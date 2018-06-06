@@ -19,7 +19,8 @@
         </div>
         <input  class="form-control email" name="emailAddress" placeholder="Email Address" type="text">
         </div>
-        <button  class="btn btn-success home-input submit-btn" name="submit">Submit</button>
+        <button  class="btn btn-primary home-input submit-btn" name="submit">Submit</button>
+        <button class="btn btn-success home-input submit-btn" name="login">Login</button>
       </form>
     </div>
   </div>
@@ -72,7 +73,7 @@
   </div>
 
   <div class="click-link">
-    <h5 class="link" (click)="ListElementComponents.isApplicationVisible()">Click here to Apply Now</h5>
+    <a style="color: blue; cursor: pointer" routerLinkActive="active current" [routerLink]="['../apply']">Click here to Apply Now</a>
   </div>
 
   <div class="col-md-12 row">

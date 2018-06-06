@@ -5,25 +5,25 @@
         <div class="tabbable">
           <ul class="nav nav-tabs" style="position: absolute; right: 0px; cursor: pointer; margin-top: 27px; margin-bottom: 25px">
             <li class="nav-item">
-              <a class="nav-link {{elements.showHome?'active':''}}" (click)="isHomeVisible()" data-toggle="tab">Home</a>
+              <a class="nav-link" routerLinkActive="active current" [routerLink]="['home']" data-toggle="tab">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{elements.showAbout?'active':''}}" (click)="isAboutVisible()" data-toggle="tab">About
+              <a class="nav-link" routerLinkActive="active current" [routerLink]="['about']" data-toggle="tab">About
                 Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{elements.showWorking?'active':''}}" (click)="isWorkingVisible()" data-toggle="tab">How
+              <a class="nav-link" routerLinkActive="active current" [routerLink]="['working']" data-toggle="tab">How
                 it Works</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{elements.showApplication?'active':''}}" (click)="isApplicationVisible()"
+              <a class="nav-link" routerLinkActive="active current" [routerLink]="['apply']"
                  data-toggle="tab">Apply</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{elements.showFaq?'active':''}}" (click)="isFaqVisible()" data-toggle="tab">FAQ</a>
+              <a class="nav-link" routerLinkActive="active current" [routerLink]="['faq']" data-toggle="tab">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{elements.showContact?'active':''}}" (click)="isContactVisible()" data-toggle="tab">Contact
+              <a class="nav-link" routerLinkActive="active current" [routerLink]="['contact']" data-toggle="tab">Contact
                 Us</a>
             </li>
           </ul>
@@ -34,53 +34,37 @@
 
 
     <div class="col-md-12">
-      <!--<button class="btn btn-primary" (click)="isChildVisible()">Toggle Child</button>-->
-      <div *ngIf="elements.showHome">
-        <app-home></app-home>
-      </div>
-      <div *ngIf="elements.showAbout">
-        <app-about></app-about>
-      </div>
-      <div *ngIf="elements.showWorking">
-        <app-working></app-working>
-      </div>
-      <div *ngIf="elements.showApplication">
-        <app-apply></app-apply>
-      </div>
-      <div *ngIf="elements.showFaq">
-        <app-faq></app-faq>
-      </div>
-      <div *ngIf="elements.showContact">
-        <app-contact></app-contact>
-      </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
+
 
 <div class="footer col-md-12" style="background: url(../../assets/images/speedloan4/footer-bg.jpg);">
   <div id="footer_under_left_top">
     <div class="tabbable">
       <ul class="nav" style="cursor: pointer;">
         <li class="nav-item">
-          <a style="color: white" class="nav-link {{elements.showHome?'active':''}}" (click)="isHomeVisible()" data-toggle="tab">Home</a>
+          <a class="nav-link" routerLinkActive="active current" [routerLink]="['home']" data-toggle="tab">Home</a>
         </li>
         <li class="nav-item">
-          <a style="color: white" class="nav-link {{elements.showAbout?'active':''}}" (click)="isAboutVisible()" data-toggle="tab">About
+          <a class="nav-link" routerLinkActive="active current" [routerLink]="['about']" data-toggle="tab">About
             Us</a>
         </li>
         <li class="nav-item">
-          <a style="color: white" class="nav-link {{elements.showWorking?'active':''}}" (click)="isWorkingVisible()" data-toggle="tab">How
+          <a class="nav-link" routerLinkActive="active current" [routerLink]="['working']" data-toggle="tab">How
             it Works</a>
         </li>
         <li class="nav-item">
-          <a style="color: white" class="nav-link {{elements.showApplication?'active':''}}" (click)="isApplicationVisible()"
+          <a class="nav-link" routerLinkActive="active current" [routerLink]="['apply']"
              data-toggle="tab">Apply</a>
         </li>
         <li class="nav-item">
-          <a style="color: white" class="nav-link {{elements.showFaq?'active':''}}" (click)="isFaqVisible()" data-toggle="tab">FAQ</a>
+          <a class="nav-link" routerLinkActive="active current" [routerLink]="['faq']" data-toggle="tab">FAQ</a>
         </li>
         <li class="nav-item">
-          <a style="color: white" class="nav-link {{elements.showContact?'active':''}}" (click)="isContactVisible()" data-toggle="tab">Contact
+          <a class="nav-link" routerLinkActive="active current" [routerLink]="['contact']" data-toggle="tab">Contact
             Us</a>
         </li>
       </ul>

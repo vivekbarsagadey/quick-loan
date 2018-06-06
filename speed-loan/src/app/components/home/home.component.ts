@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {AppComponent} from '../../app.component';
-import {ListElementComponent} from '../../list-element/list-element.component';
+import {ListElementService} from '../../services/list-element.service';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +10,14 @@ import {ListElementComponent} from '../../list-element/list-element.component';
 
 export class HomeComponent implements OnInit {
   @Input() appComponents: AppComponent;
-  @Input() ListElementComponents: ListElementComponent;
-  constructor() {
+  constructor(private elementService: ListElementService) {
     this.appComponents = new AppComponent();
-    this.ListElementComponents = new ListElementComponent();
   }
 
   ngOnInit() {
   }
-
+  // isApplicationVisible() {
+  //   this.elementService.isApplicationVisible();
+  //   return false;
+  // }
 }
