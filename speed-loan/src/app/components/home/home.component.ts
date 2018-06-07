@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {AppComponent} from '../../app.component';
-import {ListElementService} from '../../services/list-element.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +9,7 @@ import {ListElementService} from '../../services/list-element.service';
 
 export class HomeComponent implements OnInit {
   @Input() appComponents: AppComponent;
-  constructor(private elementService: ListElementService) {
+  constructor() {
     this.appComponents = new AppComponent();
   }
 

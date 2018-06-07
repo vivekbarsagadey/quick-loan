@@ -1,3 +1,39 @@
 .home-input{
   margin: 10px;
 }
+.contact-us{
+  margin-top: 100px
+}
+.contact-back{
+  background-color: #B6D8F0; margin: 5px; padding-top: 5px;
+}
+.back-color{
+  background-color: darkslateblue
+}
+.contactus-color{
+  color: white
+}
+.contactus-form{
+  text-align: center;
+}
+.email-io{
+  margin-left: 25px
+}
+.description-field{
+  margin-left: 25px
+}
+.sub-btn{
+  width: 30%
+}
+.pay-loan-bg{
+  background-color: darkslateblue
+}
+.pay-loan-color{
+  color: white
+}
+.rec-read-bg{
+  background-color: darkslateblue
+}
+.rec-read-color{
+  color: white
+}

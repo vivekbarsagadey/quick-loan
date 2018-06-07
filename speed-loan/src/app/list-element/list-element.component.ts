@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {ListElement} from './list-element.model';
 import {AppComponent} from '../app.component';
-import {ListElementService} from '../services/list-element.service';
+//import {ListElementService} from '../services/list-element.service';
 
 @Component({
   selector: 'app-list-element',
@@ -11,7 +11,8 @@ import {ListElementService} from '../services/list-element.service';
 export class ListElementComponent implements OnInit {
   @Input() elements: ListElement;
   @Input() appComponents: AppComponent;
-  constructor(private elementService: ListElementService) {
+  //private elementService: ListElementService
+  constructor() {
     this.elements = new ListElement();
     this.appComponents = new AppComponent();
   }
