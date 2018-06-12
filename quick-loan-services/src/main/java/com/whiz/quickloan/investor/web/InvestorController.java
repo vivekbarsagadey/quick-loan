@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.whiz.quickloan.customer.domain.BestTimeToCall;
 import com.whiz.quickloan.investor.domain.Investor;
 import com.whiz.quickloan.investor.domain.LoanRange;
 import com.whiz.quickloan.investor.services.InvestorRepository;
+import com.whiz.quickloan.ledger.mapper.InvestorMapper;
+import com.whiz.quickloan.ledger.services.LedgerInvestorServices;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -25,6 +26,9 @@ public class InvestorController {
 
 	@Autowired
 	private InvestorRepository investorRepository;
+	
+	@Autowired
+	private LedgerInvestorServices ledgerInvestorServices;
 
 	@ApiOperation(value = "View a list of available Investors", response = Iterable.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully retrieved list"),
@@ -47,6 +51,10 @@ public class InvestorController {
 		investor.getBankDetails().setInvestor(investor);
 		// investor.setContact(contact);
 		investorRepository.save(investor);
+		
+		// update ledger data
+		System.out.println(ledgerInvestorServices.saveInvestor(InvestorMapper.map(investor)));
+		
 		return new ResponseEntity("Investor details saved successfully!", HttpStatus.OK);
 	}
 

@@ -7,18 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.whiz.quickloan.core.domain.BaseEntityAudit;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Entity
 @Data
-public class Applications {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@ApiModelProperty(notes = "The database generated customer ID")
-	private Integer id;
-
+public class Applications extends BaseEntityAudit{
+	
 	private int customerId;
 	private LocalDate applicationDate;
+	private String remarks;
 	
 }

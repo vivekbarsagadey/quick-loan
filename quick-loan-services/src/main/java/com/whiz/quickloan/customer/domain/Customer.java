@@ -7,19 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import com.whiz.quickloan.core.domain.BaseEntityAudit;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Entity
 @Data
 public class Customer extends BaseEntityAudit{
+	private String firstName;
 	private String lastName;
 	private LocalDate DoB;
 	private Boolean isUsCitizen;

@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.whiz.quickloan.applications.domain.Applications;
 import com.whiz.quickloan.customer.domain.BestTimeToCall;
 import com.whiz.quickloan.customer.domain.Customer;
 import com.whiz.quickloan.customer.services.CustomerRepository;
+import com.whiz.quickloan.ledger.mapper.CustomerMapper;
+import com.whiz.quickloan.ledger.services.LedgerCustomerServices;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -24,6 +27,10 @@ public class CustomerController {
 
 	@Autowired
 	private CustomerRepository customerRepository;
+	
+	@Autowired
+	private LedgerCustomerServices ledgerCustomerServices;
+	
 	
 	@ApiOperation(value = "View a list of available Customers", response = Iterable.class)
 	@ApiResponses(value = {
@@ -49,8 +56,11 @@ public class CustomerController {
 		customer.getPaymentDetails().setCustomer(customer);
 		customer.getBankDetails().setCustomer(customer);
 		customer.getLoanDetails().setCustomer(customer);
-		//customer.setContact(contact);
 		customerRepository.save(customer);
+		
+		// update ledger data
+		System.out.println(ledgerCustomerServices.saveCustomer(CustomerMapper.map(customer)));
+		
 		return new ResponseEntity("Customer saved successfully", HttpStatus.OK);
 	}
 
@@ -81,5 +91,12 @@ public class CustomerController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
 	public Customer showCustomer(@PathVariable Integer id, Model model) {
 		return customerRepository.findById(id).orElse(new Customer());
+	}
+	
+	
+	@ApiOperation(value = "LedgerCustomerServices test", response = Applications.class)
+	@RequestMapping(value = "/LedgerCustomerServices/", method = RequestMethod.GET, produces = "application/json")
+	public String testLedgerCustomerServices(Model model) {
+		return ledgerCustomerServices.getCustomer();
 	}
 }

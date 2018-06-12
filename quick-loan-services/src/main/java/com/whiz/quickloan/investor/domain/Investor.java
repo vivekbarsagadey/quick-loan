@@ -1,7 +1,5 @@
 package com.whiz.quickloan.investor.domain;
 
-import java.time.LocalDate;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,7 +7,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
-import com.whiz.quickloan.core.domain.BaseEntity;
 import com.whiz.quickloan.core.domain.BaseEntityAudit;
 
 import lombok.Data;
