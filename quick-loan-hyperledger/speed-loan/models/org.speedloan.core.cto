@@ -3,42 +3,51 @@ namespace org.speedloan.core
 //PARTICIPANTS
 participant Customer identified by customerId {
 	o String customerId
-    --> Applications[] applicationId
+    o Applications[] allApplications
     --> Investor lender
 }
 
 participant Investor identified by investorId {
 	o String investorId
-    --> Applications[] applicationRequests
-    --> Applications[] applicationsAssigned
+    --> Applications applicationRequests
+    --> Applications applicationAssigned
     o Integer totalLoanLent
 }
 
 //ASSETS
 asset Applications identified by applicationId {
 	o String applicationId
-    o String customerId
+    --> Customer customer
     o DateTime applicationDate
     o Integer loanAmount
-    o String applicationStatus
-    o String remarks
+    o String applicationStatus default = "In Process"
+    o String remarks default = "No remarks"
 }
 
 //TRANSACTIONS
-transaction requestInvestor{
+transaction createApplication {
+    o Applications application
+}
+
+transaction requestInvestor {
 	--> Investor investor
     --> Applications application
 }
-/*
-transaction approveLoan {
 
+transaction approveLoan {
+	--> Investor investor
+    --> Applications application
+    //--> Customer customer
 }
 
 transaction loanLent {
+	--> Investor investor
+    -->Customer customer
+}
+/*
+transaction loanRepaid {
 
 }
 
-transaction loanRepayed {
-
-}
+transaction
 */
