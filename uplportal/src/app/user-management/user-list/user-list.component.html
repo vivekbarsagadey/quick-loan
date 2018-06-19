@@ -1,0 +1,20 @@
+<div class="">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">Users</li>
+  </ol>
+  <div *ngIf="deletedUser" class="alert alert-info" role="alert">
+    <strong>Heads up!</strong> You have successfully deleted <strong> {{getFullName(deletedUser)}}</strong> user.
+  </div>
+  <ul class="list-group users">
+    <li class="list-group-item list-group-item-action justify-content-between" *ngFor="let user of users | async"
+        (click)="onSelect(user)">
+      <span class="badge badge-danger badge-pill" (click)="onDeleteUser(user)">Delete</span>
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ getFullName(user) }}</h5>
+        <small>{{ user.age }} Years</small>
+      </div>
+      <small>User email id is {{user.email}}</small>
+
+    </li>
+  </ul>
+</div>

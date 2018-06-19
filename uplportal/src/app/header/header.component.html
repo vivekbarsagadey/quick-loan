@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand flex-column flex-md-row navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand user-manager" href="#" i18n>URL Portal</a>
+  <div class="collapse navbar-collapse col-md-12 row" id="navbarCollapse">
+    <div class="col-md-6">
+    <ul class="navbar-nav mr-auto component-list">
+      <li class="nav-item active">
+        <a routerLink="/home" class="nav-link" routerLinkActive="active" i18n>Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contact" class="nav-link" routerLinkActive="active" i18n>Contacts</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/user" class="nav-link" routerLinkActive="active" #user="routerLinkActive" i18n>User</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/application" class="nav-link" routerLinkActive="active" #user="routerLinkActive" i18n>Application</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/about" class="nav-link"  routerLinkActive="active" i18n>About Us</a>
+      </li>
+    </ul>
+    </div>
+    <div class="col-md-6">
+    <form [formGroup]="Form" class="form-inline mt-2 mt-md-0">
+      <input class="form-control mr-sm-2" formControlName="searchData" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="showSearch(Form.value)" [disabled]="!user.isActive" i18n>Search</button>
+    </form>
+    </div>
+  </div>
+</nav>
+
