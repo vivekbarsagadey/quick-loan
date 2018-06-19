@@ -3,11 +3,7 @@ package com.whiz.quickloan.applications.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.whiz.quickloan.application.services.ApplicationsRepository;
 import com.whiz.quickloan.applications.domain.Applications;
@@ -37,6 +33,7 @@ public class ApplicationsController {
 	}
 	)
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
+	@CrossOrigin
 	public Iterable<Applications> list(Model model) {
 		Iterable<Applications> ApplicationsList = applicationsRepository.findAll();
 		return ApplicationsList;
