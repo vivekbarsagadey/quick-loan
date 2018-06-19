@@ -3,11 +3,7 @@ package com.whiz.quickloan.customer.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.whiz.quickloan.applications.domain.Applications;
 import com.whiz.quickloan.customer.domain.BestTimeToCall;
@@ -89,6 +85,7 @@ public class CustomerController {
 	
 	@ApiOperation(value = "Search a Customer with an ID", response = Customer.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
+	@CrossOrigin
 	public Customer showCustomer(@PathVariable Integer id, Model model) {
 		return customerRepository.findById(id).orElse(new Customer());
 	}
