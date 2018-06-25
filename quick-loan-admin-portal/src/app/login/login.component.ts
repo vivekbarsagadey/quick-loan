@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlConstant } from '../util/url-constant'
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   sendToServer (username: HTMLInputElement, password: HTMLInputElement) {
     console.log(`Username is ${username.value} and password is ${password.value}`);
 
-    fetch('http://localhost:3000/api/user/authenticate', {
+    fetch(UrlConstant.API_HOST + 'user/authenticate', {
       method: 'POST',
       body: JSON.stringify({
         "username": username.value,
