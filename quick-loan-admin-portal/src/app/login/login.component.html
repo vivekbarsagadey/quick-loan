@@ -1,0 +1,37 @@
+<div id="loginDiv">
+  <div class="row">
+    <div class="col-sm-5">
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control border-input" placeholder="Username" type="text" #username>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <label>Password</label>
+          <input class="form-control border-input" placeholder="Password" type="text" #password>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="sendToServer(username, password)">Submit</button>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-danger">Clear</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>

@@ -15,13 +15,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormComponent } from './form/form.component';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'home', component: FormComponent},
   {path: 'about', component: AboutComponent},
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {path: '**', component: PageNotFoundComponent}
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     HomeComponent,
     SidebarComponent,
     FormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
