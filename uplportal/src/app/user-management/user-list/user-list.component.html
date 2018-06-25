@@ -1,6 +1,17 @@
-<div class="">
+<div>
+  <div>
+    <ul class="app-nav">
+      <li class="app-search">
+    <input class="app-search__input" type="serch" placeholder="Search">
+    <button class="app-search__button"><i class="fa fa-search"></i></button>
+      </li>
+      <li>
+    <button type="button" (click)="newUserComponent()" class="btn btn-lg btn-success p-2" name="New User"> New User >></button>
+      </li>
+    </ul>
+  </div>
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active">Users</li>
+    <li class="breadcrumb-item active"><b>Users</b></li>
   </ol>
   <div *ngIf="deletedUser" class="alert alert-info" role="alert">
     <strong>Heads up!</strong> You have successfully deleted <strong> {{getFullName(deletedUser)}}</strong> user.

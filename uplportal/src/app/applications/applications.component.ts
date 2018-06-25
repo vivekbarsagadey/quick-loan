@@ -5,10 +5,12 @@ import {ActivatedRoute, Router, Params} from '@angular/router';
 
 @Component({
   selector: 'app-application',
-  templateUrl: './application.component.html',
-  styleUrls: ['./application.component.scss']
+  templateUrl: './applications.component.html',
+  styleUrls: ['./applications.component.scss']
 })
-export class ApplicationComponent implements OnInit {
+export class ApplicationsComponent implements OnInit {
+  applicationUrl: 'http://localhost:8080/api/applications/';
+  customerUrl: 'http://localhost:8080/api/customer/';
   users: Observable<any[]>;
   display: any;
   currentUser: any;
@@ -24,9 +26,9 @@ export class ApplicationComponent implements OnInit {
   }
 
   ngOnInit() {
-     // this.loadUser();
+    // this.loadUser();
     this.display = 'none';
-    fetch('http://localhost:8080/api/applications/', {
+    fetch(this.applicationUrl, {
       method: 'get',
       mode: 'cors'
     }).then(response => {
@@ -42,23 +44,10 @@ export class ApplicationComponent implements OnInit {
   openModal(id) {
     /*this.currentUser = u;*/
     this.display = 'block';
-    /*$('.backdrop').css('display', 'block');
-    $('.modal').css('display', 'block');*/
-    fetch('http://localhost:8080/api/customer/' + 1, {
-      method: 'get',
-      mode: 'cors'
-    }).then(response => {
-      console.log(response);
-      return response.json();
-    }).then(res => {
-      console.log('res>>>>>>>>>>>>>>', res);
-      this.userInfo = res;
-    }).catch(err => {
-      }
-    );
+
   }
   onClickAcceptBtn() {
-    fetch('http://localhost:8080/api/customer/', {
+    fetch(this.customerUrl,  {
       method: 'POST',
       mode: 'cors',
       redirect: 'follow',
@@ -68,7 +57,7 @@ export class ApplicationComponent implements OnInit {
     }).then(function() { /* handle response */ });
   }
   onClickRejectBtn() {
-    fetch('http://localhost:8080/api/customer/', {
+    fetch(this.customerUrl, {
       method: 'POST',
       mode: 'cors',
       redirect: 'follow',
@@ -83,8 +72,8 @@ export class ApplicationComponent implements OnInit {
     $('.modal').css('display', 'none');*/
   }
 
- /* getFullName(user: User) {
-    return [user.lastName, user.firstName].join(',');
-  }*/
+  /* getFullName(user: User) {
+     return [user.lastName, user.firstName].join(',');
+   }*/
 
 }
