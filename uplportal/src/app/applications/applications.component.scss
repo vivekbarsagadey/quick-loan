@@ -1,9 +1,19 @@
 .cust-details-btn{
-  margin-left: 44%;
   background: #6495ed;
-  width: 159px;
+  width: 129px;
   height: 45px;
-  font-size: medium;
+  font-size: 13px;
+}
+.accept-btn{
+  margin-left: 11px;
+  background: #6495ed;
+  height: 45px;
+  font-size: 13px;
+}
+.reject-btn{
+  background: #ED2838;
+  height: 45px;
+  font-size: 13px;
 }
 .backdrop{
   background-color:rgba(0,0,0,0.6) !important;
@@ -18,4 +28,3 @@
   height: 98%;
   margin: 1.75rem auto;
 }
-

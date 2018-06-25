@@ -3,14 +3,30 @@
     <li class="list-group-item list-group-item-action justify-content-between" *ngFor="let user of users">
       <div class="row">
         <div class="col-md-8">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{ user.remarks }}</h5>
-            <small>User email id is {{user.remarks}}</small>
-            <small>{{ user.applicationDate }} </small>
+          <div class="row">
+            <div class="col-sm-4">
+              <h5 class="mb-1">{{ user.remarks }}</h5>
+            </div>
+            <div class="col-sm-4">
+              <small>User email id is {{user.remarks}}</small>
+            </div>
+            <div class="col-sm-4">
+              <small>{{ user.applicationDate }} </small>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
-          <button class="btn btn-lg btn-default cust-details-btn" type="button" (click)="openModal(user.id)">Customer Details</button>
+          <div class="row">
+            <div class="col-sm-4">
+              <button class="btn btn-lg btn-default cust-details-btn" type="button" (click)="openModal(user.id)">Customer Details</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-lg btn-default accept-btn" (click)="onClickAcceptBtn()">Accept</button>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-lg btn-danger reject-btn" (click)="onClickRejectBtn()">Reject</button>
+            </div>
+          </div>
         </div>
       </div>
     </li>
@@ -52,11 +68,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="onClickAcceptBtn()">Accept</button>
-        <button type="button" class="btn btn-default" (click)="onClickRejectBtn()">Reject</button>
-        <!--
-                <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
-        -->
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
