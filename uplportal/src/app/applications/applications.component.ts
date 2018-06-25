@@ -28,7 +28,7 @@ export class ApplicationsComponent implements OnInit {
   ngOnInit() {
     // this.loadUser();
     this.display = 'none';
-    fetch(this.applicationUrl, {
+    fetch('http://localhost:8080/api/applications/', {
       method: 'get',
       mode: 'cors'
     }).then(response => {
@@ -44,7 +44,18 @@ export class ApplicationsComponent implements OnInit {
   openModal(id) {
     /*this.currentUser = u;*/
     this.display = 'block';
-
+    fetch('http://localhost:8080/api/customer/' + 1, {
+      method: 'get',
+      mode: 'cors'
+    }).then(response => {
+      console.log(response);
+      return response.json();
+    }).then(res => {
+      console.log('res>>>>>>>>>>>>>>', res);
+      this.userInfo = res;
+    }).catch(err => {
+      }
+    );
   }
   onClickAcceptBtn() {
     fetch(this.customerUrl,  {
