@@ -7,21 +7,25 @@
       <div class="col-md-2"></div>
     </div>
     <div class="col-md-6 homepage-form">
-      <form name="basic-form">
+      <div *ngIf="formDispaly;else formInfo">
+      <form [formGroup]="Form" (submit)="addPost(Form.value)" name="basic-form">
         <div class="col-md-12 row">
         <div class="col-md-6">
-        <input class="form-control home-input" name="userName" type="text" placeholder="FirstName LastName">
-        <input class="form-control home-input" name="contactNumber" type="text" placeholder="Contact Number">
+        <input class="form-control home-input" formControlName="name" name="userName" type="text" placeholder="FirstName LastName">
+          <!--<div class="alert error-msg" *ngIf="!Form.controls['name'].valid && Form.controls['name'].touched">{{message}}</div>-->
+          <input class="form-control home-input" formControlName="contact" name="contactNumber" type="text" placeholder="Contact Number">
         </div>
         <div class="col-md-6">
-        <input class="form-control home-input" name="loanAmount" type="text" placeholder="Loan Amount">
-        <input class="form-control home-input" name="zipCode" type="text" placeholder="Zip Code">
+        <input class="form-control home-input" formControlName="amount" name="loanAmount" type="text" placeholder="Loan Amount">
+        <input class="form-control home-input" formControlName="zipCode" name="zipCode" type="text" placeholder="Zip Code">
         </div>
-        <input  class="form-control email" name="emailAddress" placeholder="Email Address" type="text">
+        <input  class="form-control email" formControlName="email" name="emailAddress" placeholder="Email Address" type="text">
         </div>
-        <button  class="btn btn-primary home-input submit-btn" name="submit">Submit</button>
+        <button type="submit" [disabled]="!Form.valid" value="Submit Form" class="btn btn-primary home-input submit-btn" name="submit">Submit</button>
         <button class="btn btn-success home-input submit-btn" name="login">Login</button>
       </form>
+        <template #formInfo><div class="form-container"><div class="row columns"><h5> Form Submit </h5></div></div></template>
+      </div>
     </div>
   </div>
 

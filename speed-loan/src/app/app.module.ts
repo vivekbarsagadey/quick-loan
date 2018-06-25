@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -10,7 +11,8 @@ import { FaqComponent } from './components/faq/faq.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ListElementComponent } from './list-element/list-element.component';
 import { HomeComponent } from './components/home/home.component';
-import {ListElementService} from './services/list-element.service';
+ // import {ListElementService} from './services/list-element.service';
+// import { RformComponent } from './rform/rform.component';
 
 const appRoutes: Routes = [
   { path: 'app', component: AppComponent},
@@ -20,7 +22,9 @@ const appRoutes: Routes = [
   { path: 'faq', component: FaqComponent},
   { path: 'working', component: WorkingComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'apply', component: ApplyComponent}
+  { path: 'apply', component: ApplyComponent},
+ // { path: 'form', component: RformComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -32,13 +36,16 @@ const appRoutes: Routes = [
     FaqComponent,
     ContactComponent,
     ListElementComponent,
-    HomeComponent
+    HomeComponent,
+   // RformComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [ListElementService],
+  // providers: [ListElementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
