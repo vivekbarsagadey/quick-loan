@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {UserService} from '../user-management/user.service';
 import {ActivatedRoute, Router, Params} from '@angular/router';
+import { UrlConstants } from '../common/url-constants';
 
 @Component({
   selector: 'app-application',
@@ -9,26 +10,17 @@ import {ActivatedRoute, Router, Params} from '@angular/router';
   styleUrls: ['./applications.component.scss']
 })
 export class ApplicationsComponent implements OnInit {
-  applicationUrl: 'http://localhost:8080/api/applications/';
-  customerUrl: 'http://localhost:8080/api/customer/';
   users: Observable<any[]>;
   display: any;
   currentUser: any;
   userInfo: any;
   constructor(private userService: UserService, private route: ActivatedRoute,
               private router: Router) {
-    // this.route.params.subscribe(params => {
-    //   console.log(params);
-    //   if (params['searchData']) {
-    //     this.doSearch(params['searchData']);
-    //   }
-    // });
   }
 
   ngOnInit() {
-    // this.loadUser();
     this.display = 'none';
-    fetch('http://localhost:8080/api/applications/', {
+    fetch( UrlConstants.APPLICATION_URL , {
       method: 'get',
       mode: 'cors'
     }).then(response => {
@@ -42,9 +34,8 @@ export class ApplicationsComponent implements OnInit {
   }
 
   openModal(id) {
-    /*this.currentUser = u;*/
     this.display = 'block';
-    fetch('http://localhost:8080/api/customer/' + 1, {
+    fetch(UrlConstants.CUSTOMER_URL + 1, {
       method: 'get',
       mode: 'cors'
     }).then(response => {
@@ -58,29 +49,27 @@ export class ApplicationsComponent implements OnInit {
     );
   }
   onClickAcceptBtn() {
-    fetch(this.customerUrl,  {
+    fetch(UrlConstants.APPLICATION_URL,  {
       method: 'POST',
       mode: 'cors',
       redirect: 'follow',
       headers: new Headers({
         'Content-Type': 'text/plain'
       })
-    }).then(function() { /* handle response */ });
+    }).then(function() { this.display = 'none'; });
   }
   onClickRejectBtn() {
-    fetch(this.customerUrl, {
+    fetch(UrlConstants.APPLICATION_URL, {
       method: 'POST',
       mode: 'cors',
       redirect: 'follow',
       headers: new Headers({
         'Content-Type': 'text/plain'
       })
-    }).then(function() { /* handle response */ });
+    }).then(function() { this.display = 'none'; });
   }
   onCloseHandled() {
     this.display = 'none';
-    /*$('.backdrop').css('display', 'none');
-    $('.modal').css('display', 'none');*/
   }
 
   /* getFullName(user: User) {
