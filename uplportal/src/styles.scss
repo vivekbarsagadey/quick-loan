@@ -1,14 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
-/*@import "~bootstrap/scss/bootstrap";*/
-/*!
- * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 
-// Core variables and mixins
-@import "assets/variables";
+@import "assets/scss/fonts";
+@import "assets/scss/variables";
+@import 'assets/scss/customize-bootstrap';
 @import "~bootstrap/scss/bootstrap";
+
+@import "assets/scss/app";
+
+// Component
+//---------------------------------------------------
+
+@import 'assets/scss/component/header';
+@import 'assets/scss/component/sidebar';
+@import 'assets/scss/component/sidebar-mini';
+
+// This styles are optional based on your preferance
+@import 'assets/scss/component/dropdown';
+@import 'assets/scss/component/button';
+@import 'assets/scss/component/app-title';
+@import 'assets/scss/component/tile';
+@import 'assets/scss/component/custom-radio-n-checkbox';
+@import 'assets/scss/component/toggle-button';
+@import 'assets/scss/component/material-half-bg';
+@import 'assets/scss/component/material-loader';
+@import 'assets/scss/component/button-spinner';
+@import 'assets/scss/component/widgets';
+@import 'assets/scss/component/chat';
+
+
+
 
 

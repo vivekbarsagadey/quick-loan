@@ -1,0 +1,3 @@
+ constant for url 
+ 
+ const applicationUrl = 'http://localhost:8080/api/applications/';

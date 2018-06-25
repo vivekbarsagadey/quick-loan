@@ -52,7 +52,9 @@ export class UserListComponent implements OnInit {
     }, 3000);
 
   }
-
+  newUserComponent() {
+    this.router.navigate(['/newuser']);
+  }
   getFullName(user: User) {
     return [user.lastName , user.firstName ].join(',');
   }

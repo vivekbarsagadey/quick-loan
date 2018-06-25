@@ -1,0 +1,19 @@
+{
+  "applicationDate": "2018-06-18",
+  "customerId": 1,
+  "createdBy":"test",
+  "remarks": "this  is test"
+ }
+
+ 
+ {
+  "applicationDate": "2018-06-18",
+  "customerId": 2,
+  "createdBy":"test1",
+  "remarks": "this  is test 2"
+ }
+ 
+ 
+ 
+ 
+ http://192.168.0.110:8080/swagger-ui.html

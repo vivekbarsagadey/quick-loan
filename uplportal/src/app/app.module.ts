@@ -11,13 +11,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import {UserManagementModule} from './user-management/user-management.module';
 import {ContactModule} from './contact/contact.module';
-import { ApplicationComponent } from './application/application.component';
-import { ApplicationDetailsComponent } from './application-details/application-details.component';
+import { MenuComponent } from './menu/menu.component';
+import { ApplicationsComponent } from './applications/applications.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'application', component: ApplicationComponent},
+  {path: 'applications', component: ApplicationsComponent},
   {
     path: '',
     redirectTo: '/home',
@@ -35,8 +35,8 @@ const appRoutes: Routes = [
     AboutComponent,
     PageNotFoundComponent,
     HomeComponent,
-    ApplicationComponent,
-    ApplicationDetailsComponent,
+    MenuComponent,
+    ApplicationsComponent,
   ],
   imports: [
     BrowserModule,

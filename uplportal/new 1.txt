@@ -1,0 +1,52 @@
+{
+  "addressDetails": {
+    "activeStatus": true,
+    "companyAddress": "asdad",
+    "companyCity": "asd",
+    "companyCountry": "asdsa",
+    "companyState": "asdas",
+    "companyZipCode": "asdwq"
+    },
+  "bankDetails": {
+    "abaOrRoutingNumber": 0,
+    "accountNumber": 0,
+    "accountType": 0,
+    "activeStatus": true,
+    "bankName": "weeq",
+    "bankPhone": "asda",
+    "durationOfBankAccount": 0
+    },
+  "bestTimeToCall": "MORNING",
+  "contactDetails": {
+    "activeStatus": true,
+    "cellPhone1": "1231321",
+    "cellPhone2": "1232132131",
+    "companyEmailId": "1231231321",
+    "companyWebsite": "213123212424",
+    "workPhone1": "1214242",
+    "workPhone2": "23423423"
+  },
+  "doB": "2018-06-18",
+  "employmentDetails": {
+    "activeStatus": true,
+    "currentEmployedDuration": 0,
+    "employerName": "3524dfvdc",
+    "employerPhone": "strxcvxvxing",
+    "incomeType": "EMPLOYMENT",
+    "jobTitle": "zxczcxz"
+  },
+  "firstName": "zxcxz",
+  "isMilitaryDependant": true,
+  "isUsCitizen": true,
+  "lastName": "zxczx",
+  "licenseNumber": "zxczc",
+  "loanDetails": {
+    "deadlineDate": "2018-06-18",
+    "loanAmount": 1000,
+    "loanPurpose": "wqeq"
+  },
+  "paymentDetails": {
+    "activeStatus": true,
+    "rateOfInterest": 0
+  }
+ }

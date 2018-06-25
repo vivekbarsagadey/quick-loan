@@ -4,8 +4,8 @@ import {FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule} fr
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'header',
   templateUrl: './header.component.html',
+  selector: '.app-header',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {

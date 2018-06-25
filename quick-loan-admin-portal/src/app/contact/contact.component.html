@@ -1,0 +1,26 @@
+<h2 class="text-white">Contact of {{userName}}</h2>
+<div *ngIf="msg" class="text-white" class="msg">{{msg}}</div>
+<form *ngIf="contacts" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+ <br> <h3 highlight class="bg-light">{{ contact.name | awesome }}</h3><br>
+  <div class="form-group">
+    <label class="text-white" for="name">Name</label>
+    <input type="text" class="form-control bg-light" required
+           [(ngModel)]="contact.name"
+           name="name"  #name="ngModel" >
+    <div [hidden]="name.valid" class="alert alert-danger text-white">
+      Name is required
+    </div>
+  </div>
+  <br>
+  <div class="btn-toolbar space-between col-md-6">
+    <div class="col-md-4">
+  <button type="submit" class="btn btn-success width-large" [disabled]="!contactForm.form.valid">Save</button>
+    </div>
+    <div class="col-md-4 width-large">
+  <button type="button" class="btn btn-success width-large" id="next" (click)="next()" [disabled]="!contactForm.form.valid">Next Contact</button>
+    </div>
+    <div class="col-md-4 width-large">
+  <button type="button" class="btn btn-success width-large" (click)="newContact()">New Contact</button>
+    </div>
+  </div><br><br><br><br><br><br><br><br><br><br>
+</form>

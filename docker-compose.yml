@@ -1,0 +1,20 @@
+quick-loan-admin:
+  build: quick-loan-admin-portal
+  ports:
+    - 8084:4200
+  restart: always
+speed-loan:
+  build: speed-loan
+  ports:
+    - 8085:4200
+  restart: always
+quick-loan-service:
+  build: quick-loan-services
+  ports:
+    - 8086:8080
+  restart: always
+uplportal:
+  build: uplportal
+  ports:
+    - 8087:4200
+  restart: always
