@@ -40,14 +40,19 @@ transaction approveLoan {
     //--> Customer customer
 }
 
+transaction rejectLoan {
+    --> Applications application
+	o String remarks
+}
+
 transaction loanLent {
-	--> Investor investor
-    -->Customer customer
+	--> Applications application
+}
+
+transaction loanRepaid {
+	--> Applications application
+	--> Investor investor optional
 }
 /*
-transaction loanRepaid {
-
-}
-
 transaction
 */

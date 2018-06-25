@@ -22,7 +22,6 @@ function createApplication(createApplication) {
   return getParticipantRegistry(NS + '.Customer')}).then(function(CustomerRegistry) {
     return CustomerRegistry.update(createApplication.application.customer);
   });
-
 }
 
 /**
@@ -54,10 +53,12 @@ function requestInvestor(requestInvestor) {
  * @transaction
  */
 function approveLoan(approveLoan) {
-  //approveLoan.investor.applicationRequests.applicationId = 0;//approveLoan.application."NoAppl";
   approveLoan.application.customer.lender.investorId = approveLoan.investor.investorId;
-  approveLoan.investor.applicationAssigned.applicationId = approveLoan.application.customer.allApplications.applicationId;
-  approveLoan.application.applicationStatus = "Loan Approved";
+  //var temp = approveLoan.investor.applicationAssigned.applicationId;
+  approveLoan.investor.applicationAssigned.applicationId = approveLoan.investor.applicationRequests.applicationId;
+  //approveLoan.investor.applicationRequests.applicationId = temp;
+  //approveLoan.investor.applicationRequests.applicationId = "NULL";
+  approveLoan.application.applicationStatus = "Application approved by Investor";
 
   return getParticipantRegistry(NS + '.Investor')
     .then(function(InvestorRegistry) {
@@ -68,11 +69,83 @@ function approveLoan(approveLoan) {
     })
     .then(function(ApplicationsRegistry) {
     	return ApplicationsRegistry.update(approveLoan.application);
-    })
+  	})
     .then(function() {
-    	return getParticipantRegistry(NS + '.Customer');
+    	return getParticipantRegistry(NS + '.Customer')
     })
     .then(function(CustomerRegistry) {
-    	return CustomerRegistry.update(approveLoan.customer);
-  	});
+        return CustomerRegistry.update(approveLoan.application.customer);
+    });
+}
+
+/**
+ * @param {org.speedloan.core.rejectLoan} rejectLoan - send application to investor
+ * @transaction
+ */
+function rejectLoan(rejectLoan) {
+  rejectLoan.application.applicationStatus = "Application rejected by Investor";
+  rejectLoan.application.remarks = rejectLoan.remarks;
+
+  return getAssetRegistry(NS + '.Applications')
+    .then(function(ApplicationsRegistry) {
+    	return ApplicationsRegistry.update(rejectLoan.application);
+    })
+    .then(function() {
+    	return getParticipantRegistry(NS + '.Customer')
+    })
+    .then(function(CustomerRegistry) {
+        return CustomerRegistry.update(rejectLoan.application.customer);
+    });
+}
+
+/**
+ * @param {org.speedloan.core.loanLent} loanLent - Change Loan Lent status
+ * @transaction
+ */
+
+function loanLent(loanLent) {
+  loanLent.application.applicationStatus = "Loan amount sent to customer";
+  loanLent.application.customer.lender.totalLoanLent = loanLent.application.loanAmount;
+
+  return getAssetRegistry(NS + '.Applications')
+    .then(function(ApplicationsRegistry) {
+    	return ApplicationsRegistry.update(loanLent.application);
+  }).then(function() {
+  		return getParticipantRegistry(NS + '.Customer')
+  })
+    .then(function(CustomerRegistry) {
+    	return CustomerRegistry.update(loanLent.application.customer);
+  })
+  .then(function() {
+  		return getParticipantRegistry(NS + '.Investor')
+  })
+    .then(function(InvestorRegistry) {
+    	return InvestorRegistry.update(loanLent.application.customer.lender);
+  });
+}
+
+/**
+ * @param {org.speedloan.core.loanRepaid} loanRepaid - Change Loan Repaid status
+ * @transaction
+ */
+
+function loanRepaid(loanRepaid) {
+  loanRepaid.application.applicationStatus = "Loan amount repaid by the customer";
+  loanRepaid.application.customer.lender.totalLoanLent -= loanRepaid.application.loanAmount;
+
+  return getAssetRegistry(NS + '.Applications')
+    .then(function(ApplicationsRegistry) {
+    return ApplicationsRegistry.update(loanRepaid.application);
+  })
+    .then(function() {
+  return getParticipantRegistry(NS + '.Customer')})
+    .then(function(CustomerRegistry) {
+    return CustomerRegistry.update(loanRepaid.application.customer);
+  })
+  .then(function() {
+  		return getParticipantRegistry(NS + '.Investor')
+  })
+    .then(function(InvestorRegistry) {
+    	return InvestorRegistry.update(loanRepaid.application.customer.lender);
+  });
 }
