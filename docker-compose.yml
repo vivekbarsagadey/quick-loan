@@ -1,7 +1,7 @@
 quick-loan-admin:
   build: quick-loan-admin-portal
   ports:
-    - 8084:4200
+    - 8084:3000
   restart: always
 speed-loan:
   build: speed-loan

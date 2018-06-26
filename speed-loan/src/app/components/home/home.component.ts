@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   contact: number;
   name: string;
   formDispaly = true;
+  formInfo;
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.appComponents = new AppComponent();
     this.Form = formBuilder.group({
