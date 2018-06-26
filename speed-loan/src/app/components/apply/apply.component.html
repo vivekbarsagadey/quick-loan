@@ -5,19 +5,9 @@
       <div style="background-color: darkslateblue"><h2 style="color: white">Application Form</h2></div>
       <div class="col-md-12" style="text-align: center;">
         <form name="basic-form">
-          <div class="col-md-12 row">
-            <div class="col-md-12"><h5><strong>User Details</strong></h5></div>
-            <div class="col-md-6 row">
-              <div class="col-md-12 row">
-                <div class="col-md-5">
-                  <label>Best time to call:</label>
-                </div>
-                <div class="col-md-7">
-                  <select class="form-control home-input" name="bestTimeToCall" type="text">
-                    <option>morning</option>
-                  </select>
-                </div>
-              </div>
+          <div class="col-md-12 row text-right">
+            <div class="col-md-12 text-center"><h5><strong>User Details</strong></h5></div>
+            <div class="col-md-6 row" >
 
               <div class="col-md-12 row">
                 <div class="col-md-5">
@@ -30,10 +20,41 @@
 
               <div class="col-md-12 row">
                 <div class="col-md-5">
-                  <label class="form-input-label">Date of Birth:</label>
+                  <label class="form-input-label">Last Name:</label>
                 </div>
                 <div class="col-md-7">
-                  <input class="form-control home-input" name="doB" type="date" placeholder="date of Birth">
+                  <input class="form-control home-input" name="lastName" type="text" placeholder="Last Name">
+                </div>
+              </div>
+
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label>Best time to call:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="bestTimeToCall" type="text">
+                    <option>morning</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label>License Number:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="licenseNumber" type="text" placeholder="License Number">
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">License Issue Date:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="licIssueDate" type="date" placeholder="date of Birth">
                 </div>
               </div>
 
@@ -50,39 +71,66 @@
             <div class="col-md-6 row">
               <div class="col-md-12 row">
                 <div class="col-md-5">
+                  <label class="form-input-label">Middle Name:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="middleName" type="text" placeholder="Middle Name">
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5 mt-3">
+                  <label>Marital status:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="maritalStatus" type="text">
+                    <option>single</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Date of Birth:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="doB" type="date" placeholder="date of Birth">
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5 mt-3">
+                  <label>License State:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="licState" type="text">
+                    <option></option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">License Expiration Date:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="licExpirationDate" type="date" placeholder="License Expiration Date">
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
                   <label class="form-input-label">Us Citizenship:</label>
                 </div>
                 <div class="col-md-7">
                   <input class="form-control home-input" name="isUsCitizen" type="radio">
                 </div>
               </div>
-
-              <div class="col-md-12 row">
-                <div class="col-md-5">
-                  <label class="form-input-label">Last Name:</label>
-                </div>
-                <div class="col-md-7">
-                  <input class="form-control home-input" name="lastName" type="text" placeholder="Last Name">
-                </div>
-              </div>
-
-              <div class="col-md-12 row">
-                <div class="col-md-5">
-                  <label>License Number:</label>
-                </div>
-                <div class="col-md-7">
-                  <input class="form-control home-input" name="licenseNumber" type="text" placeholder="License Number">
-                </div>
-              </div>
             </div>
             </div>
 
-
-
-
-
-          <div class="col-md-12 row">
-            <div class="col-md-12"><h5><strong>Address Details</strong></h5></div>
+          <div class="col-md-12 row text-right">
+            <div class="col-md-12 text-center"><h5><strong>Address Details</strong></h5></div>
             <div class="col-md-6 row">
               <div class="col-md-12 row">
                 <div class="col-md-5">
@@ -90,6 +138,17 @@
                 </div>
                 <div class="col-md-7">
                   <textarea class="form-control home-input" name="address" type="text"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">State:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="state" type="text">
+                    <option></option>
+                  </select>
                 </div>
               </div>
 
@@ -161,14 +220,11 @@
                   <input class="form-control home-input" name="activeStatus" type="radio" placeholder="Active Status">
                 </div>
               </div>
-            </div> </div>
+            </div>
+          </div>
 
-
-
-
-
-          <div class="col-md-12 row">
-            <div class="col-md-12"><h5><strong>Bank Details</strong></h5></div>
+          <div class="col-md-12 row text-right">
+            <div class="col-md-12 text-center"><h5><strong>Bank Details</strong></h5></div>
             <div class="col-md-6 row">
               <div class="col-md-12 row">
                 <div class="col-md-5">
@@ -255,11 +311,8 @@
             </div>
           </div>
 
-
-
-
-          <div class="col-md-12 row">
-            <div class="col-md-12"><h5><strong>Contact Details</strong></h5></div>
+          <div class="col-md-12 row text-right">
+            <div class="col-md-12 text-center"><h5><strong>Contact Details</strong></h5></div>
             <div class="col-md-6 row">
               <div class="col-md-12 row">
                 <div class="col-md-5">
@@ -305,15 +358,35 @@
                   <input class="form-control home-input" name="activeStatus" type="radio" placeholder="Active Status">
                 </div>
               </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label>Residential status:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="residentialStatus" type="text">
+                    <option></option>
+                  </select>
+                </div>
+              </div>
             </div>
 
             <div class="col-md-6 row">
               <div class="col-md-12 row">
                 <div class="col-md-5">
+                  <label class="form-input-label">Confirm Email Id:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="confirmEmailId" type="email" placeholder="Confirm Email Id">
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
                   <label class="form-input-label">Cell Phone1:</label>
                 </div>
                 <div class="col-md-7">
-                  <input class="form-control home-input" name="cellPhone3" type="number" placeholder="Cell Phone3">
+                  <input class="form-control home-input" name="cellPhone1" type="number" placeholder="Cell Phone1">
                 </div>
               </div>
 
@@ -343,17 +416,30 @@
                   <input class="form-control home-input" name="workPhone" type="number" placeholder="Work Phone">
                 </div>
               </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Date of Move:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="dateOfMove" type="date" placeholder="date of Move">
+                </div>
+              </div>
             </div>
           </div>
 
-
-
-
-
-
-          <div class="col-md-12 row">
-            <div class="col-md-12"><h5><strong>Employment Details</strong></h5></div>
+          <div class="col-md-12 row text-right">
+            <div class="col-md-12 text-center"><h5><strong>Employment Details</strong></h5></div>
             <div class="col-md-6 row">
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Company Name:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="companyName" type="number" placeholder="Company Name">
+                </div>
+              </div>
 
               <div class="col-md-12 row">
                 <div class="col-md-5">
@@ -383,10 +469,18 @@
                   <input class="form-control home-input" name="currentEmployedDuration" type="number" placeholder="Current Employed Duration">
                 </div>
               </div>
-
             </div>
 
             <div class="col-md-6 row">
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Company Address:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="companyAddress" type="text" placeholder="Company Address">
+                </div>
+              </div>
+
               <div class="col-md-12 row">
                 <div class="col-md-5">
                   <label class="form-input-label">Job Title:</label>
@@ -416,12 +510,8 @@
             </div>
           </div>
 
-
-
-
-
-          <div class="col-md-12 row">
-            <div class="col-md-12"><h5><strong>Loan Details</strong></h5></div>
+          <div class="col-md-12 row text-right">
+            <div class="col-md-12 text-center"><h5><strong>Loan Details</strong></h5></div>
             <div class="col-md-6 row">
 
               <div class="col-md-12 row">
@@ -455,10 +545,8 @@
           </div>
           </div>
 
-
-
-          <div class="col-md-12 row">
-            <div class="col-md-12"><h5><strong>Payment Details</strong></h5></div>
+          <div class="col-md-12 row text-right">
+            <div class="col-md-12 text-center"><h5><strong>Payment Details</strong></h5></div>
             <div class="col-md-6 row">
 
               <div class="col-md-12 row">
@@ -470,25 +558,83 @@
                 </div>
               </div>
 
+               <div class="col-md-12 row">
+                  <div class="col-md-5">
+                    <label class="form-input-label">Sort Code:</label>
+                  </div>
+                  <div class="col-md-7">
+                    <input class="form-control home-input" name="sortCode" type="text" placeholder="Sort Code">
+                  </div>
+                </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Bank Account:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="bankAccount" type="text" placeholder="Bank Account">
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Monthly Expenses:</label>
+                </div>
+                <div class="col-md-7">
+                  <input class="form-control home-input" name="monthlyExpenses" type="text" placeholder="Monthly Expenses">
+                </div>
+              </div>
+
               <div class="col-md-12 row">
                 <div class="col-md-5">
                   <label>Second Pay Day:</label>
                 </div>
                 <div class="col-md-7">
-                  <input class="form-control home-input" name="secondTPayDay" type="date" placeholder="Second Pay Day">
+                  <input class="form-control home-input" name="secondPayDay" type="date" placeholder="Second Pay Day">
                 </div>
               </div>
-
             </div>
 
             <div class="col-md-6 row">
-
               <div class="col-md-12 row">
                 <div class="col-md-5">
                   <label class="form-input-label">NexT Pay Day:</label>
                 </div>
                 <div class="col-md-7">
                   <input class="form-control home-input" name="nexTPayDay" type="date" placeholder="NexT Pay Day">
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Monthly Income:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="monthlyIncome" type="text">
+                    <option></option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Income Source:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="incomeSource" type="text">
+                    <option></option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-12 row">
+                <div class="col-md-5">
+                  <label class="form-input-label">Payment Method:</label>
+                </div>
+                <div class="col-md-7">
+                  <select class="form-control home-input" name="paymentMethod" type="text">
+                    <option></option>
+                  </select>
                 </div>
               </div>
 
@@ -526,5 +672,4 @@
       </div>
     </div>
   </div>
-
 </div>
