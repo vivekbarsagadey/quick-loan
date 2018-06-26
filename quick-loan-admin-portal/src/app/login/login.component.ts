@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlConstant } from '../util/url-constant'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,28 +8,33 @@ import { UrlConstant } from '../util/url-constant'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  dataForServer;
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   sendToServer (username: HTMLInputElement, password: HTMLInputElement) {
-    console.log(`Username is ${username.value} and password is ${password.value}`);
+
+    this.dataForServer = {
+      "username": username.value,
+      "password": password.value
+    };
 
     fetch(UrlConstant.API_HOST + 'user/authenticate', {
       method: 'POST',
-      body: JSON.stringify({
-        "username": username.value,
-        "password": password.value
-      }),
+      body: JSON.stringify(this.dataForServer),
       headers:{
         'Content-Type': 'application/json'
       }
     })
-      .then(res => {console.log(res);
-       return res.json()})
-      .then(res => console.log(res))
+      .then(res => res.json())
+      .then(res => {
+        if(res.auth == true) {
+          console.log(res);
+          this.router.navigateByUrl('/home')
+        }
+      })
       .catch(error => console.log('Error:', error));
   }
 
