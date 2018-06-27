@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(express.static(path.join(__dirname, 'dist/quick-loan-admin-portal/')));
+app.use(express.static(path.join(__dirname, 'dist/uplportal/')));
 app.use(express.static(__dirname + '/node_modules/'));
 
 // Set our api routes
@@ -25,7 +25,7 @@ app.use('/api', api);
 
 // Catch all other routes and return the index file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/quick-loan-admin-portal/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/uplportal/index.html'));
 });
 
 // Handle authentication request
@@ -34,7 +34,7 @@ app.use('/api/user', user);
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '8084';
+const port = process.env.PORT || '8087';
 app.set('port', port);
 
 /**

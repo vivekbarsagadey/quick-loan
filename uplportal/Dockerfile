@@ -15,12 +15,20 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /usr/src/app/package.json
+
+COPY . .
+
 RUN npm install
 # RUN npm install -g @angular/cli@1.7.1
 RUN npm install -g @angular/cli@latest
 
+ENV NODE_ENV production
+
+RUN ng build
+
 # add app
-COPY . /usr/src/app
+COPY . /usr/dist
 
 # start app
-CMD ng serve --host 0.0.0.0
+#CMD ng serve --host 0.0.0.0
+CMD ["node", "server.js"]
