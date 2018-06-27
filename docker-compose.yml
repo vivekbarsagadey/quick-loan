@@ -1,3 +1,8 @@
+mysql:
+  build: mysql
+  ports:
+    - 6603:3306
+  restart: always
 quick-loan-admin:
   build: quick-loan-admin-portal
   ports:
