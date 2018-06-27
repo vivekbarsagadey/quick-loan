@@ -35,6 +35,25 @@ public class LedgerCustomerServices {
 	}
 	
 	public String saveCustomer(Customer customer) {
+		ResponseEntity<Customer> responseCustomer  = null;
+		try {
+			log.info(customer.toString());
+			RestTemplate restTemplate = new RestTemplate();
+			/*List<ClientHttpRequestInterceptor> interceptors = new ArrayList<ClientHttpRequestInterceptor>();
+			interceptors.add(new LoggingRequestInterceptor());
+			restTemplate.setInterceptors(interceptors);
+*/
+			//RestTemplate restTemplate = new RestTemplate();
+			responseCustomer  =  restTemplate.postForEntity(LedgerConstant.API_URL + "Customer",customer,Customer.class);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		return responseCustomer.getBody().toString();
+	}
+
+
+	public String saveCustomerOld(Customer customer) {
 		ResponseEntity<String> response  = null;
 		try {
 			log.info(customer.toString());
@@ -47,7 +66,7 @@ public class LedgerCustomerServices {
 			response  = restTemplate.postForEntity(LedgerConstant.API_URL + "Customer",customer.toString(),String.class);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}	
+		}
 		return response.getBody();
 	}
 }

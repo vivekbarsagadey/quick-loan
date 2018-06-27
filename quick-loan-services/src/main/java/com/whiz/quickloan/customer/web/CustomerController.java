@@ -51,12 +51,12 @@ public class CustomerController {
 		customer.getPaymentDetails().setCustomer(customer);
 		customer.getBankDetails().setCustomer(customer);
 		customer.getLoanDetails().setCustomer(customer);
-		customerRepository.save(customer);
+		customer = customerRepository.save(customer);
 		
 		// update ledger data
-		System.out.println(ledgerCustomerServices.saveCustomer(CustomerMapper.map(customer)));
+		String response = ledgerCustomerServices.saveCustomer(CustomerMapper.map(customer));
 		
-		return new ResponseEntity("Customer saved successfully", HttpStatus.OK);
+		return new ResponseEntity(response, HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Update a Customer")

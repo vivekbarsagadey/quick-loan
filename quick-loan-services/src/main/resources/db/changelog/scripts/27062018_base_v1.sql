@@ -48,7 +48,7 @@ alter table payment_details add constraint fkixvxf0b21jorw2axfhbrqyiwy foreign k
 
  
  
-
+CREATE SEQUENCE HIBERNATE_SEQUENCE;
  
  
  
