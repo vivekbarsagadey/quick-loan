@@ -6,15 +6,13 @@ public final class CustomerMapper {
 	
 	public final static com.whiz.quickloan.ledger.domain.Customer map(Customer source ) {
 		com.whiz.quickloan.ledger.domain.Customer dest = new com.whiz.quickloan.ledger.domain.Customer();
-		dest.$class = "org.speedloan.core.Customer";
-		dest.setCustomerId(Integer.toString(source.getId()) );
-		dest.setFirstName(source.getFirstName());
-		dest.setLastName(source.getLastName());
-		dest.setEmailId(source.getContactDetails().getEmailId());
-		dest.setContact(Integer.parseInt(source.getContactDetails().getCellPhone1()));
-		dest.setLoanAmount(source.getLoanDetails().getLoanAmount());
-		dest.setLoanStatus("In Process");
-		dest.setLender("resource:org.speedloan.core.Investor"+"#201");
+		dest.set$class("org.speedloan.core.Customer"); 
+		dest.setCustomerId(Integer.toString(source.getId()));
+		/*int[] allApplications = new int[0];
+		allApplications[0] = 0;
+		dest.setAllApplications(allApplications);*/
+		dest.setAllApplications(new int[] {});
+		dest.setLender("resource:org.speedloan.core.Investor"+"#0");
 		return dest;
 	}
 	
@@ -22,5 +20,4 @@ public final class CustomerMapper {
 		Customer dest = new Customer();
 		return dest;
 	}
-
 }

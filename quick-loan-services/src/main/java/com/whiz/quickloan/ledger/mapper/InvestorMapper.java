@@ -8,15 +8,12 @@ public final class InvestorMapper {
 		com.whiz.quickloan.ledger.domain.Investor dest = new com.whiz.quickloan.ledger.domain.Investor();
 		dest.$class = "org.speedloan.core.Investor";
 		dest.setInvestorId(Integer.toString(source.getId()) );
-		dest.setCompanyName(source.getCompanyName());
-		dest.setEmailId(source.getContactDetails().getCompanyEmailId());
-		dest.setContact(Integer.parseInt(source.getContactDetails().getCellPhone1()));
-		int[] appReqList = new int[1];
-		appReqList[0] = 0;
-		dest.setApplicationRequests(appReqList);
-		int[] appAssignedList = new int[1];
-		appAssignedList[0]=0;
-		dest.setApplicationsAssigned(appAssignedList);
+		/*int[] appReqList = new int[1];
+		appReqList[0] = 0;*/
+		dest.setApplicationRequests(0);
+		/*int[] appAssignedList = new int[1];
+		appAssignedList[0]=0;*/
+		dest.setApplicationAssigned(0);
 		dest.setTotalLoanLent(0);
 		
 		return dest;
@@ -26,5 +23,4 @@ public final class InvestorMapper {
 		Investor dest = new Investor();
 		return dest;
 	}
-
 }

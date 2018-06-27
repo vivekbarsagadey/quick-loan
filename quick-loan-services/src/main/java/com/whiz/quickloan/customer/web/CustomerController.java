@@ -27,7 +27,6 @@ public class CustomerController {
 	@Autowired
 	private LedgerCustomerServices ledgerCustomerServices;
 	
-	
 	@ApiOperation(value = "View a list of available Customers", response = Iterable.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Successfully retrieved list"),
