@@ -6,7 +6,7 @@ mysql:
 quick-loan-admin:
   build: quick-loan-admin-portal
   ports:
-    - 8084:8084
+    - 8084:8089
   restart: always
 speed-loan:
   build: speed-loan
@@ -21,5 +21,5 @@ quick-loan-service:
 uplportal:
   build: uplportal
   ports:
-    - 8087:8087
+    - 8087:8088
   restart: always

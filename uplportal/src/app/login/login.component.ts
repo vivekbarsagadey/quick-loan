@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UrlConstant } from '../util/url-constant';
 import { Router } from '@angular/router';
+import { UrlConstant } from '../util/url-constant';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  dataForServer;
   errorFieldValue;
+  dataForServer;
   constructor(private router: Router) {
     this.errorFieldValue = 'none';
   }
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         if (res.auth) {
           console.log(res);
           localStorage.setItem( 'admin', JSON.stringify(res));
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/route');
         } else {
           this.errorFieldValue = 'block';
         }

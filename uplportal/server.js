@@ -34,7 +34,7 @@ app.use('/api/user', user);
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '8087';
+const port = process.env.PORT || '8088';
 app.set('port', port);
 
 /**

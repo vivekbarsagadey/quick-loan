@@ -40,7 +40,7 @@ export class UserListComponent implements OnInit {
   //   return data;
   // }
   onSelect(user: User) {
-    this.router.navigate(['/user', user.id]);
+    this.router.navigate(['route/user', user.id]);
   }
 
   onDeleteUser(user: User) {
@@ -53,7 +53,7 @@ export class UserListComponent implements OnInit {
 
   }
   newUserComponent() {
-    this.router.navigate(['/newuser']);
+    this.router.navigate(['route/newuser']);
   }
   getFullName(user: User) {
     return [user.lastName , user.firstName ].join(',');
