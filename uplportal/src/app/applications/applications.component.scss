@@ -1,12 +1,12 @@
 .cust-details-btn{
-  background: #6495ed;
+  //background: #6495ed;
   width: 129px;
   height: 45px;
   font-size: 13px;
 }
 .accept-btn{
   margin-left: 11px;
-  background: #6495ed;
+  //background: #6495ed;
   height: 45px;
   font-size: 13px;
 }
@@ -27,4 +27,8 @@
   max-width: 98%;
   height: 98%;
   margin: 1.75rem auto;
+  overflow-y: scroll;
+}
+.cust-info{
+  font-size: 1.2em;
 }

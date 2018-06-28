@@ -35,7 +35,7 @@ export class ApplicationsComponent implements OnInit {
 
   openModal(id) {
     this.display = 'block';
-    fetch(UrlConstants.CUSTOMER_URL + 1, {
+    fetch(UrlConstants.CUSTOMER_URL + 8, {
       method: 'get',
       mode: 'cors'
     }).then(response => {

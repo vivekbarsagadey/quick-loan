@@ -2,11 +2,153 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="08f993dc23f471d98689cb664a68c976e6429302" datatype="html">
+        <source>Terms &amp; Conditions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/footer/footer.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
+        <source>Privacy Policy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/footer/footer.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34746fb1c7f3d2194d99652bdff89e6e14c9c4f4" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/footer/footer.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80739f72d8ee00a5c8734ebdee6fa58463df88a7" datatype="html">
+        <source>Copyright © whizit.co.in 2016 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/footer/footer.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ddafafa21437a75a0773fa1d7d87424fd0c395f0" datatype="html">
+        <source>Whiz It</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6539bd2f35b68f59ce81138dade2f5b718e0c43a" datatype="html">
+        <source>You have 4 new notifications.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dcb5753e5a0de6e318bc24c9f58fb9d831e58e71" datatype="html">
+        <source>Lisa sent you a mail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b690b9ca69a0f4f47fa30093ea2cbc77ed1e0f22" datatype="html">
+        <source>2 min ago</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c2e0b39d1531f2b34b1807dba8a8deed9d32fe95" datatype="html">
+        <source>Mail server not working</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c541c421d1885e8c0e428864a000c9baed851b13" datatype="html">
+        <source>5 min ago</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b596749fa89e2239cee2f121e145a0160d935153" datatype="html">
+        <source>Transaction complete</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f98696fd55b3ce22aa199e0a51b8d37229c09317" datatype="html">
+        <source>2 days ago</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3b9ca9b8435cd5f981ad1e70d87e1d88373f8625" datatype="html">
+        <source>See all notifications.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="847171f94c5e932a67df0c3b4d57e4e10d844b52" datatype="html">
         <source>About Us</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/about/about.component.ts</context>
           <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="77531430bb19e0b8ada348cba9d42f60f22009f3" datatype="html">
+        <source>User management was created by engineers. We are professionals, all passionate about growing our exclusive network of the top software developers, designers, and finance experts in the world..</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/about/about.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cf99de22828ebe6d9cf27131ad59bfb6273ffe5e" datatype="html">
+        <source>User Management»</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/about/about.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f402bbd79fd470258c3746ff0e0399eeead03fdc" datatype="html">
+        <source>
+  page-not-found works!
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/page-not-found/page-not-found.component.ts</context>
+          <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6ad31729632818476420bb0f698d617436263675" datatype="html">
@@ -16,49 +158,122 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="148bf9c719b35579d18f0f69747c67e8a69fe81c" datatype="html">
-        <source>
-        <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Dashboard<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-      </source>
+      <trans-unit id="169191dfbbe569e9b9c275110086cf26cd477b94" datatype="html">
+        <source>(Home)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/menu/menu.component.ts</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="424bef8c9be06f2d41c5ecde0780260f7013ca63" datatype="html">
-        <source>
-        <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Contacts<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-      </source>
+      <trans-unit id="243bbbffae401805dfe257301ac0ddf64844f269" datatype="html">
+        <source>User management is an exclusive network of the top software developers, designers, experts in the world.
+      Top companies rely on us for their most important projects.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/menu/menu.component.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7a9b419f70fa1183bea74c330a1d198a244fb2b4" datatype="html">
-        <source>
-        <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>User<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-      </source>
+      <trans-unit id="dd96056293e557d37974ba8d6d39e6e1705319da" datatype="html">
+        <source>Test User</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/menu/menu.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ea6c9339f911a3225c52d649d2620e2ce1d1af4d" datatype="html">
-        <source>
-        <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Applications<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-      </source>
+      <trans-unit id="79cd1b1433bb586aaaa4ac696abb647e4e1408ec" datatype="html">
+        <source>Frontend Developer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/menu/menu.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="a352bf7a7bfb4ecda881a6bc2cf9150acf3f9747" datatype="html">
-        <source>
-        <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>About Us<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-      </source>
+      <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
+        <source>Dashboard</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/menu/menu.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b475bb63675494482effde989c7f1f18c232620" datatype="html">
+        <source>Contacts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
+        <source>User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f1abafaeb40ce52355ddcc24686e3cd17b64e08a" datatype="html">
+        <source>Applications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fb7652cfe3e2fcec2cdfda327b80d9d86e86fe30" datatype="html">
+        <source>First Name :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/applications/applications.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="177ab17ad0612fae8e2995d4102c0560ba1f9909" datatype="html">
+        <source>Last Name :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/applications/applications.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
+        <source>Users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/user-detail/user-detail.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c45254e94be6391b3f4f8203993aada3cddc543" datatype="html">
+        <source>Heads up!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
+        <source>Delete</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/user-detail/user-detail.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c92724284f2943ccfe952e3c48d1db1d38d4a403" datatype="html">
+        <source>Apply to Join us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e5dc502d942b80812637f76240f4f4d4400d7dd9" datatype="html">
+        <source>This is new user management application, you&apos;ll gain access to a network of top talent,
+      great companies, and resources you can leverage throughout your career. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c83b838d845690bcb897f775f53b5316535306dc" datatype="html">
@@ -68,11 +283,25 @@
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="eb6f2e665c66ae22f2c0efa765038f5ee45f7ac3" datatype="html">
+        <source>Please enter correct first name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="166b2cc65003221ff5f3ec05d5baca41e6821396" datatype="html">
         <source>Last Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
           <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1b908537148e2413785dff7dabb3ef906c93c39a" datatype="html">
+        <source>Please enter correct last name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2e6be334a2152f179a557167f98ce4459ff9a2f9" datatype="html">
@@ -82,6 +311,13 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="84d1b03105e89e9abfa28fcd6508d819c9bf14f7" datatype="html">
+        <source>Please enter correct age</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="69b6ac577a19acc39fc0c22342092f327fff2529" datatype="html">
         <source>Email address</source>
         <context-group purpose="location">
@@ -89,11 +325,39 @@
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="67eabc249f4d263eaa04451522c7d3fe0902c9ae" datatype="html">
+        <source>Please enter correct email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="897b3bba2d33454e83c17d779ffed2ffba5f8332" datatype="html">
+        <source>We&apos;ll never share your email with anyone else.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
         <source>Password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
           <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="68df8ee69288842bcbd001bea049b00852eaa7ab" datatype="html">
+        <source>Please enter correct password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="da4e5d34f5248ae38cedd4fff9e87571cb36d01a" datatype="html">
+        <source>Must be 8-20 characters long. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">

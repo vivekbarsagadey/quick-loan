@@ -4,9 +4,9 @@
 <div class="card">
   <div class="card-block p-3">
     <div class="header-text">
-    <h3 class="text-primary card-title">Apply to Join us</h3>
+    <h3 class="text-primary card-title" i18n>Apply to Join us</h3>
     <!--<h6 class="card-subtitle mb-2 text-muted ">New User Register</h6>-->
-    <p class="card-text">This is new user management application, you'll gain access to a network of top talent,
+    <p class="card-text" i18n>This is new user management application, you'll gain access to a network of top talent,
       great companies, and resources you can leverage throughout your career. </p>
     </div>
     <form #userForm="ngForm">
@@ -14,14 +14,14 @@
         <label for="firstNameInput" class="col-4 col-form-label" i18n>First Name</label>
         <div class="col-8">
           <input type="text" class="form-control form-control-danger" id="firstNameInput" placeholder="Enter First Name" required [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel">
-          <div [hidden]="firstName.valid || firstName.pristine" class="form-control-feedback">Please enter correct first name</div>
+          <div [hidden]="firstName.valid || firstName.pristine" class="form-control-feedback" i18n>Please enter correct first name</div>
         </div>
       </div>
       <div class="form-group row has-danger">
         <label for="lastNameInput" class="col-4 col-form-label" i18n>Last Name</label>
         <div class="col-8">
           <input type="text" class="form-control form-control-danger" id="lastNameInput" placeholder="Enter Last Name" required [(ngModel)]="user.lastName" name="lastName"  #lastName="ngModel">
-          <div [hidden]="lastName.valid || lastName.pristine" class="form-control-feedback">Please enter correct last name</div>
+          <div [hidden]="lastName.valid || lastName.pristine" class="form-control-feedback" i18n>Please enter correct last name</div>
         </div>
       </div>
       <div class="form-group row has-danger">
@@ -30,7 +30,7 @@
           <input type="number" class="form-control form-control-danger" id="ageInput" placeholder="Enter Age" required
                  [(ngModel)]="user.age" name="age"
                  #age="ngModel">
-          <div [hidden]="age.valid || age.pristine" class="form-control-feedback">Please enter correct age</div>
+          <div [hidden]="age.valid || age.pristine" class="form-control-feedback" i18n>Please enter correct age</div>
         </div>
       </div>
       <div class="form-group row has-danger">
@@ -39,8 +39,8 @@
           <input type="email" class="form-control form-control-danger" id="exampleInputEmail1" aria-describedby="emailHelp"
                  placeholder="Enter email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
                  [(ngModel)]="user.email" name="email" #email="ngModel">
-          <div [hidden]="email.valid || email.pristine" class="form-control-feedback">Please enter correct email</div>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <div [hidden]="email.valid || email.pristine" class="form-control-feedback" i18n>Please enter correct email</div>
+          <small id="emailHelp" class="form-text text-muted" i18n>We'll never share your email with anyone else.</small>
         </div>
 
       </div>
@@ -48,8 +48,8 @@
         <label for="exampleInputPassword" class="col-4 col-form-label" i18n>Password</label>
         <div class="col-8">
           <input type="password" class="form-control form-control-danger" id="exampleInputPassword" placeholder="Password" required [(ngModel)]="user.password" name="password" #password="ngModel">
-          <div [hidden]="password.valid || password.pristine" class="form-control-feedback">Please enter correct password</div>
-          <small id="passwordHelp" class="form-text text-muted">Must be 8-20 characters long. </small>
+          <div [hidden]="password.valid || password.pristine" class="form-control-feedback" i18n>Please enter correct password</div>
+          <small id="passwordHelp" class="form-text text-muted" i18n>Must be 8-20 characters long. </small>
         </div>
 
       </div>

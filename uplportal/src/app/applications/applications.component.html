@@ -17,11 +17,11 @@
         </div>
         <div class="col-md-4">
           <div class="row">
-            <div class="col-sm-4">
-              <button class="btn btn-lg btn-default cust-details-btn" type="button" (click)="openModal(user.id)">Customer Details</button>
+            <div class="col-sm-4 mr-2">
+              <button class="btn btn-lg btn-info cust-details-btn" type="button" (click)="openModal(user.id)">Customer Details</button>
             </div>
-            <div class="col-sm-3">
-              <button type="button" class="btn btn-lg btn-default accept-btn" (click)="onClickAcceptBtn()">Accept</button>
+            <div class="col-sm-3 mr-2">
+              <button type="button" class="btn btn-lg btn-info accept-btn" (click)="onClickAcceptBtn()">Accept</button>
             </div>
             <div class="col-sm-4">
               <button type="button" class="btn btn-lg btn-danger reject-btn" (click)="onClickRejectBtn()">Reject</button>
@@ -36,39 +36,1007 @@
 
 <div class="backdrop" [ngStyle]="{'display':display}"></div>
 <div class="modal" *ngIf="userInfo" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-scroll" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <div class="col-md-12">
+        <div class="container col-md-12">
           <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-3">
-                  <p>First Name :</p>
+            <div class=" col-md-6 tile">
+              <h4 class="tile-title cust-info">User Details</h4>
+              <div class="card-body text-left">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>First Name :</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.firstName}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Last Name :</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.lastName}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-3">
-                  <p>{{userInfo.firstName}}</p>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Military Dependant:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.isMilitaryDependant}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Us Citizen:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.isUsCitizen}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Updated By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.updatedBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.updatedDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Best Time to Call:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bestTimeToCall}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Date of Birth:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.dob}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Created By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.createdBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.createdDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-3">
-                  <p>Last Name :</p>
+            <div class=" col-md-6 tile">
+              <h6 class="tile-title cust-info">Address Details</h6>
+              <div class="card-body">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Address:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.address}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>City:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.city}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-3">
-                  <p>{{userInfo.lastName}}</p>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Country:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.country}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.createdBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.createdDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Active Status:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.activeStatus}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Months In Current Address:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.monthsInCurrentaddress}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>State:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.state}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Stay Type:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.stayType}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.updatedBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.updatedDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Years In Current Address:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.yrsInCurrentaddress}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Zip Code:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.addressDetails.zipCode}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container col-md-12">
+          <div class="row">
+            <div class=" col-md-6 tile">
+              <h6 class="tile-title cust-info">Bank Details</h6>
+              <div class="card-body">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Routing Number:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.abaOrRoutingNumber}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Account Number:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.accountNumber}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Account Type:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.accountType}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Active Status:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.activeStatus}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Bank Name:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.bankName}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Bank Phone:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.bankPhone}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.createdBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.createdDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Bank Account Duration:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.durationOfBankAccount}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Direct Deposit:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.isDirectDeposit}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Monthly Income:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.monthlyIncome}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.updatedBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.bankDetails.updatedDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class=" col-md-6 tile">
+              <h6 class="tile-title cust-info">Contact Details</h6>
+              <div class="card-body">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Active Status:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.activeStatus}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Cell Phone1:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.callPhone1}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Cell Phone2:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.callPhone2}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Cell Phone3:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.callPhone3}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.createdBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.createdDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Email Id:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.emailId}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Home Phone1:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.homePhone1}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Home Phone2:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.homePhone2}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Home Phone3:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.homePhone3}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.updatedBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.updatedDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Work Phone:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.contactDetails.workPhone}}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container col-md-12">
+          <div class="row">
+            <div class=" col-md-6 tile">
+              <h6 class="tile-title cust-info">Employment Details</h6>
+              <div class="card-body">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Active Status:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.activeStatus}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.createdBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.createdDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Current Employee Duration:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.currentImployedDuration}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Employee Name:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.employerName}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Employee Phone:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.employerPhone}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Income Type:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.incomeType}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Job Title:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.jobTitle}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.updatedBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.employmentDetails.updatedDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class=" col-md-6 tile">
+              <h6 class="tile-title cust-info">Loan Details</h6>
+              <div class="card-body text-left">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Deadline Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.loanDetails.deadlineDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Loan Amount:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.loanDetails.loanAmount}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Loan Purpose:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.loanDetails.loanPurpose}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.loanDetails.createdBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Created Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.loanDetails.createdDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.loanDetails.updatedBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>Updated Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.loanDetails.updatedDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container col-md-12">
+          <div class="row">
+            <div class=" col-md-6 tile">
+              <h6 class="tile-title cust-info">Payment Details</h6>
+              <div class="card-body">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Active Status:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.activeStatus}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.createdBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Created Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.createdDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Next PayDay:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.nexTPayDay}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Second PayDay:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.secondTPayDay}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Payment Frequency:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.paymentFrequency}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated By:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.updatedBy}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p i18n>Updated Date:</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{{userInfo.paymentDetails.updatedDate}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+        <button type="button" class="btn btn-info" (click)="onCloseHandled()">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
