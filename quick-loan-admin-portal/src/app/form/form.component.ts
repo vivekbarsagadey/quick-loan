@@ -6,12 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  foods = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
-  constructor() { }
+  adminObject: any;
+
+  constructor() {
+    this.adminObject = JSON.parse(localStorage.getItem('admin'))
+  }
 
   ngOnInit() {
   }

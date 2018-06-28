@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   dataForServer;
-  constructor(private router: Router) { }
+  errorFieldValue;
+  constructor(private router: Router) {
+    this.errorFieldValue = 'none';
+  }
 
   ngOnInit() {
   }
@@ -32,7 +35,10 @@ export class LoginComponent implements OnInit {
       .then(res => {
         if(res.auth == true) {
           console.log(res);
+          localStorage.setItem( 'admin', JSON.stringify(res));
           this.router.navigateByUrl('/home')
+        } else {
+          this.errorFieldValue = 'block'
         }
       })
       .catch(error => console.log('Error:', error));
