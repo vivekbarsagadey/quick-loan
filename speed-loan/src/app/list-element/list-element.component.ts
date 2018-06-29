@@ -6,7 +6,7 @@ import {AppComponent} from '../app.component';
 @Component({
   selector: 'app-list-element',
   templateUrl: './list-element.component.html',
-  styleUrls: ['./list-element.component.css'],
+  styleUrls: ['./list-element.component.scss'],
 })
 export class ListElementComponent implements OnInit {
   @Input() elements: ListElement;
