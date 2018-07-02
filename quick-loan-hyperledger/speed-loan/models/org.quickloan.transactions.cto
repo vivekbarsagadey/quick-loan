@@ -1,0 +1,34 @@
+namespace org.quickloan.transactions
+
+import org.quickloan.participants.Customer
+import org.quickloan.participants.Investor
+import org.quickloan.assets.Applications
+
+transaction createApplication {
+    o Applications application
+}
+
+transaction requestInvestor {
+	--> Investor investor
+    --> Applications application
+}
+
+transaction approveLoan {
+	--> Investor investor
+    --> Applications application
+    //--> Customer customer
+}
+
+transaction rejectLoan {
+    --> Applications application
+	o String remarks
+}
+
+transaction loanLent {
+	--> Applications application
+}
+
+transaction loanRepaid {
+	--> Applications application
+	--> Investor investor optional
+}

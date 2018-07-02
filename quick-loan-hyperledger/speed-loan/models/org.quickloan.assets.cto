@@ -1,0 +1,13 @@
+namespace org.quickloan.assets
+
+import org.quickloan.participants.Customer
+import org.quickloan.participants.Investor
+
+asset Applications identified by applicationId {
+	o String applicationId
+    --> Customer customer
+    o DateTime applicationDate
+    o Integer loanAmount
+    o String applicationStatus default = "In Process"
+    o String remarks default = "No remarks"
+}

@@ -3,11 +3,17 @@ package com.whiz.quickloan.applications.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.whiz.quickloan.application.services.ApplicationsRepository;
-import com.whiz.quickloan.applications.domain.Applications;
-import com.whiz.quickloan.ledger.services.LedgerCustomerServices;
+import com.whiz.quickloan.applications.domain.Application;
+import com.whiz.quickloan.ledger.mapper.ApplicationMapper;
+import com.whiz.quickloan.ledger.transactions.services.LedgerTxApplicationServices;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -22,7 +28,7 @@ public class ApplicationsController {
 	private ApplicationsRepository applicationsRepository;
 	
 	@Autowired
-	private LedgerCustomerServices ledgerCustomerServices;
+	private LedgerTxApplicationServices ledgerTxApplicationServices;
 	
 	@ApiOperation(value = "View a list of available Applications", response = Iterable.class)
 	@ApiResponses(value = {
@@ -34,23 +40,23 @@ public class ApplicationsController {
 	)
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	@CrossOrigin
-	public Iterable<Applications> list(Model model) {
-		Iterable<Applications> ApplicationsList = applicationsRepository.findAll();
+	public Iterable<Application> list(Model model) {
+		Iterable<Application> ApplicationsList = applicationsRepository.findAll();
 		return ApplicationsList;
 	}
 
 	@ApiOperation(value = "Create an Application")
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity saveApplication(@RequestBody Applications application) {
+	public ResponseEntity saveApplication(@RequestBody Application application) {
 		applicationsRepository.save(application);
 		return new ResponseEntity("Application saved successfully", HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Update an Application")
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json")
-	public ResponseEntity updateApplication(@PathVariable Integer id, @RequestBody Applications application) {
+	public ResponseEntity updateApplication(@PathVariable Integer id, @RequestBody Application application) {
 
-		Applications storedApplications = applicationsRepository.findById(id).orElse(null);
+		Application storedApplications = applicationsRepository.findById(id).orElse(null);
 		if(storedApplications !=null) {
 			applicationsRepository.save(storedApplications);
 			return new ResponseEntity("Application updated successfully!", HttpStatus.OK);
@@ -66,16 +72,16 @@ public class ApplicationsController {
 		return new ResponseEntity("Application deleted successfully!", HttpStatus.OK);
 	}
 	
-	@ApiOperation(value = "Search an Application with ID", response = Applications.class)
+	@ApiOperation(value = "Search an Application with ID", response = Application.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-	public Applications showApplications(@PathVariable Integer id, Model model) {
-		return applicationsRepository.findById(id).orElse(new Applications());
+	public Application showApplications(@PathVariable Integer id, Model model) {
+		return applicationsRepository.findById(id).orElse(new Application());
 	}
 	
-	
-	@ApiOperation(value = "LedgerCustomerServices test", response = Applications.class)
-	@RequestMapping(value = "/LedgerCustomerServices/", method = RequestMethod.GET, produces = "application/json")
-	public String testLedgerCustomerServices(Model model) {
-		return ledgerCustomerServices.getCustomer();
+	@ApiOperation(value = "LedgerTxApplicationServices test", response = Application.class)
+	@RequestMapping(value = "/LedgerTxApplicationServices/{id}", method = RequestMethod.GET, produces = "application/json")
+	public String testLedgerTxApplicationServices(@PathVariable Integer id) {
+		return ledgerTxApplicationServices.createApplication(ApplicationMapper.map(new Application(id)));
 	}
+	
 }

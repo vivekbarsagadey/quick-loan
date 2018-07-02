@@ -28,7 +28,7 @@ public class InvestorController {
 	private InvestorRepository investorRepository;
 	
 	@Autowired
-	private LedgerInvestorServices ledgerInvestorServices;
+ 	private LedgerInvestorServices ledgerInvestorServices;
 
 	@ApiOperation(value = "View a list of available Investors", response = Iterable.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully retrieved list"),
@@ -50,12 +50,12 @@ public class InvestorController {
 		investor.getPaymentDetails().setInvestor(investor);
 		investor.getBankDetails().setInvestor(investor);
 		// investor.setContact(contact);
-		investorRepository.save(investor);
+		investor = investorRepository.save(investor);
 		
 		// update ledger data
-		System.out.println(ledgerInvestorServices.saveInvestor(InvestorMapper.map(investor)));
+		String response = ledgerInvestorServices.saveInvestor(InvestorMapper.map(investor));
 		
-		return new ResponseEntity("Investor details saved successfully!", HttpStatus.OK);
+		return new ResponseEntity(response, HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Update an Investor")

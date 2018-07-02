@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.whiz.quickloan.applications.domain.Applications;
+import com.whiz.quickloan.applications.domain.Application;
 import com.whiz.quickloan.customer.domain.BestTimeToCall;
 import com.whiz.quickloan.customer.domain.Customer;
 import com.whiz.quickloan.customer.services.CustomerRepository;
@@ -90,7 +90,7 @@ public class CustomerController {
 	}
 	
 	
-	@ApiOperation(value = "LedgerCustomerServices test", response = Applications.class)
+	@ApiOperation(value = "LedgerCustomerServices test", response = Application.class)
 	@RequestMapping(value = "/LedgerCustomerServices/", method = RequestMethod.GET, produces = "application/json")
 	public String testLedgerCustomerServices(Model model) {
 		return ledgerCustomerServices.getCustomer();

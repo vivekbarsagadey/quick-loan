@@ -5,20 +5,12 @@ import java.util.Arrays;
 import lombok.Data;
 
 @Data
-public class Customer {
+public class Customer extends BaseDomain {
 	
-	private String $class;
 	private String customerId;
 	private int[] allApplications = new int[] {};
 	private String lender;
 	
-	public String get$class() {
-		return this.$class;
-	}
-	
-	public void set$class(String name) {
-		this.$class = name;
-	}
 
 	@Override
 	public String toString() {

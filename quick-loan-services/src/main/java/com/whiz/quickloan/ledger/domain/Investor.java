@@ -1,22 +1,23 @@
 package com.whiz.quickloan.ledger.domain;
 
-import java.util.Arrays;
-
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class Investor {
+@Getter
+@Setter
+public class Investor extends BaseDomain{
 	
-	public String $class;
 	private String investorId;
-	private int applicationRequests;
-	private int applicationAssigned;
+	private String applicationRequests;
+	private String applicationAssigned;
 	private int totalLoanLent;
+	
 	
 	@Override
 	public String toString() {
-		return "{\"$class\":\"" + $class + "\", \"investorId\" : \"" + investorId + "\", \"applicationRequests\": \"resource:org.speedloan.core.Applications#"
-				+ applicationRequests + "\",  \"applicationAssigned\": \"resource:org.speedloan.core.Applications#"
+		return "{\"$class\":\"" + $class + "\", \"investorId\" : \"" + investorId + "\", \"applicationRequests\": \"resource:org.quickloan.assets.Applications#"
+				+ applicationRequests + "\",  \"applicationAssigned\": \"resource:org.quickloan.assets.Applications#"
 						+ applicationAssigned + "\", \"totalLoanLent\" :" + totalLoanLent + "}";
 	}
 }

@@ -14,10 +14,20 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Applications extends BaseEntityAudit{
+public class Application extends BaseEntityAudit{
 	
 	private int customerId;
 	private LocalDate applicationDate;
 	private String remarks;
+	
+	public Application() {
+		super();
+	}
+	
+	public Application(int id) {
+		super();
+		this.setId(id);
+		
+	}
 	
 }

@@ -2,6 +2,9 @@ package com.whiz.quickloan.ledger;
 
 public interface LedgerConstant {
 
-	public static final String API_URL = "http://192.168.100.24:3000/api/";
+	public static final String API_URL = "http://192.168.100.9:3000/api/";
+	public static final String ASSET_NS ="org.quickloan.assets";
+	public static final String PARTICIPANT_NS ="org.quickloan.participants";
+	public static final String TRANSACTION_NS ="org.quickloan.transactions";
 	
 }
