@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { AppComponent } from '../app.component';
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
 import { AboutComponent } from '../about/about.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { HomeComponent } from '../home/home.component';
@@ -64,23 +61,11 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    AppComponent,
-    FooterComponent,
-    HeaderComponent,
-    AboutComponent,
-    PageNotFoundComponent,
-    HomeComponent,
-    MenuComponent,
-    ApplicationsComponent,
-    LoginComponent,
-    AppRouteComponent,
-  ],
-  imports: [
     ContactModule,
     RouterModule.forRoot(appRoutes),
     UserManagementModule,
   ],
-  declarations: [],
+  declarations: [  ],
   exports: [
     RouterModule
   ]

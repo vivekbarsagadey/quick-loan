@@ -22,6 +22,10 @@ RUN npm install
 # RUN npm install -g @angular/cli@1.7.1
 RUN npm install -g @angular/cli@latest
 
+RUN npm install
+
+RUN npm i knex -g
+
 ENV NODE_ENV production
 
 RUN ng build
