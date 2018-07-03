@@ -1,0 +1,70 @@
+<app-sidebar></app-sidebar>
+
+<div class="main-panel">
+
+  <!--<div class="selectappStatusdiv">
+  <label class="selectLabelSatus"   for="applicationStatus">Application Status</label>
+  <select name="applicationStatus" class="applicationStatus" id="applicationStatus" (change)="renderApplicationList($event)">
+    <option value="all">All</option>
+    <option value="approved">Approved</option>
+    <option value="pending">Pending</option>
+    <option value="rejected">Rejected</option>
+  </select>
+  </div>
+
+  <div *ngFor="let element of renderedList">
+    <div class="row" id="rowapplicationStatus">
+     <div class="col-lg-4 col-md-5">
+        <h5>{{element.name}}</h5>
+     </div>
+      <div class="col-lg-8 col-md-7">
+        <p>{{element.status}}</p>
+      </div>
+    </div>
+  </div>
+-->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                  <th>
+                    <div class="selectappStatusdiv">
+                      <label class="selectLabelSatus" for="applicationStatus">Application Status</label>
+                      <select name="applicationStatus" class="applicationStatus" id="applicationStatus"
+                              (change)="renderApplicationList($event)">
+                        <option value="all">All</option>
+                        <option value="approved">Approved</option>
+                        <option value="pending">Pending</option>
+                        <option value="rejected">Rejected</option>
+                      </select>
+                    </div>
+                  </th>
+                  </thead>
+                  <tbody>
+                  <div *ngFor="let element of renderedList">
+                    <tr>
+                      <td>
+                        {{element.name}}
+                      </td>
+                      <td>
+                        {{element.status}}
+                      </td>
+                    </tr>
+                  </div>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
