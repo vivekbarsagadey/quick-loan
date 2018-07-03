@@ -24,3 +24,4 @@ uplportal:
   ports:
     - 8087:8088
   restart: always
+
