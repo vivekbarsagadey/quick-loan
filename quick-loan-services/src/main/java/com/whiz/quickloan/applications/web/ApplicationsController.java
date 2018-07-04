@@ -1,5 +1,7 @@
 package com.whiz.quickloan.applications.web;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.whiz.quickloan.application.services.ApplicationsRepository;
 import com.whiz.quickloan.applications.domain.Application;
+import com.whiz.quickloan.customer.domain.BestTimeToCall;
 import com.whiz.quickloan.ledger.mapper.ApplicationMapper;
+import com.whiz.quickloan.ledger.mapper.CustomerMapper;
+import com.whiz.quickloan.ledger.services.LedgerApplicationServices;
 import com.whiz.quickloan.ledger.transactions.services.LedgerTxApplicationServices;
 
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +31,9 @@ public class ApplicationsController {
 
 	@Autowired
 	private ApplicationsRepository applicationsRepository;
+
+	@Autowired
+	private LedgerApplicationServices ledgerApplicationServices;
 	
 	@Autowired
 	private LedgerTxApplicationServices ledgerTxApplicationServices;
@@ -48,8 +56,17 @@ public class ApplicationsController {
 	@ApiOperation(value = "Create an Application")
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity saveApplication(@RequestBody Application application) {
+		application.setApplicationDate(LocalDate.now());
+		application.setCustomerId(0);
+		application.setRemarks("");
+		
 		applicationsRepository.save(application);
-		return new ResponseEntity("Application saved successfully", HttpStatus.OK);
+		
+		// update ledger data
+		String response = ledgerApplicationServices.saveApplication(ApplicationMapper.map(application));
+				
+		//return new ResponseEntity("Application saved successfully", HttpStatus.OK);
+		return new ResponseEntity(response, HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Update an Application")
@@ -78,10 +95,10 @@ public class ApplicationsController {
 		return applicationsRepository.findById(id).orElse(new Application());
 	}
 	
+	//Add application to ledger
 	@ApiOperation(value = "LedgerTxApplicationServices test", response = Application.class)
 	@RequestMapping(value = "/LedgerTxApplicationServices/{id}", method = RequestMethod.GET, produces = "application/json")
 	public String testLedgerTxApplicationServices(@PathVariable Integer id) {
 		return ledgerTxApplicationServices.createApplication(ApplicationMapper.map(new Application(id)));
 	}
-	
 }

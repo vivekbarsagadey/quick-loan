@@ -1,23 +1,27 @@
 package com.whiz.quickloan.ledger.mapper;
 
-import java.util.Date;
-
 import com.whiz.quickloan.applications.domain.Application;
 import com.whiz.quickloan.ledger.LedgerConstant;
 
 public final class ApplicationMapper {
-	
-	public final static com.whiz.quickloan.ledger.domain.Application map(Application source ) {
+
+	public final static com.whiz.quickloan.ledger.domain.Application map(Application source) {
 		com.whiz.quickloan.ledger.domain.Application dest = new com.whiz.quickloan.ledger.domain.Application();
 		dest.set$class(LedgerConstant.ASSET_NS + ".Applications");
-		dest.setCustomer("resource:org.quickloan.participants.Customer#1");
-		dest.setApplicationId(source.getId().toString());
-		dest.setLoanAmount(100);
-		dest.setApplicationStatus("In Process");
-		dest.setRemarks("No remarks");
-		dest.setApplicationDate("2018-07-02T16:20:23.940Z");
-		
+		dest.setId(source.getId().toString());
+		dest.setCustomer("resource:org.whizit.pronto.participants.Customer#1");
+		dest.setInvestor("resource:org.whizit.pronto.participants.Investor#0");
+		dest.setApplicationDate("2018-07-04T10:06:34.591Z");
+		dest.setLoanAmount(150);
+		dest.setStatus("RECEIVED");
+		dest.setState("RECEIVED_QLAP");
+		dest.setRemarks("");
+
 		return dest;
 	}
-	
+
+	public final static Application map(com.whiz.quickloan.ledger.domain.Application source) {
+		Application dest = new Application();
+		return dest;
+	}
 }

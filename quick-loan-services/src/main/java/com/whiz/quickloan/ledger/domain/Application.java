@@ -5,22 +5,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Application extends BaseDomain{
-	
-	private String applicationId;
+public class Application extends BaseDomain {
+
+	private String id;
 	private String customer;
+	private String investor;
 	private String applicationDate;
 	private Integer loanAmount;
-	private String applicationStatus;
+	private String status;
+	private String state;
 	private String remarks;
-	@Override
-	public String toString() {
-		return "{\"applicationId\":\"" + applicationId + "\", \"customer\":\"" + customer + "\", \"applicationDate\":\""
-				+ applicationDate + "\", \"loanAmount\":" + loanAmount + ", \"applicationStatus\":\"" + applicationStatus
-				+ "\", \"remarks\":\"" + remarks + "\", \"$class\":\"" + $class + "\"}";
-	}
-	
-	
-	
 
 }

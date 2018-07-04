@@ -3,13 +3,9 @@ package com.whiz.quickloan.applications.domain;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import com.whiz.quickloan.core.domain.BaseEntityAudit;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Entity
@@ -23,11 +19,9 @@ public class Application extends BaseEntityAudit{
 	public Application() {
 		super();
 	}
-	
+
 	public Application(int id) {
 		super();
-		this.setId(id);
-		
-	}
-	
+		this.setId(id);	
+	}	
 }

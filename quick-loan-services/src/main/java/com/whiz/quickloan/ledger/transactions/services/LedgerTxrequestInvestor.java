@@ -12,9 +12,9 @@ import com.whiz.quickloan.ledger.domain.Application;
 import com.whiz.quickloan.ledger.transactions.TxApplication;
 
 @Service
-public class LedgerTxApplicationServices {
+public class LedgerTxrequestInvestor {
 	
-	private static final Logger log = LoggerFactory.getLogger(LedgerTxApplicationServices.class);
+	private static final Logger log = LoggerFactory.getLogger(LedgerTxrequestInvestor.class);
 	
 	@Autowired
 	private RestTemplate restTemplate;

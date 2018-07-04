@@ -28,8 +28,4 @@ public class TxApplication extends BaseDomain{
 		return "{\"application\":" + application.toString() + ", \"$class\":\"" + $class + "\"}";
 	}
 	
-	
-	
-	
-
 }
