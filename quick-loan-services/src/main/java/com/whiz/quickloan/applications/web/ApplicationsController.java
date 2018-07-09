@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.whiz.quickloan.application.services.ApplicationsRepository;
 import com.whiz.quickloan.applications.domain.Application;
-import com.whiz.quickloan.customer.domain.BestTimeToCall;
 import com.whiz.quickloan.ledger.mapper.ApplicationMapper;
-import com.whiz.quickloan.ledger.mapper.CustomerMapper;
 import com.whiz.quickloan.ledger.services.LedgerApplicationServices;
 import com.whiz.quickloan.ledger.transactions.services.LedgerTxApplicationServices;
 

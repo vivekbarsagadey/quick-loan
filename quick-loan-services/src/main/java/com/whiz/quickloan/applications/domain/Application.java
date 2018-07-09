@@ -13,7 +13,11 @@ import lombok.Data;
 public class Application extends BaseEntityAudit{
 	
 	private int customerId;
+	private int investorId;
 	private LocalDate applicationDate;
+	private Double loanAmount = 0.0;
+	private String status;
+	private String state;
 	private String remarks;
 	
 	public Application() {

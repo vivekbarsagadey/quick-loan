@@ -22,6 +22,7 @@ public class Customer extends BaseEntityAudit{
 	private Boolean isUsCitizen;
 	private Boolean isMilitaryDependant;
 	private String licenseNumber;
+	private String status;
 
 	@Enumerated(EnumType.STRING)
 	private BestTimeToCall bestTimeToCall;

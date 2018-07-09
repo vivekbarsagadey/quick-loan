@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.whiz.quickloan.customer.domain.Customer;
 import com.whiz.quickloan.customer.services.CustomerRepository;
 import com.whiz.quickloan.ledger.mapper.TxBlockCustomerMapper;
 import com.whiz.quickloan.ledger.transactions.services.LedgerTxBlockCustomerServices;

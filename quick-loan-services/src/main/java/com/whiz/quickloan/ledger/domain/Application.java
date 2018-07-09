@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class Application extends BaseDomain {
 
-	private String id;
+	//private String id;
 	private String customer;
 	private String investor;
 	private String applicationDate;
@@ -15,5 +15,4 @@ public class Application extends BaseDomain {
 	private String status;
 	private String state;
 	private String remarks;
-
 }

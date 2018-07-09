@@ -2,7 +2,7 @@
 --changeset fabio.barbosa:001.1
 CREATE TABLE ADDRESS_DETAILS (id integer not null, created_by varchar(20), created_date timestamp, updated_by varchar(20), updated_date timestamp, active_status boolean, address varchar(255), city varchar(255), country varchar(255), months_in_currentaddress integer not null, state varchar(255), stay_type varchar(255), yrs_in_currentaddress integer not null, zip_code varchar(255), customer_id integer not null, primary key (id));
 
-CREATE TABLE APPLICATION ( id integer not null, created_by varchar(20), created_date timestamp, updated_by varchar(20), updated_date timestamp, application_date date, customer_id integer not null, investor varchar(255), loan_amount double, remarks varchar(255), state varchar(255), status varchar(255), primary key (id) );
+CREATE TABLE APPLICATION ( id integer not null, created_by varchar(20), created_date timestamp, updated_by varchar(20), updated_date timestamp, application_date date, customer_id integer not null, investor_id varchar(255), loan_amount double, remarks varchar(255), state varchar(255), status varchar(255), primary key (id) );
 
 CREATE TABLE BANK_DETAILS (id integer not null, created_by varchar(20), created_date timestamp, updated_by varchar(20), updated_date timestamp, aba_or_routing_number integer not null, account_number integer not null, account_type integer not null, active_status boolean, bank_name varchar(255), bank_phone varchar(255), duration_of_bank_account integer not null, is_direct_deposit boolean, monthly_income integer not null, customer_id integer not null, primary key (id));
 

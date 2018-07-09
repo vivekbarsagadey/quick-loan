@@ -7,18 +7,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-public class TxBlockInvestor extends BaseDomain{
+public class TxApproveApplication extends BaseDomain{
 	
-	private String investor;
+	private String application;
 	
-	public TxBlockInvestor() {
+	public TxApproveApplication() {
 		super();
 	}
 
 	/**
 	 * @param investor
 	 */
-	public TxBlockInvestor(String $class) {
+	public TxApproveApplication(String $class) {
 		super();
 		this.$class = $class;
 	}
