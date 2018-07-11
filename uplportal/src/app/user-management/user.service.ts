@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from './user';
+import { UrlConstant } from '../util/url-constant';
 
 const users = [];
 
@@ -10,13 +11,20 @@ const usersPromise = Promise.resolve(users);
 export class UserService {
 
   constructor() {
-    fetch('../../assets/users.json').then(res => res.json()).then(res => {
-      for (let i = 0; i < res.users.length; i++) {
-        const [id, firstName, lastName, age, email, password] = res.users[i];
-        users.push(new User(id, firstName, lastName, age, email, password));
+    this.loadUser();
+  }
+  loadUser() {
+    fetch(UrlConstant.API_HOST + 'user/', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
       }
-      console.log(users);
-    });
+    }).then(res => res.json())
+      .then(res => {
+        res.forEach((user) => users.push(new User(user.id, user.firstName, user.lastName, user.age, user.email, user.password)));
+        console.log('usersData>>>>>>>>>>>>>>>>>>>>>', users);
+      })
+      .catch(error => console.log('Error:', error));
   }
   getUsers() {
     return usersPromise;
@@ -30,7 +38,7 @@ export class UserService {
     return new Promise((resolve, reject) => {
       user.id = users.length;
       resolve(users.push(user));
-    })  ;
+    });
   }
 
   deleteUser(id: number | string) {

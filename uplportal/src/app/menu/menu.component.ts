@@ -7,13 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  userName: string;
+  userId: number;
+  constructor(private router: Router) {
+   const userData = JSON.parse(localStorage.getItem('userData'));
+   this.userName = userData.user.userName;
+   this.userId = userData.user.id;
+  }
 
   ngOnInit() {
   }
   signOut() {
-    localStorage.removeItem('admin');
+    localStorage.removeItem('userData');
     this.router.navigateByUrl('login');
   }
 }

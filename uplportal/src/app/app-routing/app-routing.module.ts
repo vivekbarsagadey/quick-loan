@@ -10,7 +10,6 @@ import {NewUserComponent} from '../user-management/new-user/new-user.component';
 import {UserDetailComponent} from '../user-management/user-detail/user-detail.component';
 import {ContactModule} from '../contact/contact.module';
 import {ContactComponent} from '../contact/contact.component';
-import { MenuComponent } from '../menu/menu.component';
 import { ApplicationsComponent } from '../applications/applications.component';
 import { LoginComponent } from '../login/login.component';
 import { AppRouteComponent } from '../app-route/app-route.component';

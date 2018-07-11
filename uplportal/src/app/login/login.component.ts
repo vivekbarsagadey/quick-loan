@@ -13,10 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) {
     this.errorFieldValue = 'none';
   }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
   sendToServer (username: HTMLInputElement, password: HTMLInputElement) {
 
     this.dataForServer = {
@@ -33,9 +30,9 @@ export class LoginComponent implements OnInit {
     })
       .then(res => res.json())
       .then(res => {
-        if (res.auth) {
-          console.log(res);
-          localStorage.setItem( 'admin', JSON.stringify(res));
+        console.log(res);
+        if (res['auth']) {
+          localStorage.setItem( 'userData', JSON.stringify(res));
           this.router.navigateByUrl('/route');
         } else {
           this.errorFieldValue = 'block';
