@@ -27,10 +27,30 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/lib/bootstrap/css/bootstrap.min.css",
+              "src/lib/font-awesome/css/font-awesome.css",
+              "src/lib/animate/animate.min.css",
+              "src/lib/ionicons/css/ionicons.min.css",
+              "src/lib/owlcarousel/assets/owl.carousel.min.css",
+              "src/lib/lightbox/css/lightbox.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/lib/jquery/jquery.min.js",
+              "src/lib/jquery/jquery-migrate.min.js",
+              "src/lib/easing/easing.min.js",
+              "src/lib/superfish/hoverIntent.js",
+              "src/lib/superfish/superfish.min.js",
+              "src/lib/wow/wow.min.js",
+              "src/lib/waypoints/waypoints.min.js",
+              "src/lib/counterup/counterup.min.js",
+              "src/lib/owlcarousel/owl.carousel.min.js",
+              "src/lib/isotope/isotope.pkgd.min.js",
+              "src/lib/lightbox/js/lightbox.min.js",
+              "src/lib/touchSwipe/jquery.touchSwipe.min.js",
+              "src/contactform/contactform.js",
+              "src/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -49,36 +69,6 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
-            },
-            "production-fr": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "outputPath": "dist/my-project-fr/",
-              "i18nFile": "src/locale/messages.fr.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "fr",
-              "i18nMissingTranslation": "error"
-            },
-            "fr": {
-              "aot": true,
-              "outputPath": "dist/my-project-fr/",
-              "i18nFile": "src/locale/messages.fr.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "fr",
-              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -90,9 +80,6 @@
           "configurations": {
             "production": {
               "browserTarget": "speed-loan:build:production"
-            },
-            "fr": {
-              "browserTarget": "speed-loan:build:fr"
             }
           }
         },
@@ -110,9 +97,11 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "styles.scss"
+              "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

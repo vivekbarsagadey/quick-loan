@@ -1,52 +1,53 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
 import { AppComponent } from './app.component';
-import { AboutComponent } from './components/about/about.component';
-import { WorkingComponent } from './components/working/working.component';
-import { ApplyComponent } from './components/apply/apply.component';
-import { FaqComponent } from './components/faq/faq.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { ListElementComponent } from './list-element/list-element.component';
-import { HomeComponent } from './components/home/home.component';
- // import {ListElementService} from './services/list-element.service';
-// import { RformComponent } from './rform/rform.component';
+import { ApplicationComponent } from './application/application.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { FaqComponent } from './faq/faq.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+
+
 
 const appRoutes: Routes = [
-  { path: 'app', component: AppComponent},
-  { path: 'list', component: ListElementComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'contact', component: ContactComponent},
-  { path: 'faq', component: FaqComponent},
-  { path: 'working', component: WorkingComponent},
-  { path: 'about', component: AboutComponent},
-  { path: 'apply', component: ApplyComponent},
- // { path: 'form', component: RformComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
-]
+  {path: 'home', component: HomePageComponent},
+  {path: 'apply', component: ApplicationComponent},
+  {path: 'about-us', component: AboutUsComponent},
+  {path: 'how-it-works', component: HowItWorksComponent},
+  {path: 'faq', component: FaqComponent},
+  {path: 'contact-us', component: ContactUsComponent},
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {path: '**', component: ApplicationComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    WorkingComponent,
-    ApplyComponent,
+    ApplicationComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomePageComponent,
+    AboutUsComponent,
+    HowItWorksComponent,
     FaqComponent,
-    ContactComponent,
-    ListElementComponent,
-    HomeComponent,
-   // RformComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
   ],
-  // providers: [ListElementService],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
