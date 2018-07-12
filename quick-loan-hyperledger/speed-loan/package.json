@@ -2,11 +2,11 @@
   "engines": {
     "composer": "^0.19.5"
   },
-  "name": "speed-loan",
-  "version": "0.0.1",
+  "name": "pronto",
+  "version": "0.0.6",
   "description": "Blockchain based quick payday loan web application",
   "scripts": {
-    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/speed-loan.bna",
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/pronto.bna",
     "pretest": "npm run lint",
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"
