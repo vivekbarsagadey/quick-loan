@@ -7,11 +7,7 @@ const bodyParser = require('body-parser');
 
 // Get our API routes
 const api = require('./server/routes/api');
-const user = require('./server/routes/user');
-const userStore = require('./server/stores/userstore');
-const dbSchema = require('./server/stores/db/db_schema');
-const dbSql = require('./server/stores/db/db_insert');
-const knex = require('knex')(require('./knexfile'));
+const user = require('./server/routes/user-controller');
 const cors = require('cors');
 const app = express();
 app.use(cors());
@@ -36,37 +32,6 @@ const logger = winston.createLogger({
   ]
 });
 
-
-(function (argv) {
-
-  if (argv.help) {
-    optimist.showHelp();
-    process.exit(0);
-  }
-
-  /* initialize logger */
-  //logger.cli();
-  //logger.default.transports.console.level = 'debug';
-  //logger.default.transports.console.timestamp = true;
-  logger.info('knex test');
-  dbSchema.recreateSchema(knex, function (err) {
-    if (err) {
-      logger.error('create database schema error: %s', err.toString());
-      knex.destroy();
-    }
-    dbSql.insertData(knex, function (err) {
-      if (err) {
-        logger.error('create database schema error: %s', err.toString());
-      }
-      knex.destroy();
-    });
-  });
-
-
-
-})(optimist.argv);
-
-
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -84,8 +49,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/quick-loan-admin-portal/index.html'));
 });
 
+
+
 // Handle authentication request
 app.use('/api/user', user);
+
 
 /**
  * Get port from environment and store in Express.
@@ -93,7 +61,7 @@ app.use('/api/user', user);
 const port = process.env.PORT || '8089';
 app.set('port', port);
 
-/*
+/**
  * Create HTTP server.
  */
 const server = http.createServer(app);
