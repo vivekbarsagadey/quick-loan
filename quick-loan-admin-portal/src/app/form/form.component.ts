@@ -9,7 +9,7 @@ export class FormComponent implements OnInit {
   adminObject: any;
 
   constructor() {
-    this.adminObject = JSON.parse(localStorage.getItem('admin'));
+
   }
   ngOnInit() {
   }

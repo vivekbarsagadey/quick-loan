@@ -52,7 +52,7 @@ public class ApplicationsController {
 	}
 	
 	
-	@RequestMapping(value = "/{invertor}", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/investor/{invertorId}", method = RequestMethod.GET, produces = "application/json")
 	@CrossOrigin
 	public Iterable<Application> listByInverstor(@PathVariable String invertorId, Model model) {
 		Iterable<Application> ApplicationsList = applicationsRepository.findAll();
