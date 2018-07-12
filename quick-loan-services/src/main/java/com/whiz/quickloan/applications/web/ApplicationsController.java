@@ -50,6 +50,14 @@ public class ApplicationsController {
 		Iterable<Application> ApplicationsList = applicationsRepository.findAll();
 		return ApplicationsList;
 	}
+	
+	
+	@RequestMapping(value = "/{invertor}", method = RequestMethod.GET, produces = "application/json")
+	@CrossOrigin
+	public Iterable<Application> listByInverstor(@PathVariable String invertorId, Model model) {
+		Iterable<Application> ApplicationsList = applicationsRepository.findAll();
+		return ApplicationsList;
+	}
 
 	@ApiOperation(value = "Create an Application")
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
