@@ -41,7 +41,7 @@ public class LedgerApplicationServices {
 			restTemplate.setInterceptors(interceptors);*/
 			//RestTemplate restTemplate = new RestTemplate();
 
-			responseApplication =  restTemplate.postForEntity(LedgerConstant.API_URL + "Applications",application,Application.class);
+			responseApplication =  restTemplate.postForEntity(LedgerConstant.API_URL + "Applications",application, Application.class);
 
 		} catch (Exception e) {
 			e.printStackTrace();
