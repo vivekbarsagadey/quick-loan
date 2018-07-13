@@ -15,7 +15,7 @@ import lombok.Data;
 public abstract class BaseEntity implements Serializable{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(notes = "The database generated ID")
 	private Integer id;
 

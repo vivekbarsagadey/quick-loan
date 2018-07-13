@@ -17,15 +17,14 @@ import lombok.Data;
 @Entity	
 @Data
 public class BankDetails extends BaseEntityAudit{
+	
 	private int abaOrRoutingNumber;
-	private int accountNumber;
 	private int accountType;
-	private String bankName;
+	private long accountNumber;
 	private String bankPhone;
+	private String bankName;
 	private int durationOfBankAccount;
-	private Boolean isDirectDeposit;
 	private int monthlyIncome;
-	private Boolean activeStatus;
 	
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)
