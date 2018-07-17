@@ -19,6 +19,7 @@ import io.swagger.models.Model;
 
 @RestController
 @RequestMapping("/api/customer")
+@CrossOrigin
 public class CustomerController {
 
 	@Autowired
@@ -42,7 +43,7 @@ public class CustomerController {
 	}
 
 	@ApiOperation(value = "Add a Customer")
-	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
 	public ResponseEntity saveCustomer(@RequestBody Customer customer) {
 		
 		

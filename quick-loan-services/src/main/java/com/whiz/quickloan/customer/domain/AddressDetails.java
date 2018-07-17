@@ -18,8 +18,10 @@ import lombok.Data;
 public class AddressDetails extends BaseEntityAudit{
 
 	private String address;
-	private String state;
-	private String country;
+	@Enumerated(EnumType.STRING)
+	private State state;
+	@Enumerated(EnumType.STRING)
+	private Country country;
     private String city;
     private String zipCode;
     private int monthsInCurrentaddress;

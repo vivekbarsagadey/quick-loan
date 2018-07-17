@@ -3,6 +3,8 @@ package com.whiz.quickloan.customer.domain;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -27,7 +29,8 @@ public class ContactDetails extends BaseEntityAudit{
     private String cellPhone1;
     private String cellPhone2;
     private String cellPhone3;
-    private Boolean residentialStatus;
+    @Enumerated(EnumType.STRING)
+    private ResidentialStatus residentialStatus;
     private Date dateOfMove;
     
     @OneToOne(fetch = FetchType.LAZY)

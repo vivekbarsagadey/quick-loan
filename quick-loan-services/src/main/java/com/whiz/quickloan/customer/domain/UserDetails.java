@@ -23,7 +23,8 @@ public class UserDetails extends BaseEntityAudit {
 	private String lastName;
 	private LocalDate DoB;
 	private String licenseNumber;
-	private String licState;
+	@Enumerated(EnumType.STRING)
+	private State licState;
 	private LocalDate licIssueDate;
 	private LocalDate licExpirationDate;
 	
