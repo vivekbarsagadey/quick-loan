@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class QuickloanApplication {
 
+	public static boolean blockChainENabled = false;
 	public static void main(String[] args) {
 		SpringApplication.run(QuickloanApplication.class, args);
 	}

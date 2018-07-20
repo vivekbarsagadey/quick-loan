@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.whiz.quickloan.QuickloanApplication;
 import com.whiz.quickloan.applications.domain.Application;
 import com.whiz.quickloan.customer.domain.Customer;
 import com.whiz.quickloan.customer.services.CustomerRepository;
@@ -47,6 +48,7 @@ public class CustomerController {
 	
 	@Autowired
 	private UserService userService;
+	
 
 	@ApiOperation(value = "View a list of available Customers", response = Iterable.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully retrieved list"),
@@ -83,7 +85,9 @@ public class CustomerController {
 		customer = customerRepository.save(customer);
 
 		// save customer in Block chain
-		//String response = ledgerCustomerServices.saveCustomer(CustomerMapper.map(customer));
+		String response;
+		if(QuickloanApplication.blockChainENabled)
+			response = ledgerCustomerServices.saveCustomer(CustomerMapper.map(customer));
 
 		// save user in DB
 		User user = new User();
@@ -96,7 +100,7 @@ public class CustomerController {
 		userRepository.save(user);
 		
 
-		return new ResponseEntity("Customer added", HttpStatus.OK);
+		return new ResponseEntity(customer, HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Update a Customer")

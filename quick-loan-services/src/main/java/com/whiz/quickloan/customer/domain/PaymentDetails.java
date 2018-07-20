@@ -21,10 +21,10 @@ public class PaymentDetails extends BaseEntityAudit{
 	private int paymentFrequency;
 	private String sortCode;
 	private String bankAccount;
-	private int monthlyExpenses;
+	private double monthlyExpenses;
     private LocalDate nexTPayDay;
     private LocalDate secondPayDay;
-    private int monthlyIncome;
+    private double monthlyIncome;
     @Enumerated(EnumType.STRING)
     private IncomeSource incomeSource;
     @Enumerated(EnumType.STRING)

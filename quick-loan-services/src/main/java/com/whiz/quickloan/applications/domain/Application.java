@@ -3,6 +3,8 @@ package com.whiz.quickloan.applications.domain;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import com.whiz.quickloan.core.domain.BaseEntityAudit;
 
@@ -16,8 +18,10 @@ public class Application extends BaseEntityAudit{
 	private int investorId;
 	private LocalDate applicationDate;
 	private Double loanAmount = 0.0;
-	private String status;
-	private String state;
+	@Enumerated(EnumType.STRING)
+	private ApplicationStatus status;
+	@Enumerated(EnumType.STRING)
+	private ApplicationState state;
 	private String remarks;
 	
 	public Application() {

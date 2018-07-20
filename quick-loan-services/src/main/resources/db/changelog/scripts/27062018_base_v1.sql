@@ -1,6 +1,7 @@
 --liquibase formatted sql
 --changeset fabio.barbosa:001.1
 
+
 CREATE TABLE `address_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(20) DEFAULT NULL,
@@ -37,7 +38,6 @@ CREATE TABLE `application` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-
 CREATE TABLE `bank_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(20) DEFAULT NULL,
@@ -45,16 +45,16 @@ CREATE TABLE `bank_details` (
   `updated_by` varchar(20) DEFAULT NULL,
   `updated_date` datetime DEFAULT NULL,
   `aba_or_routing_number` int(11) NOT NULL,
-  `account_number` bigint(20) NOT NULL,
-  `account_type` int(11) NOT NULL,
+  `account_number` varchar(255) DEFAULT NULL,
+  `account_type` varchar(255) DEFAULT NULL,
   `bank_name` varchar(255) DEFAULT NULL,
   `bank_phone` varchar(255) DEFAULT NULL,
   `duration_of_bank_account` int(11) NOT NULL,
-  `monthly_income` int(11) NOT NULL,
+  `monthly_income` double NOT NULL,
   `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FKlxahb6q7hvt3ymfvjpvdnlq02` (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE `contact_details` (
@@ -219,8 +219,8 @@ CREATE TABLE `payment_details` (
   `updated_date` datetime DEFAULT NULL,
   `bank_account` varchar(255) DEFAULT NULL,
   `income_source` varchar(255) DEFAULT NULL,
-  `monthly_expenses` int(11) NOT NULL,
-  `monthly_income` int(11) NOT NULL,
+  `monthly_expenses` double NOT NULL,
+  `monthly_income` double NOT NULL,
   `nextpay_day` date DEFAULT NULL,
   `payment_frequency` int(11) NOT NULL,
   `payment_method` varchar(255) DEFAULT NULL,
@@ -229,7 +229,8 @@ CREATE TABLE `payment_details` (
   `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FKixvxf0b21jorw2axfhbrqyiwy` (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
 
 
 CREATE TABLE `user` (
@@ -245,7 +246,7 @@ CREATE TABLE `user` (
 
 
 CREATE TABLE `user_role` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -274,7 +275,7 @@ CREATE TABLE `user_details` (
 
 
 CREATE TABLE `user_roles` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `roles_id` bigint(20) NOT NULL,
   UNIQUE KEY `UK_amwlmdeik2qdnksxgd566knop` (`roles_id`),
   KEY `FK55itppkw3i07do3h7qoclqd4k` (`user_id`)
@@ -299,16 +300,14 @@ ALTER TABLE LOAN_DETAILS add constraint fkstim55vaton2j1s2kf8o0dy4y foreign key 
 
 ALTER TABLE PAYMENT_DETAILS add constraint fkixvxf0b21jorw2axfhbrqyiwy foreign key (customer_id) references customer;
  
-CREATE SEQUENCE HIBERNATE_SEQUENCE;
 
+ 
 
+insert into user (id, email_id, password) values (1, 'whizit', 'whizit');
 
+insert into user_role (id, name) values (1, 'USER');
 
+insert into user (id, email_id, password) values (2, 'gsit', 'gsit');
 
-
-
-
-
-
-
+insert into user_role (id, name) values (2, 'CUSTOMER');
 

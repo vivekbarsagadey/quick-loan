@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.whiz.quickloan.application.services.ApplicationsRepository;
 import com.whiz.quickloan.applications.domain.Application;
+import com.whiz.quickloan.applications.domain.ApplicationState;
+import com.whiz.quickloan.applications.domain.ApplicationStatus;
 import com.whiz.quickloan.ledger.mapper.ApplicationMapper;
 import com.whiz.quickloan.ledger.services.LedgerApplicationServices;
 import com.whiz.quickloan.ledger.transactions.services.LedgerTxApplicationServices;
@@ -63,9 +65,13 @@ public class ApplicationsController {
 	@ApiOperation(value = "Create an Application")
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity saveApplication(@RequestBody Application application) {
+		
 		application.setApplicationDate(LocalDate.now());
-		//application.setCustomerId(0);
-		//application.setRemarks("");
+		application.setCustomerId(application.getCustomerId());
+		application.setInvestorId(0);
+		application.setState(ApplicationState.NEW);
+		application.setStatus(ApplicationStatus.RECEIVED);
+		application.setRemarks("NO_REMARKS");
 		
 		Application response = applicationsRepository.save(application);
 		
@@ -82,6 +88,7 @@ public class ApplicationsController {
 
 		Application storedApplications = applicationsRepository.findById(id).orElse(null);
 		if(storedApplications !=null) {
+			storedApplications.updateApplication(application);
 			applicationsRepository.save(storedApplications);
 			return new ResponseEntity("Application updated successfully!", HttpStatus.OK);
 		}else {

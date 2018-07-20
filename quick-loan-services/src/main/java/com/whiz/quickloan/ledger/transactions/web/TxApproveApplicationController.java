@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.whiz.quickloan.application.services.ApplicationsRepository;
 import com.whiz.quickloan.applications.domain.Application;
+import com.whiz.quickloan.applications.domain.ApplicationState;
 import com.whiz.quickloan.investor.services.InvestorRepository;
 import com.whiz.quickloan.ledger.mapper.TxApproveApplicationMapper;
 import com.whiz.quickloan.ledger.mapper.TxBlockInvestorMapper;
@@ -35,7 +36,7 @@ public class TxApproveApplicationController {
 	public ResponseEntity approve(@PathVariable Integer id) {
 		ResponseEntity responseEntity = new ResponseEntity("Application Approved successfully", HttpStatus.OK);
 		applicationsRepository.findById(id).ifPresent(application -> {
-			application.setState("APPROVED");
+			application.setState(ApplicationState.APPROVED);
 			applicationsRepository.save(application);
 			ledgerTxApproveApplicationServices.approveApplication(TxApproveApplicationMapper.map(application));
 			
