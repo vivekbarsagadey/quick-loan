@@ -1,0 +1,59 @@
+/*.faq-scr-bg{*/
+  /*background-color: #B6D8F0; margin: 5px; padding-top: 5px;*/
+/*}*/
+/*.frequently-bg{*/
+  /*background-color: darkslateblue*/
+/*}*/
+/*.frequently-color{*/
+  /*color: white*/
+/*}*/
+/*.loan-serv-bg{*/
+  /*background-color: darkslateblue*/
+/*}*/
+/*.loan-serv-color{*/
+  /*color: white*/
+/*}*/
+/*.recrd-bg{*/
+  /*background-color: darkslateblue*/
+/*}*/
+/*.recrd-color{*/
+  /*color: white*/
+/*}*/
+/*.faq-scr strong, ul li, p{*/
+  /*color: black !important;*/
+  /*line-height: 1.5;*/
+/*}*/
+
+
+/*--------------------------new css--------------------------------*/
+.faq-scr {
+  background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/12/services-header.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.faq-heading{
+  margin-top: 19%;
+}
+
+p, ul, li{
+  color:#878787;
+}
+p,ul,h4{
+  margin-top: 10px;
+}
+
+.faq-page-content{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  font-style: normal;
+  /*color:#212121*/
+}
+.payDay-loan-services {
+  background-color: #18d26e;
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/04/green-poly-background.jpg);*/
+  /*background-position: center center;*/
+}
+.faq-page-content h4{
+  color: #18d26e;
+}

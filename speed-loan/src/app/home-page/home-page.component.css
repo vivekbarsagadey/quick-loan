@@ -1,0 +1,409 @@
+
+/* ------------------- First Section------------------------*/
+
+.home-page-getting-money {
+  background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/11/home.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.home-page-getting-money{
+  padding-bottom: 120px;
+  padding-top: 120px;
+}
+
+.icon_box_text{
+  margin-top: 30px;
+}
+.p-cls{
+  text-align: left!important;
+
+}
+.faq{
+  color: #878787!important;
+}
+
+h3, h3 a {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+}
+
+#moneyTransfer {
+   text-align: left;
+   margin-top: 160px;
+   margin-bottom: 30px;
+ }
+
+#moneyTransfer{
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+ .money-transfer {
+  text-align: left;
+}
+.read-our-policies{
+  display: inline-block;
+  margin: 0;
+}
+.getting-money{
+  font-size: 72px;
+  line-height: 84px;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+}
+.is-now-as-easy-as-spending{
+   font-size: 28px;
+   line-height: 32px;
+   font-weight: normal;
+   font-style: normal;
+   color: #18d26e;
+  margin-bottom: 40px;
+  text-align: left;
+ }
+
+.link-how-it-works {
+  font-weight: 600;
+  font-style: normal;
+  border-style: solid;
+  float: left;
+  text-decoratioon: none;
+}
+.link-why-pay-day-loans {
+  font-weight: 600;
+  font-style: normal;
+  /*border-style: solid;*/
+  background-color: #18d26e;
+  color: #ffffff;
+  text-decoratioon: none;
+  /*border-color: #3e467b;*/
+}
+.home-application-form {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: rgba(255,255,255,0);
+  border-color: rgba(205,220,57,0);
+  border-width: 20px;
+  border-style: solid;
+}
+#homeApplicationForm{
+  width: 100%;
+  padding: 50px 40px 50px 40px;
+  text-align: left;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+.how-much-do-you-need {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 22px;
+}
+
+ .row_margin:after{
+  content: '.';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+.home-inner-div{
+  position: relative;
+  width: 980px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.one_half{
+  width: 46.6%;
+  margin: 0 1.7%;
+  position: relative;
+  float: left;
+}
+.how-it-works-btn{
+  background-color: white;
+  color:#18d26e ;
+}
+
+.apply-Online-info{
+margin-top: 5%;
+color: aliceblue;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out
+}
+
+.btn-primary {
+  background-color: #18d26e;
+  color: #ffffff;
+  width: 88%;
+  margin-left: 5%;
+}
+
+.btn-round {
+  border-width: 1px;
+  border-radius: 30px !important;
+  padding: 11px 23px;
+}
+
+/*-------------------------------------------second div---------------------------*/
+
+/*#cmsmasters_row_div .cmsmasters_row_outer_parent {*/
+  /*padding-bottom: 70px;*/
+/*}*/
+/*#cmsmasters_row_div .cmsmasters_row_outer_parent {*/
+  /*padding-top: 80px;*/
+/*}*/
+/*.cmsmasters_row .cmsmasters_row_outer_parent {*/
+  /*padding: .1px 0;*/
+  /*z-index: 2;*/
+/*}*/
+/*.one_third {*/
+  /*width: 29.93%;*/
+/*}*/
+
+/*#cmsmasters_icon_box_5b360c5e1ab05.cmsmasters_icon_box_top {*/
+  /*padding-top: 75px;*/
+  /*margin-top: 45px;*/
+/*}*/
+/*#cmsmasters_icon_box_5b360c5e1ab05 {*/
+  /*padding-top: 120px;*/
+/*}*/
+
+/*#cmsmasters_icon_box_5b360c5e1ab05 {*/
+  /*border-width: 0px;*/
+  /*background-color: #ffffff;*/
+/*}*/
+/*.cmsmasters_attach_img .cmsmasters_attach_img_info, hr, .cmsmasters_divider, .cmsmasters_table tbody tr, .cmsmasters_widget_divider, .cmsmasters_icon_wrap .cmsmasters_simple_icon, .cmsmasters_icon_box.cmsmasters_icon_box_top, .cmsmasters_icon_box.cmsmasters_icon_box_left, .cmsmasters_icon_list_items.cmsmasters_icon_list_type_block .cmsmasters_icon_list_item, .cmsmasters_icon_list_items.cmsmasters_color_type_bg .cmsmasters_icon_list_icon:after, .cmsmasters_icon_list_items.cmsmasters_color_type_icon .cmsmasters_icon_list_icon:after, #fbuilder input[type=radio] + .field_before:before, #fbuilder input[type=checkbox] + .field_before:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=checkbox] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=checkbox] + label:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=radio] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=radio] + label:before {*/
+  /*border-color: #b6b6b6;*/
+/*}*/
+/*select, fieldset, table, code, fieldset legend, .img_placeholder_small, .cmsmasters_featured_block, textarea, input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]), .cmsmasters_icon_box.cmsmasters_icon_box_top, .cmsmasters_icon_box.cmsmasters_icon_box_left, .cmsmasters_icon_list_items.cmsmasters_color_type_icon .cmsmasters_icon_list_icon, .gallery-item .gallery-icon, .cmsmasters_post_masonry .cmsmasters_post_cont, .post_nav, .cmsmasters_stats.stats_mode_bars.stats_type_horizontal .cmsmasters_stat_wrap:before, .cmsmasters_stats.stats_mode_bars.stats_type_vertical .cmsmasters_stat_wrap .cmsmasters_stat_inner, .cmsmasters_project_grid .project_outer .project_inner, .cmsmasters_items_filter_list li a, .cmsmasters_comment_item .cmsmasters_comment_item_content, .cmsmasters_single_slider .cmsmasters_single_slider_item_inner, .cmsmasters_post_timeline .cmsmasters_post_cont_inner, .cmsmasters_profile_horizontal .profile_inner, .gallery-item .gallery-caption, .cmsmasters_img.with_caption, .cmsmasters_wrap_pagination, .cmsmasters_slider_project_inner, .cmsmasters_table_row_footer, .cmsmasters_slider_post_inner, .widget_nav_menu .menu li a, .wp-caption .wp-caption-text, .cmsmasters_post_default.sticky .cmsmasters_sticky, .cmsmasters_tabs .cmsmasters_tabs_list_item, .cmsmasters_toggles.toggles_mode_accordion .cmsmasters_toggle_title, .cmsmasters_toggles.toggles_mode_toggle .cmsmasters_toggle_inner, .cmsmasters_quotes_grid .cmsmasters_quote, .cmsmasters_pricing_item .cmsmasters_pricing_item_inner, .cmsmasters_notice.cmsmasters_notice_custom, #fbuilder input[type=radio] + .field_before:before, #fbuilder input[type=checkbox] + .field_before:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=checkbox] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=checkbox] + label:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=radio] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=radio] + label:before {*/
+  /*background-color: #f6f6f6;*/
+/*}*/
+/*.cmsmasters_icon_box.cmsmasters_icon_box_top {*/
+  /*border-width: 1px;*/
+  /*padding: 20px 20px 30px;*/
+/*}*/
+/*.cmsmasters_icon_box {*/
+  /*border-style: solid;*/
+  /*border-color: transparent;*/
+  /*position: relative;*/
+/*}*/
+/*#cmsmasters_icon_box_5b360c5e1ab05.cmsmasters_icon_box_top:before {*/
+  /*top: -45px;*/
+/*}*/
+/*#cmsmasters_icon_box_5b360c5e1ab05:before {*/
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/11/Без-имени-1.png);*/
+/*}*/
+
+/*#cmsmasters_icon_box_5b360c5e1adf6:before, #cmsmasters_icon_box_5b360c5e1adf6 .icon_box_heading:before {*/
+  /*margin-left: -45px;*/
+/*}*/
+
+/*.cmsmasters_icon_box .icon_box_text {*/
+  /*margin-bottom: 10px;}*/
+/*{*/
+  /*text-align: center;*/
+/*}*/
+
+/*p {*/
+  /*padding: 0 0 20px;*/
+  /*margin: 0;*/
+/*}*/
+/*#cmsmasters_heading_5b360c5e1b059 {*/
+  /*text-align: center;*/
+  /*margin-top: -30px;*/
+  /*margin-bottom: 0px;*/
+/*}*/
+/*#cmsmasters_heading_5b360c5e1b059 .cmsmasters_heading, #cmsmasters_heading_5b360c5e1b059 .cmsmasters_heading a {*/
+  /*font-size: 14px;*/
+  /*font-weight: 600;*/
+  /*font-style: normal;*/
+  /*color: #3e467b;*/
+/*}*/
+
+/*#cmsmasters_heading_5b360c5e1b059 .cmsmasters_heading {*/
+  /*text-align: center;*/
+/*}*/
+
+/*#cmsmasters_heading_5b360c5e1b059 .cmsmasters_heading, #cmsmasters_heading_5b360c5e1b059 .cmsmasters_heading a {*/
+  /*font-size: 14px;*/
+  /*font-weight: 600;*/
+  /*font-style: normal;*/
+  /*color: #3e467b;*/
+/*}*/
+
+
+/*#cmsmasters_icon_box_5b360c5e1b110.cmsmasters_icon_box_top {*/
+  /*padding-top: 75px;*/
+  /*margin-top: 45px;*/
+/*}*/
+
+/*#cmsmasters_icon_box_5b360c5e1b110 {*/
+  /*padding-top: 120px;*/
+/*}*/
+/*#cmsmasters_icon_box_5b360c5e1b110 {*/
+  /*border-width: 0px;*/
+  /*background-color: #ffffff;*/
+/*}*/
+/*.cmsmasters_attach_img .cmsmasters_attach_img_info, hr, .cmsmasters_divider, .cmsmasters_table tbody tr, .cmsmasters_widget_divider, .cmsmasters_icon_wrap .cmsmasters_simple_icon, .cmsmasters_icon_box.cmsmasters_icon_box_top, .cmsmasters_icon_box.cmsmasters_icon_box_left, .cmsmasters_icon_list_items.cmsmasters_icon_list_type_block .cmsmasters_icon_list_item, .cmsmasters_icon_list_items.cmsmasters_color_type_bg .cmsmasters_icon_list_icon:after, .cmsmasters_icon_list_items.cmsmasters_color_type_icon .cmsmasters_icon_list_icon:after, #fbuilder input[type=radio] + .field_before:before, #fbuilder input[type=checkbox] + .field_before:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=checkbox] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=checkbox] + label:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=radio] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=radio] + label:before {*/
+  /*border-color: #b6b6b6;*/
+/*}*/
+/*#cmsmasters_icon_box_5b360c5e1b110.cmsmasters_icon_box_top:before {*/
+  /*top: -45px;*/
+/*}*/
+/*#cmsmasters_icon_box_5b360c5e1b110 {*/
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/11/Без-имени-3.png);*/
+/*}*/
+
+/*#cmsmasters_icon_box_5b360c5e1b110, #cmsmasters_icon_box_5b360c5e1b110 .icon_box_heading:before {*/
+  /*margin-left: -45px;*/
+/*}*/
+/*#cmsmasters_icon_box_5b360c5e1b110, #cmsmasters_icon_box_5b360c5e1b110 .icon_box_heading:before {*/
+  /*font-size: 90px;*/
+  /*line-height: 90px;*/
+  /*!*width: 90px;*!*/
+  /*height: 90px;*/
+  /*border-width: 0px;*/
+  /*-webkit-border-radius: 50%;*/
+  /*border-radius: 50%;*/
+/*}*/
+/*#cmsmasters_row_5b3643184e821 .cmsmasters_row_outer_parent {*/
+  /*padding-bottom: 70px;*/
+/*}*/
+/*#cmsmasters_row_5b3643184e821 .cmsmasters_row_outer_parent {*/
+  /*padding-top: 80px;*/
+/*}*/
+/*.cmsmasters_row .cmsmasters_row_outer_parent {*/
+  /*padding: .1px 0;*/
+  /*z-index: 2;*/
+/*}*/
+/*.cmsmasters_heading_wrap cmsmasters_heading_align_center {*/
+  /*text-align: center;*/
+  /*margin-top: -30px;*/
+  /*margin-bottom: 0px;*/
+/*}*/
+
+/*#cmsmasters_heading_raed_our_policies .cmsmasters_heading, #cmsmasters_heading_raed_our_policies .cmsmasters_heading a {*/
+  /*font-size: 14px;*/
+  /*font-weight: 600;*/
+  /*font-style: normal;*/
+  /*color: #3e467b;*/
+/*}*/
+/*#cmsmasters_heading_raed_our_policies .cmsmasters_heading {*/
+  /*text-align: center;*/
+/*}*/
+/*.cmsmasters_heading_wrap .cmsmasters_heading {*/
+  /*display: inline-block;*/
+  /*margin: 0;*/
+/*}*/
+/*---------------------------------third div------------------*/
+.speed-loan-and-income{
+  /*background-position: 50% 21.5px;*/
+  background-color: #18d26e;
+  /*height: 400px;*/
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/11/blue-poly-background.jpg);*/
+}
+
+ Services Section
+--------------------------------
+#services {
+  background: #fff;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+}
+
+#services .box {
+  margin-bottom: 30px;
+}
+
+#services .icon {
+  float: left;
+}
+
+#services .icon i {
+  color: #18d26e;
+  font-size: 36px;
+  line-height: 1;
+  transition: 0.5s;
+}
+
+#services .title {
+  margin-left: 60px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#services .title a {
+  color: #111;
+}
+
+#services .title a {
+  /*color: #18d26e;*/
+  text-decoration: none;
+}
+
+#services .description {
+  font-size: 14px;
+  margin-left: 60px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+
+/*!*----------------------------------Fourth div -------------**/
+
+
+/*----------------------------------Fifth div------------------*/
+
+/*.apply-ol{*/
+  /*margin-top: 5% !important;*/
+/*}*/
+.speed-loan-expenses{
+  margin-top: 8%;
+}
+
+.apply-online-now{
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/11/how-it-works-background.jpg);*/
+  background-color: #18d26e;
+  /*background-position: center center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-attachment: fixed;*/
+  /*background-size: cover;*/
+  /*position: static;*/
+}
+.cmsmasters_color_scheme_second, .cmsmasters_color_scheme_second.cmsmasters_footer_default .footer_copyright, html .cmsmasters_color_scheme_second .cmsmasters_img_rollover .cmsmasters_open_post_link > span:after, html .cmsmasters_color_scheme_second .cmsmasters_img_rollover .cmsmasters_open_post_link > span:before, html .cmsmasters_color_scheme_second .owl-pagination .owl-page, html .cmsmasters_color_scheme_second .cmsmasters_single_slider .cmsmasters_owl_slider .owl-buttons > div, html .cmsmasters_color_scheme_second .cmsmasters_posts_slider .owl-buttons > div, html .cmsmasters_color_scheme_second .cmsmasters_twitter_wrap .owl-buttons, html .cmsmasters_color_scheme_second .cmsmasters_notice .notice_close, html .cmsmasters_color_scheme_second .cmsmasters_toggles.toggles_mode_toggle .cmsmasters_toggle_title, html .cmsmasters_color_scheme_second .pricing_best .cmsmasters_pricing_but_wrap .cmsmasters_button, html .cmsmasters_color_scheme_second option {
+  background-color: rgba(255,255,255,0);
+}
+
+/*----------------------------------Sixth div------------------*/
+
+
+.payDay-loan-services {
+  /*background-color: #bcc650;*/
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/04/green-poly-background.jpg);*/
+  background-position: center center;
+}
+

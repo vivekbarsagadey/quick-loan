@@ -1,0 +1,65 @@
+/*.home-input{*/
+  /*margin: 10px;*/
+/*}*/
+/*.form-input-label{*/
+  /*text-align: right;*/
+  /*padding-top: 15px;*/
+/*}*/
+/*.application strong, ul li, label, p{*/
+  /*color: black;*/
+  /*line-height: 1.5;*/
+/*}*/
+
+
+
+/*----------------------------------first div ---------------------*/
+.application-form {
+  background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2016/05/slider1.jpg);
+  background-position: top center;
+  background-size: cover;
+  height: 370px;
+}
+
+.apply-now{
+  margin-top: 17%;
+}
+label{
+  padding: 12px;
+}
+.application-form-fields{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.payday-loan-services {
+  background-color: #18d26e;
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/04/green-poly-background.jpg);*/
+  /*background-position: center center;*/
+}
+.application-form-fields input[type=radio] {
+  height: 24px;
+  width: 7%;
+}
+.heading-title{
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.next-btn{
+  background-color: #18d26e;
+}
+.next-btn-align{
+  margin-left: 24%;
+}
+.next-btn-userdetail{
+  margin-left: 46%;
+}
+
+/*input, textarea {*/
+  /*background-color:transparent;*/
+  /*border: 0px solid;*/
+/*}*/
+/*input:focus {*/
+  /*outline:none;*/
+/*}*/

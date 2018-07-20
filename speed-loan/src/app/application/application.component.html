@@ -1,0 +1,1104 @@
+<div>
+  <!-------------------------------first div--------------------->
+  <div id="applicationForm" class=" application-form cmsmasters_row">
+    <div class="cmsmasters_row_outer_parent">
+      <div class=" text-white text-center apply-now">
+        <div>
+          <h1 >Apply Now</h1>
+        </div>
+        <div>
+          <h2>Fill out an application form </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-12 application-form-fields heading-title">
+    <form novalidate 	#applicationForm="ngForm" name="applicationForm">
+      <div class="col-md-12 row text-left"  id="userdetail" *ngIf="userDetails">
+        <div class="col-md-12 text-center heading-title"><h5><strong>USER DETAILS</strong></h5></div>
+        <div class="col-md-6 row" >
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="firstName" class="control-label">FIRST NAME</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"   #firstName = "ngModel" id="firstName"  pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.firstName" name="firstName" type="text" required>
+            </div>
+            <div [hidden]="firstName.valid || firstName.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!firstName.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <!--<div  ng-show="applicationForm.firstname.$dirty" role="alert">-->
+               <!--<span ng-show="applicationForm.firstname.$error.minlength"> Please enter atleast 5 characters-->
+      <!--</span>-->
+            <!--</div>-->
+            <!--<div *ngIf="firstName.errors?.minlength" class="col-md-7 offset-md-5 text-danger">-->
+              <!--Name must be at least 5 characters long.-->
+            <!--</div>-->
+            <div *ngIf="firstName.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "firstName.errors?.required">
+                First Name is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="lastName" class="control-label">LAST NAME</label>
+            </div>
+            <div class="col-md-7">
+              <input  class="form-control" #lastName = "ngModel" id="lastName" pattern="[a-zA-Z][a-zA-Z ]+"  [(ngModel)]="user.lastName" name="lastName" type="text" required>
+            </div>
+            <div [hidden]="lastName.valid || lastName.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!lastName.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="lastName.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "lastName.errors?.required">
+                Last Name is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="bestTimeToCall" class="control-label">BEST TIME TO CALL</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control" #bestTimeToCall = "ngModel" [(ngModel)]="user.bestTimeToCall" id="bestTimeToCall" name="bestTimeToCall" type="text" required>
+                <option>MORNING</option>
+                <option>AFTERNOON</option>
+                <option>EVENING</option>
+              </select>
+            </div>
+            <div *ngIf="bestTimeToCall.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "bestTimeToCall.errors?.required">
+                Best time to call is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="licenseNumber" class="control-label">LICENSE NUMBER</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control "  #licenseNumber = "ngModel" id="licenseNumber"   [(ngModel)]="user.licenseNumber" name="licenseNumber" type="number" required>
+            </div>
+            <div *ngIf="licenseNumber.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "licenseNumber.errors?.required">
+                License Number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="licIssueDate" class="control-label">LICENSE ISSUE DATE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  #licIssueDate = "ngModel" id="licIssueDate"   [(ngModel)]="user.licIssueDate" name="licIssueDate" type="date" required>
+            </div>
+            <div *ngIf="licIssueDate.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "licIssueDate.errors?.required">
+                License Issue Date is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="middleName" class="control-label">MIDDLE NAME</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #middleName = "ngModel" id="middleName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.middleName" name="middleName" type="text" required>
+            </div>
+            <div [hidden]="middleName.valid || middleName.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!middleName.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="middleName.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "middleName.errors?.required">
+                Middle Name is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="maritalStatus" class="control-label">MARITAL STATUS</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control " #maritalStatus = "ngModel" id='maritalStatus' [(ngModel)]="user.maritalStatus" name="maritalStatus" type="text" required>
+                <option>SINGLE</option>
+                <option>MARRIED</option>
+              </select>
+            </div>
+            <div *ngIf="maritalStatus.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "maritalStatus.errors?.required">
+                Marital Status is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="doB" class="control-label">DATE OF BIRTH</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #doB = "ngModel" id="doB"  [(ngModel)]="user.doB" name="doB" type="date" required>
+            </div>
+            <div *ngIf="doB.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "doB.errors?.required">
+                Date of birth is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="licState" class="control-label">LICENSE STATE</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control"  #licState = "ngModel" id="licState"   [(ngModel)]="user.licState" name="licState" type="text" required>
+                <option>MAHARASHTRA</option>
+              </select>
+            </div>
+            <div *ngIf="licState.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "licState.errors?.required">
+                License state is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="licExpirationDate" class="control-label">LICENSE EXPIRATION DATE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  #licExpirationDate = "ngModel" id="licExpirationDate"  [(ngModel)]="user.licExpirationDate" name="licExpirationDate" type="date" required>
+            </div>
+            <div *ngIf="licExpirationDate.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "licExpirationDate.errors?.required">
+                License expiration date is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row next-btn-userdetail form-group">
+          <div><button  type="submit" class="btn btn-lg next-btn" id="userdetailbtn" name="next"  (click)="applyForm('userDetails')"> NEXT </button></div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 row text-left" id="Addressdetails" *ngIf="addressDetails">
+        <div class="col-md-12 text-center heading-title"><h5><strong>ADDRESS DETAILS</strong></h5></div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="address" class="control-label">ADDRESS</label>
+            </div>
+            <div class="col-md-7">
+              <textarea class="form-control"  #address = "ngModel" id="address" minlength="15" maxlength="50"  [(ngModel)]="user.address" name="address" type="text" required></textarea>
+            </div>
+            <div *ngIf="address.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Address must be at least 15 characters long.
+            </div>
+            <!--<div *ngIf="address.errors?.maxlength" class="col-md-7 offset-md-5 text-danger">-->
+              <!--Name must be at least 50 characters long.-->
+            <!--</div>-->
+            <div *ngIf="address.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "address.errors?.required">
+                Address is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="state" class="control-label">STATE</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control "  #state = "ngModel" id="state"    [(ngModel)]="user.state" name="state" type="text" required>
+                <option>MAHARASHTRA</option>
+              </select>
+            </div>
+            <div *ngIf="state.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "state.errors?.required">
+                State is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="country" class="control-label">COUNTRY</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control " #country = "ngModel" id="country" [(ngModel)]="user.country" name="country" type="text" required>
+                <option>INDIA</option>
+              </select>
+            </div>
+            <div *ngIf="country.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "country.errors?.required">
+                Country is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="stayType" class="control-label">STAY TYPE</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control" #stayType = "ngModel" id="stayType" [(ngModel)]="user.stayType" name="stayType" type="text" required>
+                <option>RENT</option>
+              </select>
+            </div>
+            <div *ngIf="stayType.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "stayType.errors?.required">
+                Stay type is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="city" class="control-label">CITY</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control " #city = "ngModel" id="city" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.city" name="city" type="text" required>
+            </div>
+            <div [hidden]="city.valid || city.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!city.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="city.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "city.errors?.required">
+                City is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="zipCode" class="control-label">ZIP CODE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control "  #zipCode = "ngModel" id="zipCode" [(ngModel)]="user.zipCode" name="zipCode" type="number" required>
+            </div>
+            <div *ngIf="zipCode.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "zipCode.errors?.required">
+                Zip code is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="monthsInCurrentaddress" class="control-label">MONTHS IN CURRENT ADDRESS</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control " #monthsInCurrentaddress = "ngModel" id="monthsInCurrentaddress" [(ngModel)]="user.monthsInCurrentaddress" name="monthsInCurrentaddress" type="number" required>
+            </div>
+            <div *ngIf="monthsInCurrentaddress.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "monthsInCurrentaddress.errors?.required">
+                Months in current address is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="yrsInCurrentaddress" class="control-label">YEARS IN CURRENT ADDRESS</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control " #yrsInCurrentaddress = "ngModel" id="yrsInCurrentaddress" [(ngModel)]="user.yrsInCurrentaddress" name="yrsInCurrentaddress" type="number" required>
+            </div>
+            <div *ngIf="yrsInCurrentaddress.touched"
+                       class="col-md-7 offset-md-5 text-danger">
+            <div *ngIf = "yrsInCurrentaddress.errors?.required">
+              Years in current address is required
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-12 row next-btn-align">
+          <div class="col-6"><button class="btn btn-lg next-btn" id="addressdetailsbtnpre" name="pre" (click)="applyFormPre('addressDetails')">PREVIOUS</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="addressdetailsbtn" name="next" (click)="applyForm('addressDetails')">NEXT</button></div>
+        </div>
+      </div>
+
+      <div class="col-md-12 row text-left" id="bankdetails"  *ngIf="bankDetails">
+        <div class="col-md-12 text-center heading-title"><h5><strong>BANK DETAILS</strong></h5></div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="abaOrRoutingNumber" class="control-label">ROUTING NUMBER</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #abaOrRoutingNumber = "ngModel" id="abaOrRoutingNumber" [(ngModel)]="user.abaOrRoutingNumber" name="abaOrRoutingNumber" type="number" required>
+            </div>
+            <div *ngIf="abaOrRoutingNumber.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "abaOrRoutingNumber.errors?.required">
+               Routing number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label  for="accountType" class="control-label">ACCOUNT TYPE</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control " #accountType = "ngModel" id="accountType" [(ngModel)]="user.accountType" name="accountType" type="text" required>
+                <option value="1">SAVING</option>
+                <option value="2">CURRENT</option>
+              </select>
+            </div>
+            <div *ngIf="accountType.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "accountType.errors?.required">
+                Account type is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label  for="bankPhone" class="control-label">BANK PHONE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #bankPhone = "ngModel" name="bankPhone" id="bankPhone"  minlength="10" maxlength="10" pattern="[0-9]"  [(ngModel)]="user.bankPhone"  type="text" required>
+            </div>
+            <!--<div [hidden]= "bankPhone.valid || bankPhone.pristine"-->
+                 <!--class="col-md-7 offset-md-5 text-danger">-->
+              <!--<div [hidden]="!bankPhone.hasError('pattern')">Only numbers</div>-->
+            <!--</div>-->
+            <div *ngIf="bankPhone.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <!--<div *ngIf="bankPhone.errors?.maxlength" class="col-md-7 offset-md-5 text-danger">-->
+            <!--Name must be at least 11 characters long.-->
+            <!--</div>-->
+            <div *ngIf="bankPhone.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "bankPhone.errors?.required">
+                Bank phone is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="accountNumber" class="control-label">ACCOUNT NUMBER</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #accountNumber = "ngModel" id="accountNumber" [(ngModel)]="user.accountNumber" name="accountNumber" type="number" required>
+            </div>
+            <div *ngIf="accountNumber.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "accountNumber.errors?.required">
+                Account number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="bankName" class="control-label">BANK NAME</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  #bankName ="ngModel" id="bankName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.bankName" name="bankName" type="text" required>
+            </div>
+            <div [hidden]= "bankName.valid || bankName.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!bankName.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="bankName.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "bankName.errors?.required">
+               Bank name is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="durationOfBankAccount" class="control-label">DURATION OF BANK ACCOUNT</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #durationOfBankAccount = "ngModel" id="durationOfBankAccount" [(ngModel)]="user.durationOfBankAccount" name="durationOfBankAccount" type="number" required>
+            </div>
+            <div *ngIf="durationOfBankAccount.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "durationOfBankAccount.errors?.required">
+                Duration of bank account is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="monthlyIncome" class="control-label">MONTHLY INCOME</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #monthlyIncome = "ngModel" id="monthlyIncome" [(ngModel)]="user.monthlyIncome" name="monthlyIncome" type="number" required>
+            </div>
+            <div *ngIf="monthlyIncome.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "monthlyIncome.errors?.required">
+                Monthly income is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-12 row next-btn-align">
+          <div class="col-6"><button class="btn btn-lg next-btn" id="bankdetailsbtnpre" name="pre" (click)="applyFormPre('bankDetails')">PREVIOUS</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="bankdetailsbtn" name="next" (click)="applyForm('bankDetails')">NEXT</button></div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 row text-left" id="contactdetails" *ngIf="contactDetails">
+        <div class="col-md-12 text-center heading-title"><h5><strong>CONTACT DETAILS</strong></h5></div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="emailId" class=" control-label">EMAIL ID</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  [(ngModel)] = "user.emailId" name="emailId"
+                     #emailId = "ngModel" id="emailId"
+                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                     type="text" required>
+            </div>
+            <div *ngIf="emailId.invalid && ( emailId.touched)"
+                 class="col-md-7 offset-md-5  text-danger">
+              <div *ngIf = "emailId.errors?.required">
+                Email field can't be blank
+              </div>
+              <div *ngIf = "emailId.errors?.pattern && emailId.touched">
+                The email id doesn't seem right
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="confirmEmailId" class=" control-label">CONFIRM EMAIL ID</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #confirmEmailId = "ngModel" id="confirmEmailId"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="user.confirmEmailId" name="confirmEmailId" type="email" required>
+            </div>
+            <div *ngIf="confirmEmailId.invalid && ( confirmEmailId.touched)"
+                 class="col-md-7 offset-md-5  text-danger">
+              <div *ngIf = "confirmEmailId.errors?.required">
+                Email field can't be blank
+              </div>
+              <div *ngIf = "confirmEmailId.errors?.pattern && confirmEmailId.touched">
+                The email id doesn't seem right
+              </div>
+            </div>
+            <!--<div *ngIf="confirmEmailId.touched"-->
+                 <!--class="col-md-7 offset-md-5 text-danger">-->
+              <!--<div *ngIf = "confirmEmailId.errors?.required">-->
+                <!--Email income is required-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="cellPhone2" class=" control-label">CELL PHONE2</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #cellPhone2 = "ngModel" id="cellPhone2"  minlength="10" maxlength="10"  [(ngModel)]="user.cellPhone2" name="cellPhone2" type="text" required>
+            </div>
+            <div *ngIf="cellPhone2.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="cellPhone2.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "cellPhone2.errors?.required">
+                Phone number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="homePhone1"  class=" control-label">HOME PHONE 1</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #homePhone1 = "ngModel" id="homePhone1" minlength="10" maxlength="10" [(ngModel)]="user.homePhone1" name="homePhone1" type="text" required>
+            </div>
+            <div *ngIf="homePhone1.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="homePhone1.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "homePhone1.errors?.required">
+                Phone number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="homePhone3"  class=" control-label">HOME PHONE 3</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #homePhone3 = "ngModel" id="homePhone3" minlength="10" maxlength="10" [(ngModel)]="user.homePhone3" name="homePhone3" type="text" required>
+            </div>
+            <div *ngIf="homePhone3.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="homePhone3.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "homePhone3.errors?.required">
+                Phone number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label  for="residentialStatus"  class=" control-label">RESIDENTIAL STATUS</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control" #residentialStatus = "ngModel" id="residentialStatus"  [(ngModel)]="user.residentialStatus" name="residentialStatus" type="text" required>
+                <option>OWN</option>
+              </select>
+            </div>
+            <div *ngIf="residentialStatus.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "residentialStatus.errors?.required">
+                Residential status is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="password" class="control-label">PASSWORD</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  #password = "ngModel"   id="password" [(ngModel)]="user.password" name="password" type="password" required>
+            </div>
+            <div *ngIf="password.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "password.errors?.required">
+                Password is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="confirmPassword" class="control-label">CONFIRM PASSWORD</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control "  #confirmPassword = "ngModel"   id="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword" type="password" required>
+            </div>
+            <div *ngIf="confirmPassword.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "confirmPassword.errors?.required">
+                Password is required
+              </div>
+            </div>
+          </div>
+            <!--<div *ngIf="(userPassword.invalid|| userPassword.value?.password != userPassword.value?.confirmPassword) && (userPassword.touched)"-->
+                 <!--class="col-md-7 offset-md-5 text-danger">-->
+
+              <!--<div *ngIf = "userPassword.invalid; else nomatch">-->
+                <!--Password needs to be more than 8 characters-->
+              <!--</div>-->
+              <!--<ng-template #nomatch >-->
+                <!--Passwords don't match-->
+              <!--</ng-template>-->
+
+            <!--</div>-->
+          <!--</div>-->
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="cellPhone1"  class=" control-label">CELL PHONE 1</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #cellPhone1 = "ngModel" id="cellPhone1" minlength="10" maxlength="10" [(ngModel)]="user.cellPhone1" name="cellPhone1" type="text" required>
+            </div>
+            <div *ngIf="cellPhone1.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="cellPhone1.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "cellPhone1.errors?.required">
+                Phone number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="cellPhone3"  class=" control-label">CELL PHONE 3</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #cellPhone3 = "ngModel" id="cellPhone3" minlength="10" maxlength="10"  [(ngModel)]="user.cellPhone3" name="cellPhone3" type="text" required>
+            </div>
+            <div *ngIf="cellPhone3.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="cellPhone3.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "cellPhone3.errors?.required">
+                Phone number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="homePhone2"  class=" control-label">HOME PHONE 2</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #homePhone2 = "ngModel" id="homePhone2" minlength="10" maxlength="10" [(ngModel)]="user.homePhone2" name="homePhone2" type="text" required>
+            </div>
+            <div *ngIf="homePhone2.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="homePhone2.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "homePhone2.errors?.required">
+                Phone number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="workPhone"  class=" control-label">WORK PHONE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #workPhone = "ngModel" id="workPhone" minlength="10" maxlength="10" [(ngModel)]="user.workPhone" name="workPhone" type="text" required>
+            </div>
+            <div *ngIf="workPhone.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="workPhone.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "workPhone.errors?.required">
+                Phone number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="dateOfMove"  class=" control-label">DATE OF MOVE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  #dateOfMove = "ngModel" id="dateOfMove" [(ngModel)]="user.dateOfMove" name="dateOfMove" type="date" required>
+            </div>
+            <div *ngIf="dateOfMove.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "dateOfMove.errors?.required">
+                Date of move is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-12 row next-btn-align">
+          <div class="col-6"><button class="btn btn-lg next-btn" id="contactdetailsbtnpre" name="pre" (click)="applyFormPre('contactDetails')">PREVIOUS</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="contactdetailsbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('contactDetails')" >NEXT</button></div>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-12 row text-left" id="employmentdetails" *ngIf="employmentDetails">
+        <div class="col-md-12 text-center heading-title"><h5><strong>EMPLOYMENT DETAILS</strong></h5></div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="companyName"  class=" control-label">COMPANY NAME</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #companyName = "ngModel" id="companyName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.companyName" name="companyName" type="text" required>
+            </div>
+            <div [hidden]="companyName.valid || companyName.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!companyName.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="companyName.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "companyName.errors?.required">
+                Company name is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="incomeType"  class=" control-label">INCOME TYPE</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control" #incomeType = "ngModel" id="incomeType" [(ngModel)]="user.incomeType" name="incomeType" type="text" required>
+                <option>EMPLOYMENT</option>
+              </select>
+            </div>
+            <div *ngIf="incomeType.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "incomeType.errors?.required">
+                Incom type is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="employerName"  class=" control-label">EMPLOYER NAME</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #employerName = "ngModel" id="employerName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.employerName" name="employerName" type="text" required>
+            </div>
+            <div [hidden]="employerName.valid || employerName.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!employerName.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="employerName.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "employerName.errors?.required">
+                Employer name is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="currentEmployedDuration"  class=" control-label">CURRENT EMPLOYED DURATION</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #currentEmployedDuration = "ngModel" id="currentEmployedDuration" [(ngModel)]="user.currentEmployedDuration" name="currentEmployedDuration" type="number" required>
+            </div>
+            <div *ngIf="currentEmployedDuration.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "currentEmployedDuration.errors?.required">
+                Current employed duration is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="companyAddress"  class=" control-label">COMPANY ADDRESS</label>
+            </div>
+            <div class="col-md-7">
+              <textarea class="form-control" #companyAddress = "ngModel" id="companyAddress" minlength="15" maxlength="50"  [(ngModel)]="user.companyAddress" name="companyAddress" type="text" required></textarea>
+            </div>
+            <div *ngIf="companyAddress.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Address must be at least 15 characters long.
+            </div>
+            <div *ngIf="companyAddress.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "companyAddress.errors?.required">
+                Company address is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="jobTitle"  class=" control-label">JOB TITLE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #jobTitle = "ngModel" id="jobTitle" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.jobTitle" name="jobTitle" type="text" required>
+            </div>
+            <div [hidden]="jobTitle.valid || jobTitle.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!jobTitle.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="jobTitle.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "jobTitle.errors?.required">
+                Job title is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="employerPhone"  class=" control-label">EMPLOYER PHONE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #employerPhone = "ngModel" id="employerPhone" minlength="10" maxlength="10" [(ngModel)]="user.employerPhone" name="employerPhone" type="text" required>
+            </div>
+            <div *ngIf="employerPhone.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+              Only Number allowed and it should be 10 digit.
+            </div>
+            <div *ngIf="employerPhone.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "employerPhone.errors?.required">
+               Phone is required
+              </div>
+            </div>
+          </div>
+          <!--<div class="col-md-12 row form-group">-->
+          <!--<div class="col-md-5">-->
+          <!--<label>ACTIVE STATUS</label>-->
+          <!--</div>-->
+          <!--<div class="col-md-7">-->
+          <!--<input class="form-control " [(ngModel)]="user.activeStatus" name="activeStatus" type="radio">-->
+          <!--</div>-->
+          <!--</div>-->
+        </div>
+        <div class="col-12 row next-btn-align">
+          <div class="col-6"><button class="btn btn-lg next-btn" id="employmentdetailsbtnpre" name="pre" (click)="applyFormPre('employmentDetails')">PREVIOUS</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="employmentdetailsbtn" name="next" (click)="applyForm('employmentDetails')">NEXT</button></div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 row text-left" id="loandetails" *ngIf="loanDetails">
+        <div class="col-md-12 text-center heading-title"><h5><strong>LOAN DETAILS</strong></h5></div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="loanAmount"  class=" control-label">LOAN AMOUNT</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #loanAmount = "ngModel" id="loanAmount" [(ngModel)]="user.loanAmount" name="loanAmount" type="text" required>
+            </div>
+            <div *ngIf="loanAmount.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "loanAmount.errors?.required">
+                Loan amount is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="deadlineDate"  class=" control-label">DEADLINE DATE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #deadlineDate = "ngModel" id="deadlineDate" [(ngModel)]="user.deadlineDate" name="deadlineDate" type="date" required>
+            </div>
+            <div *ngIf="deadlineDate.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "deadlineDate.errors?.required">
+                Date is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="loanPurpose"  class=" control-label">LOAN PURPOSE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  #loanPurpose = "ngModel" id="loanPurpose" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.loanPurpose" name="loanPurpose" type="text" required>
+            </div>
+            <div [hidden]="loanPurpose.valid || loanPurpose.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!loanPurpose.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="loanPurpose.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "loanPurpose.errors?.required">
+                Purpose is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 row next-btn-align">
+          <div class="col-6"><button class="btn btn-lg next-btn" id="loandetailsbtnpre" name="pre" (click)="applyFormPre('loanDetails')">PREVIOUS</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="loandetailsbtn" name="next" (click)="applyForm('loanDetails')">NEXT</button></div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 row text-left" id="paymentdetails" *ngIf="paymentDetails">
+        <div class="col-md-12 text-center heading-title"><h5><strong>PAYMENT DETAILS</strong></h5></div>
+        <div class="col-md-6 row">
+
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="paymentFrequency"  class=" control-label">PAYMENT FREQUENCY</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control"  #paymentFrequency = "ngModel" id="paymentFrequency"  [(ngModel)]="user.paymentFrequency" name="paymentFrequency" type="text" required>
+            </div>
+            <div *ngIf="paymentFrequency.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "paymentFrequency.errors?.required">
+                Payment frequency is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="sortCode"  class=" control-label">SORT CODE</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #sortCode = "ngModel" id="sortCode"  [(ngModel)]="user.sortCode" name="sortCode" type="number" required>
+            </div>
+            <div *ngIf="sortCode.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "sortCode.errors?.required">
+                Sort code is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="bankAccount"  class=" control-label">BANK ACCOUNT</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #bankAccount = "ngModel" id="bankAccount" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.bankAccount" name="bankAccount" type="text" required>
+            </div>
+            <div [hidden]="bankAccount.valid || bankAccount.pristine"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div [hidden]="!bankAccount.hasError('pattern')">Only alphabetsallowed</div>
+            </div>
+            <div *ngIf="bankAccount.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "bankAccount.errors?.required">
+                Bank account is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="monthlyExpenses"  class=" control-label">MONTHLY EXPENSES</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #monthlyExpenses = "ngModel" id="monthlyExpenses" [(ngModel)]="user.monthlyExpenses" name="monthlyExpenses" type="number" required>
+            </div>
+            <div *ngIf="monthlyExpenses.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "monthlyExpenses.errors?.required">
+                Month expenses is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="secondPayDay"  class=" control-label">SECOND PAY DAY</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #secondPayDay = "ngModel" id="secondPayDay" [(ngModel)]="user.secondPayDay" name="secondPayDay" type="date" required>
+            </div>
+            <div *ngIf="secondPayDay.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "secondPayDay.errors?.required">
+                Second pay day is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="nexTPayDay"  class=" control-label">NEXT PAY DAY</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #nexTPayDay = "ngModel" id="nexTPayDay" [(ngModel)]="user.nexTPayDay" name="nexTPayDay" type="date" required>
+            </div>
+            <div *ngIf="nexTPayDay.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "nexTPayDay.errors?.required">
+                Next pay day is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="monthlyIncome1"  class=" control-label">MONTHLY INCOME</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control" #monthlyIncome1 = "ngModel" id="monthlyIncome1" [(ngModel)]="user.monthlyIncome1" name="monthlyIncome1" type="number" required>
+            </div>
+            <div *ngIf="monthlyIncome1.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "monthlyIncome1.errors?.required">
+                Monthly income is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="incomeSource"  class=" control-label">INCOME SOURCE</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control" #incomeSource = "ngModel" id="incomeSource" [(ngModel)]="user.incomeSource" name="incomeSource" type="text" required>
+                <option>JOB</option>
+              </select>
+            </div>
+            <div *ngIf="incomeSource.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "incomeSource.errors?.required">
+                Income source is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="paymentMethod"  class=" control-label">PAYMENT METHOD</label>
+            </div>
+            <div class="col-md-7">
+              <select class="form-control"  #paymentMethod = "ngModel" id="paymentMethod" [(ngModel)]="user.paymentMethod" name="paymentMethod" type="text" required>
+                <option>CHEQUE</option>
+              </select>
+            </div>
+            <div *ngIf="paymentMethod.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "paymentMethod.errors?.required">
+                Method is required
+              </div>
+            </div>
+          </div>
+          <!--<div class="col-md-12 row form-group">-->
+          <!--<div class="col-md-5">-->
+          <!--<label>ACTIVE STATUS:</label>-->
+          <!--</div>-->
+          <!--<div class="col-md-7">-->
+          <!--<input class="form-control " [(ngModel)]="user.activeStatus" name="activeStatus" type="radio">-->
+          <!--</div>-->
+          <!--</div>-->
+        </div>
+        <div class=" col-12 row next-btn-align">
+          <div class="col-6"><button type="button" class="btn btn-lg next-btn " name="pre" (click)="applyFormPre('paymentDetails')">PREVIOUS</button></div>
+          <div class="col-6"><button type="submit" class="btn btn-lg next-btn " name="submit" (click)="openClickSubmit()">SUBMIT</button></div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="container" id="payDayLoanServices" class=" payday-loan-services page-content">
+    <div class="row p-md-4">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-4">
+            <div class="payday-bg"><h4 class="text-white font-weight-bold">Payday Loan Services</h4></div>
+            <br>
+            <p class="text-white">
+              &#8594; 100% Secure<br>
+              &#8594; Fast Approval<br>
+              &#8594; Up to $1000<br>
+              &#8594; Cash Advance<br>
+              &#8594; No Credit Check<br>
+              &#8594; Paperwork: none<br>
+              &#8594; Hassles: none<br>
+            </p>
+            <br>
+
+          </div>
+          <div class="col-md-4 ">
+            <div class="recomended-bg"><h4 class="text-white font-weight-bold">Recomended Reading</h4></div>
+            <br>
+            <div><img src="../../../assets/images/speedloan4/map.jpg" alt="Online Loan Cards" class="map" title="Online Loan Cards Business Locations" border="0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="/application" class="back-to-top"><i class="ion ion-chevron-up"></i></a>
+  <app-footer></app-footer>
+</div>

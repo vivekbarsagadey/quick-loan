@@ -1,0 +1,352 @@
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Nav Menu Essentials */
+.nav-menu, .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+.nav-menu li {
+  position: relative;
+  white-space: nowrap;
+}
+.nav-menu > li {
+  float: left;
+}
+.nav-menu li:hover > ul,
+.nav-menu li.sfHover > ul {
+  display: block;
+}
+.nav-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+.nav-menu ul li {
+  min-width: 180px;
+}
+
+/* Nav Menu Arrows */
+.sf-arrows .sf-with-ul {
+  padding-right: 30px;
+}
+
+.sf-arrows .sf-with-ul:after {
+  content: "\f107";
+  position: absolute;
+  right: 15px;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+}
+.sf-arrows ul .sf-with-ul:after {
+  content: "\f105";
+}
+
+/* Nav Meu Container */
+#nav-menu-container {
+  float: right;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  #nav-menu-container {
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  #nav-menu-container {
+    display: none;
+  }
+}
+
+/* Nav Meu Styling */
+.nav-menu a {
+  padding: 0 8px 10px 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.nav-menu li:hover > a, .nav-menu > .menu-active > a {
+  color: #18d26e;
+}
+
+.nav-menu > li {
+  margin-left: 10px;
+}
+
+.nav-menu ul {
+  margin: 4px 0 0 0;
+  padding: 10px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  background: #fff;
+}
+
+.nav-menu ul li {
+  transition: 0.3s;
+}
+
+.nav-menu ul li a {
+  padding: 10px;
+  color: #333;
+  transition: 0.3s;
+  display: block;
+  font-size: 13px;
+  text-transform: none;
+}
+
+.nav-menu ul li:hover > a {
+  color: #18d26e;
+}
+
+.nav-menu ul ul {
+  margin: 0;
+}
+
+/* Mobile Nav Toggle */
+#mobile-nav-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  margin: 20px 20px 0 0;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;
+}
+
+#mobile-nav-toggle i {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #mobile-nav-toggle {
+    display: inline;
+  }
+}
+
+/* Mobile Nav Styling */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.8);
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: 0.4s;
+}
+
+#mobile-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#mobile-nav ul li {
+  position: relative;
+}
+
+#mobile-nav ul li a {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  overflow: hidden;
+  padding: 10px 22px 10px 15px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  outline: none;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
+/*---------------------------------------------------*/
+
+
+.cmsmasters_row .cmsmasters_row_outer_parent {
+  padding: .1px 0;
+  z-index: 2;
+}
+#cmsmasters_heading_5b3394f3c2b88 .cmsmasters_heading, .cmsmasters_heading a {
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  color: #ffffff;
+}
+
+#cmsmasters_heading_5b3394f3c2b88 .cmsmasters_heading {
+  text-align: left;
+}
+.cmsmasters_heading_wrap .cmsmasters_heading {
+  display: inline-block;
+  margin: 0;
+}
+#cmsmasters_heading_5b3394f3c2c60 .cmsmasters_heading, #cmsmasters_heading_5b3394f3c2c60 .cmsmasters_heading a {
+  font-size: 72px;
+  line-height: 84px;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+}
+
+#cmsmasters_heading_5b3394f3c2c60 .cmsmasters_heading {
+  text-align: left;
+}
+.cmsmasters_heading_wrap .cmsmasters_heading {
+  display: inline-block;
+  margin: 0;
+}
+#cmsmasters_heading_5b3394f3c2d2e {
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.cmsmasters_heading_wrap {
+  position: relative;
+  overflow: hidden;
+}
+#cmsmasters_heading_5b3394f3c2d2e .cmsmasters_heading, #cmsmasters_heading_5b3394f3c2d2e .cmsmasters_heading a {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: normal;
+  font-style: normal;
+  color: #e5f44e;
+}
+.cmsmasters_heading {
+  text-align: left;
+}
+.cmsmasters_heading_wrap .cmsmasters_heading {
+  display: inline-block;
+  margin: 0;
+}
+
+/*select, fieldset, table, code, fieldset legend, .img_placeholder_small, .cmsmasters_featured_block, textarea, input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]), .cmsmasters_icon_box.cmsmasters_icon_box_top, .cmsmasters_icon_box.cmsmasters_icon_box_left, .cmsmasters_icon_list_items.cmsmasters_color_type_icon .cmsmasters_icon_list_icon, .gallery-item .gallery-icon, .cmsmasters_post_masonry .cmsmasters_post_cont, .post_nav, .cmsmasters_stats.stats_mode_bars.stats_type_horizontal .cmsmasters_stat_wrap:before, .cmsmasters_stats.stats_mode_bars.stats_type_vertical .cmsmasters_stat_wrap .cmsmasters_stat_inner, .cmsmasters_project_grid .project_outer .project_inner, .cmsmasters_items_filter_list li a, .cmsmasters_comment_item .cmsmasters_comment_item_content, .cmsmasters_single_slider .cmsmasters_single_slider_item_inner, .cmsmasters_post_timeline .cmsmasters_post_cont_inner, .cmsmasters_profile_horizontal .profile_inner, .gallery-item .gallery-caption, .cmsmasters_img.with_caption, .cmsmasters_wrap_pagination, .cmsmasters_slider_project_inner, .cmsmasters_table_row_footer, .cmsmasters_slider_post_inner, .widget_nav_menu .menu li a, .wp-caption .wp-caption-text, .cmsmasters_post_default.sticky .cmsmasters_sticky, .cmsmasters_tabs .cmsmasters_tabs_list_item, .cmsmasters_toggles.toggles_mode_accordion .cmsmasters_toggle_title, .cmsmasters_toggles.toggles_mode_toggle .cmsmasters_toggle_inner, .cmsmasters_quotes_grid .cmsmasters_quote, .cmsmasters_pricing_item .cmsmasters_pricing_item_inner, .cmsmasters_notice.cmsmasters_notice_custom, #fbuilder input[type=radio] + .field_before:before, #fbuilder input[type=checkbox] + .field_before:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=checkbox] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=checkbox] + label:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=radio] + span.wpcf7-list-item-label:before, .cmsmasters-form-builder .check_parent input[type=radio] + label:before {*/
+  /*background-color: #f6f6f6;*/
+/*}*/
+
+input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]), textarea, select, option {
+  /*padding: 10px 20px;*/
+  max-width: 100%;
+  /*border-width: 0;*/
+  /*border-style: solid;*/
+  /*outline: none;*/
+}
+
+body, input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]):focus, .page #fbuilder .codepeoplecalculatedfield, .post_nav > span a, .color_2, .cmsmasters_archive_type .cmsmasters_archive_item_date_wrap:before, .img_placeholder:before, .cmsmasters_notice .notice_close, .cmsmasters_comment_item .cmsmasters_comment_item_date, .cmsmasters_wrap_pagination ul li, .cmsmasters_wrap_pagination ul li a, .cmsmasters_comments > a, .cmsmasters_likes > a, .cmsmasters_comments > a:hover, .cmsmasters_likes > a:hover, textarea:focus, select, option {
+  color: #878787;
+}
+.faq a{
+  color: #878787;
+}
+.cmsmasters_featured_block.cmsmasters_customizing .home-page-btn {
+  width: 100%;
+}
+.cmsmasters_button span {
+  position: relative;
+  z-index: 10;
+}
+.home-page-btn {
+  font-size: 14px;
+  line-height: 49px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+}
+.home-page-btn {
+  display: inline-block;
+  padding: 0 33px;
+  position: relative;
+  border-width: 0;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+}
+.cmsmasters_customizing.home-page-btn {
+  margin: 20px 20px 0 0;
+  text-decoration: none;
+}
+a:hover, a:focus {
+ text-decoration: none;
+}
+mark, form .formError .formErrorContent, .cmsmasters_icon_box.cmsmasters_icon_box_left_top:before, .cmsmasters_icon_box.cmsmasters_icon_box_left:before, .cmsmasters_icon_box.cmsmasters_icon_box_top:before, .cmsmasters_icon_list_items.cmsmasters_color_type_border .cmsmasters_icon_list_item .cmsmasters_icon_list_icon:before, .cmsmasters_stats.stats_mode_bars.stats_type_vertical .cmsmasters_stat_wrap .cmsmasters_stat .cmsmasters_stat_inner, .cmsmasters_post_date, .cmsmasters_slider_post_date, .home-page-btn, .button, input[type=submit], input[type=button], button, .page #fbuilder fieldset .pbNext, .page #fbuilder fieldset .pbPrevious, .page #fbuilder fieldset .reset-button, .page #fbuilder fieldset .pbNext:hover, .page #fbuilder fieldset .pbPrevious:hover, .page #fbuilder fieldset .reset-button:hover, .widget .home-page-btn, .widget .button, .widget input[type=submit], .widget input[type=button], .widget button, .cmsmasters_button:hover, .button:hover, input[type=submit]:hover, input[type=button]:hover, button:hover, .widget .cmsmasters_button:hover, .widget .button:hover, .widget input[type=submit]:hover, .widget input[type=button]:hover, .widget button:hover, .cmsmasters_pricing_table .pricing_title, .cmsmasters_pricing_table .cmsmasters_price_wrap, .cmsmasters_social_icon:hover, .cmsmasters_items_sort_block .button, .cmsmasters_content_slider .owl-buttons > div, .cmsmasters_items_filter_list li a:hover, .cmsmasters_items_filter_list li.current a, .cmsmasters_pricing_table .pricing_best .feature_list, .cmsmasters_stats.stats_mode_bars.stats_type_vertical .cmsmasters_stat_wrap .cmsmasters_stat .cmsmasters_bars_custom_color:before, .cmsmasters_stats.stats_mode_bars.stats_type_vertical .cmsmasters_stat_wrap .cmsmasters_bars_custom_color .cmsmasters_stat_counter_wrap, .pricing_best .cmsmasters_pricing_but_wrap .cmsmasters_button:hover, .cmsmasters_project_grid .project_outer:hover .cmsmasters_project_header a, .cmsmasters_project_grid .project_outer:hover .cmsmasters_project_category, .cmsmasters_project_grid .project_outer:hover .cmsmasters_project_category a, .cmsmasters_project_grid .project_outer:hover .cmsmasters_project_content, .cmsmasters_project_grid .project_outer:hover .cmsmasters_comments a, .cmsmasters_project_grid .project_outer:hover .cmsmasters_likes a, .cmsmasters_project_grid .project_outer:hover .cmsmasters_comments a:before, .cmsmasters_project_grid .project_outer:hover .cmsmasters_likes a:before, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_slider_project_header a, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_slider_project_category, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_slider_project_category a, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_slider_project_content, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_comments a, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_likes a, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_comments a:before, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_likes a:before, .cmsmasters_profile_horizontal .profile_outer:hover .cmsmasters_profile_title, .cmsmasters_profile_horizontal .profile_outer:hover .cmsmasters_profile_title a, .cmsmasters_profile_horizontal .profile_outer:hover .cmsmasters_profile_subtitle, .cmsmasters_profile_horizontal .profile_outer:hover .cmsmasters_profile_content, .cmsmasters_project_puzzle .cmsmasters_project_header a, .cmsmasters_project_puzzle .cmsmasters_project_category, .cmsmasters_project_puzzle .cmsmasters_project_category a, .cmsmasters_project_puzzle .cmsmasters_likes a, .cmsmasters_project_puzzle .cmsmasters_comments a, .cmsmasters_project_puzzle .cmsmasters_likes a:before, .cmsmasters_project_puzzle .cmsmasters_comments a:before, .cmsmasters_post_default .cmsmasters_post_comments > a, .cmsmasters_post_default .cmsmasters_post_likes > a, .cmsmasters_post_default .cmsmasters_post_comments > a:before, .cmsmasters_post_default .cmsmasters_post_likes > a:before, .cmsmasters_post_default .cmsmasters_post_comments > a:hover, .cmsmasters_post_default .cmsmasters_post_likes > a:hover, .cmsmasters_open_post .cmsmasters_post_comments > a, .cmsmasters_open_post .cmsmasters_post_likes > a, .cmsmasters_open_post .cmsmasters_post_comments > a:before, .cmsmasters_open_post .cmsmasters_post_likes > a:before, .cmsmasters_open_post .cmsmasters_post_comments > a:hover, .cmsmasters_open_post .cmsmasters_post_likes > a:hover, .cmsmasters_open_post .cmsmasters_post_tags > a, .profile_social_icons_list .cmsmasters_social_icon:hover, .widget_tag_cloud a, .error .error_title, .cmsmasters_breadcrumbs_inner, .cmsmasters_breadcrumbs_inner a, .cmsmasters_breadcrumbs_inner a:hover, .headline_text .entry-title, .widget_tag_cloud a:hover, .cmsmasters_notice .notice_close:hover, .cmsmasters_table_row_header th, .cmsmasters_social_icon {
+  color: #ffffff;
+  border-color: black;
+}
+#slide_top, mark, .cmsmasters_dropcap.type2, .cmsmasters_icon_box.cmsmasters_icon_box_top:before, .cmsmasters_icon_box.cmsmasters_icon_box_left_top:before, .cmsmasters_icon_box.cmsmasters_icon_box_left:before, .cmsmasters_icon_list_items.cmsmasters_color_type_bg .cmsmasters_icon_list_item .cmsmasters_icon_list_icon, .cmsmasters_icon_list_items.cmsmasters_color_type_icon .cmsmasters_icon_list_item:hover .cmsmasters_icon_list_icon, .cmsmasters_post_date, .comment-form .form-submit input[type=submit]:hover, .cmsmasters_slider_post_date, .home-page-btn, .button, input[type=submit], input[type=button], .page #fbuilder fieldset .pbNext, .page #fbuilder fieldset .pbPrevious, .page #fbuilder fieldset .reset-button, .widget_tag_cloud a, .cmsmasters_post_timeline:hover .cmsmasters_post_date, .cmsmasters_profile_horizontal .profile_outer:hover .profile_inner, .cmsmasters_img_rollover .cmsmasters_open_post_link:hover > span:after, .cmsmasters_img_rollover .cmsmasters_open_post_link:hover > span:before, .cmsmasters_slider_project .cmsmasters_slider_project_outer:hover .cmsmasters_slider_project_inner, .cmsmasters_project_grid .project_outer:hover .project_inner, .cmsmasters_items_sort_block .button, .owl-pagination .owl-page:hover, .owl-pagination .owl-page.active, .cmsmasters_quotes_slider_wrap .owl-pagination .owl-page:hover, .cmsmasters_quotes_slider_wrap .owl-pagination .owl-page.active, .cmsmasters_pricing_item.pricing_best .cmsmasters_pricing_item_inner, .cmsmasters_stats.stats_mode_bars .cmsmasters_stat_wrap .cmsmasters_stat .cmsmasters_stat_inner, .cmsmasters_counters .cmsmasters_counter_wrap .cmsmasters_counter .cmsmasters_counter_inner:before, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=checkbox] + span.wpcf7-list-item-label:after, .cmsmasters-form-builder .check_parent input[type=checkbox] + label:after, .wpcf7 form.wpcf7-form span.wpcf7-list-item input[type=radio] + span.wpcf7-list-item-label:after, .cmsmasters-form-builder .check_parent input[type=radio] + label:after, #fbuilder input[type=radio] + .field_before:after, #fbuilder input[type=checkbox] + .field_before:after, .cmsmasters_open_post .cmsmasters_post_tags > a, .cmsmasters_social_icon {
+  background-color:  #18d26e
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, figure, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  outline: none;
+  font-family: 'Raleway', sans-serif !important;
+}
+
+body{
+  overflow-x: hidden;
+}
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: #18d26e;
+  color: #fff;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.back-to-top i {
+  padding-top: 12px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 15px;
+  }
+}
+
+/*
+input, textarea {
+  background-color:transparent;
+  border: 0px solid;
+}
+input:focus {
+  outline:none;
+}
+*/

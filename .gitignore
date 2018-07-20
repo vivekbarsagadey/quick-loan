@@ -9,3 +9,4 @@ quick-loan-services/.settings
 /quick-loan-services/target
 /quick-loan-services/bin
 *.iml
+.idea/

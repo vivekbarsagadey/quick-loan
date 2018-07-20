@@ -1,0 +1,84 @@
+
+/*.background{*/
+  /*background-color: #B6D8F0; margin: 5px; padding-top: 5px;*/
+/*}*/
+/*.about-bg{*/
+  /*background-color: darkslateblue*/
+/*}*/
+/*.aboutus-colo{*/
+  /*color: white*/
+/*}*/
+/*.payday-bg{*/
+  /*background-color: darkslateblue*/
+/*}*/
+/*.payloan-color{*/
+  /*color: white*/
+/*}*/
+/*.recomended-bg{*/
+  /*background-color: darkslateblue*/
+/*}*/
+/*.recomended-color{*/
+  /*color: white*/
+/*}*/
+/*.about strong, ul li, p{*/
+  /*color: black;*/
+  /*line-height: 1.5;*/
+/*}*/
+.about-speed-loan {
+  background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/04/about-header.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.speed-loan{
+  margin-top: 18%;
+
+}
+.heading-about-speedy-loan{
+  font-size: 53px;
+}
+/*.this-is-way{*/
+  /*margin-left: 25px;*/
+/*}*/
+
+/*-------------------------------second div-------------------------*/
+.welcome-to-speedloan{
+  margin-top: 10%;
+  margin-left: 30%;
+  /*color:#212121;*/
+}
+.welcome{
+  margin-left: 4%;
+}
+.heading-we-offer
+{
+  margin-left: 6%;
+  margin-top: 3%;
+  color:#18d26e;
+}
+
+
+
+/*-----------------------------------------third div------------------------*/
+.page-content,welcome-to-speedloan{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  font-style: normal;
+  /*color:#212121*/
+}
+p, ul, li{
+  color:#878787;
+}
+p{
+  margin-top: 10px;
+}
+
+.payDay-loan-services {
+  background-color: #18d26e;
+  /*background-image: url(http://payday-loans.cmsmasters.net/wp-content/uploads/2015/04/green-poly-background.jpg);*/
+  /*background-position: center center;*/
+}
+
+.page-content H4{
+  color: #18d26e;
+}
