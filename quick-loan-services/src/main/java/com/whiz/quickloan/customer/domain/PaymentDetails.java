@@ -34,4 +34,17 @@ public class PaymentDetails extends BaseEntityAudit{
     @JoinColumn(name = "customer_id", nullable = false)
     @JsonIgnore
     private Customer customer;
+
+	public void updatePaymentDetails(PaymentDetails paymentDetails) {
+
+		this.paymentFrequency = paymentDetails.paymentFrequency;
+		this.sortCode = paymentDetails.sortCode;
+		this.bankAccount = paymentDetails.bankAccount;
+		this.monthlyExpenses = paymentDetails.monthlyExpenses;
+		this.nexTPayDay = paymentDetails.nexTPayDay;
+		this.secondPayDay = paymentDetails.secondPayDay;
+		this.monthlyIncome = paymentDetails.monthlyIncome;
+		this.incomeSource = paymentDetails.incomeSource;
+		this.paymentMethod = paymentDetails.paymentMethod;
+	}
 }

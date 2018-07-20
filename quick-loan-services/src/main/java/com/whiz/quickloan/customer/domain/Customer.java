@@ -7,6 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
 import com.whiz.quickloan.core.domain.BaseEntityAudit;
+import com.whiz.quickloan.user.domain.User;
 
 import lombok.Data;
 
@@ -16,6 +17,9 @@ public class Customer extends BaseEntityAudit{
 	
 	@Column
 	private int score;
+	
+	/*@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private User user;*/
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
 	private UserDetails userDetails;
@@ -37,4 +41,19 @@ public class Customer extends BaseEntityAudit{
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
 	private BankDetails bankDetails;
+	
+	
+	public void setCustomer(Customer customer) {
+		
+		this.addressDetails.updateAddressDetails(customer.addressDetails);
+		this.contactDetails.updateContactDetails(customer.contactDetails);
+		this.bankDetails.updateBankDetails(customer.bankDetails);
+		this.employmentDetails.updateEmploymentDetails(customer.employmentDetails);
+		this.loanDetails.updateLoanDetails(customer.loanDetails);
+		this.paymentDetails.updatePaymentDetails(customer.paymentDetails);
+		this.userDetails.updateUserDetails(customer.userDetails);
+		
+	}
+	
+	
 }

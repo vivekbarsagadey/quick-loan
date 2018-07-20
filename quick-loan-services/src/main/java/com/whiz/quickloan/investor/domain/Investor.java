@@ -9,6 +9,7 @@ import javax.persistence.OneToOne;
 
 import com.whiz.quickloan.core.domain.BaseEntityAudit;
 
+import io.swagger.models.auth.In;
 import lombok.Data;
 
 @Entity
@@ -35,5 +36,18 @@ public class Investor extends BaseEntityAudit{
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "investor")
 	private PaymentDetails paymentDetails;
+
+	public void updateInvestor(Investor investor) {
+
+		this.companyName = investor.companyName;
+		this.status = investor.status;
+		this.totalLoanLent = investor.totalLoanLent;
+		this.loanRange = investor.loanRange;
+		
+		this.addressDetails.updateAddressDetails(investor.addressDetails);
+		this.bankDetails.updateBankDetails(investor.bankDetails);
+		this.contactDetails.updateContactDetails(investor.contactDetails);
+		this.paymentDetails.updatePaymentDetails(investor.paymentDetails);
+	}
 		
 }

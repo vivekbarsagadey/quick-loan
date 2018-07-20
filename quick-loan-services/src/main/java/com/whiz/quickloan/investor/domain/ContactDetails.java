@@ -28,4 +28,15 @@ public class ContactDetails extends BaseEntityAudit{
     @JoinColumn(name = "investor_id", nullable = false)
     @JsonIgnore
     private Investor investor;
+
+	public void updateContactDetails(ContactDetails contactDetails) {
+
+		this.companyWebsite = contactDetails.companyWebsite;
+		this.companyEmailId = contactDetails.companyEmailId;
+		this.WorkPhone1 = contactDetails.WorkPhone1;
+		this.WorkPhone2 = contactDetails.WorkPhone2;
+		this.CellPhone1 = contactDetails.CellPhone1;
+		this.CellPhone2 = contactDetails.CellPhone2;
+		this.activeStatus = contactDetails.activeStatus;
+	}
 }

@@ -27,16 +27,28 @@ public class UserDetails extends BaseEntityAudit {
 	private State licState;
 	private LocalDate licIssueDate;
 	private LocalDate licExpirationDate;
-	
 	@Enumerated(EnumType.STRING)
 	private MaritalStatus maritalStatus;
-
 	@Enumerated(EnumType.STRING)
 	private BestTimeToCall bestTimeToCall;
-	
 	
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)
     @JsonIgnore
     private Customer customer;
+
+
+	public void updateUserDetails(UserDetails userDetails) {
+
+		this.firstName = userDetails.firstName;
+		this.middleName = userDetails.middleName;
+		this.lastName = userDetails.lastName;
+		this.DoB = userDetails.DoB;
+		this.licenseNumber = userDetails.licenseNumber;
+		this.licState = userDetails.licState;
+		this.licIssueDate = userDetails.licIssueDate;
+		this.licExpirationDate = userDetails.licExpirationDate;
+		this.maritalStatus = userDetails.maritalStatus;
+		this.bestTimeToCall = userDetails.bestTimeToCall;
+	}
 }

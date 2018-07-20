@@ -32,4 +32,16 @@ public class EmploymentDetails extends BaseEntityAudit{
     @JoinColumn(name = "customer_id", nullable = false)
     @JsonIgnore
     private Customer customer;
+
+
+	public void updateEmploymentDetails(EmploymentDetails employmentDetails) {
+
+		this.companyName = employmentDetails.companyName;
+		this.incomeType = employmentDetails.incomeType;
+		this.employerName = employmentDetails.employerName;
+		this.currentEmployedDuration = employmentDetails.currentEmployedDuration;
+		this.companyAddress = employmentDetails.companyAddress;
+		this.jobTitle = employmentDetails.companyName;
+		this.employerPhone = employmentDetails.employerPhone;
+	}
 }

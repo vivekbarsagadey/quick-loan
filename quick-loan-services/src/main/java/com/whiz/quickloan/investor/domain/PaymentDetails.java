@@ -27,4 +27,10 @@ public class PaymentDetails extends BaseEntityAudit{
     @JoinColumn(name = "investor_id", nullable = false)
     @JsonIgnore
     private Investor investor;
+
+	public void updatePaymentDetails(PaymentDetails paymentDetails) {
+
+		this.rateOfInterest = paymentDetails.rateOfInterest;
+		this.activeStatus = paymentDetails.activeStatus;
+	}
 }

@@ -32,4 +32,16 @@ public class BankDetails extends BaseEntityAudit{
     @JoinColumn(name = "investor_id", nullable = false)
 	@JsonIgnore
 	private Investor investor;
+
+	public void updateBankDetails(BankDetails bankDetails) {
+
+		this.abaOrRoutingNumber = bankDetails.abaOrRoutingNumber;
+		this.accountNumber = bankDetails.accountNumber;
+		this.accountType = bankDetails.accountType;
+		this.bankName = bankDetails.bankName;
+		this.bankPhone = bankDetails.bankPhone;
+		this.durationOfBankAccount = bankDetails.durationOfBankAccount;
+		this.activeStatus = bankDetails.activeStatus;
+		
+	}
 }

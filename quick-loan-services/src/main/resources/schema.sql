@@ -1,5 +1,3 @@
---liquibase formatted sql
---changeset fabio.barbosa:001.1
 
 CREATE TABLE `address_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -245,7 +243,7 @@ CREATE TABLE `user` (
 
 
 CREATE TABLE `user_role` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -274,7 +272,7 @@ CREATE TABLE `user_details` (
 
 
 CREATE TABLE `user_roles` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `roles_id` bigint(20) NOT NULL,
   UNIQUE KEY `UK_amwlmdeik2qdnksxgd566knop` (`roles_id`),
   KEY `FK55itppkw3i07do3h7qoclqd4k` (`user_id`)
@@ -299,7 +297,6 @@ ALTER TABLE LOAN_DETAILS add constraint fkstim55vaton2j1s2kf8o0dy4y foreign key 
 
 ALTER TABLE PAYMENT_DETAILS add constraint fkixvxf0b21jorw2axfhbrqyiwy foreign key (customer_id) references customer;
  
-CREATE SEQUENCE HIBERNATE_SEQUENCE;
 
 
 

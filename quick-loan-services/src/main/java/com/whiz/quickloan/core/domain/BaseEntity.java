@@ -17,6 +17,6 @@ public abstract class BaseEntity implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(notes = "The database generated ID")
-	private Integer id;
+	private Integer id=0;
 
 }

@@ -24,4 +24,11 @@ public class LoanDetails extends BaseEntityAudit{
     @JoinColumn(name = "customer_id", nullable = false)
     @JsonIgnore
     private Customer customer;
+
+	public void updateLoanDetails(LoanDetails loanDetails) {
+
+		this.loanAmount = loanDetails.loanAmount;
+		this.loanPurpose = loanDetails.loanPurpose;
+		this.deadlineDate = loanDetails.deadlineDate;
+	}
 }

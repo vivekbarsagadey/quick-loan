@@ -37,4 +37,21 @@ public class ContactDetails extends BaseEntityAudit{
     @JoinColumn(name = "customer_id", nullable = false)
     @JsonIgnore
     private Customer customer;
+
+	public void updateContactDetails(ContactDetails contactDetails) {
+
+		this.emailId = contactDetails.emailId;
+		this.confirmEmail = contactDetails.confirmEmail;
+		this.password = contactDetails.password;
+		this.confirmPassword = contactDetails.confirmPassword;
+		this.workPhone = contactDetails.workPhone;
+		this.homePhone1 = contactDetails.homePhone1;
+		this.homePhone2 = contactDetails.homePhone2;
+		this.homePhone3 = contactDetails.homePhone3;
+		this.cellPhone1 = contactDetails.cellPhone1;
+		this.cellPhone2 = contactDetails.emailId;
+		this.cellPhone3 = contactDetails.cellPhone3;
+		this.residentialStatus = contactDetails.residentialStatus;
+		this.dateOfMove = contactDetails.dateOfMove;
+	}
 }

@@ -27,5 +27,16 @@ public class Application extends BaseEntityAudit{
 	public Application(int id) {
 		super();
 		this.setId(id);	
+	}
+
+	public void updateApplication(Application application) {
+		
+		this.customerId = application.customerId;
+		this.investorId = application.investorId;
+		this.applicationDate = application.applicationDate;
+		this.loanAmount = application.loanAmount;
+		this.status = application.status;
+		this.state = application.state;
+		this.remarks = application.remarks;
 	}	
 }

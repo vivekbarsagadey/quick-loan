@@ -32,4 +32,15 @@ public class AddressDetails extends BaseEntityAudit{
     @JoinColumn(name = "investor_id", nullable = false)
     @JsonIgnore
     private Investor investor;
+
+	public void updateAddressDetails(AddressDetails addressDetails) {
+
+		this.companyAddress = addressDetails.companyAddress;
+		this.companyZipCode = addressDetails.companyZipCode;
+		this.companyCity = addressDetails.companyCity;
+		this.companyState = addressDetails.companyState;
+		this.companyCountry = addressDetails.companyCountry;
+		this.activeStatus = addressDetails.activeStatus;
+		
+	}
 }
