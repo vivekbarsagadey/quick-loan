@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.whiz.quickloan.ledger.LedgerConstant;
-import com.whiz.quickloan.ledger.domain.Application;
+import com.whiz.quickloan.ledger.domain.Application;;
 
 @Service
 public class LedgerApplicationServices {

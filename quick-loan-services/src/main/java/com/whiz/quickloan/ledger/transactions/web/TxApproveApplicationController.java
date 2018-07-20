@@ -3,6 +3,7 @@ package com.whiz.quickloan.ledger.transactions.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/ledger")
+@CrossOrigin
 public class TxApproveApplicationController {
 	
 	@Autowired
@@ -31,8 +33,11 @@ public class TxApproveApplicationController {
 	@ApiOperation(value = "approve application")
 	@RequestMapping(value = "/application/approve/{id}", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity approve(@PathVariable Integer id) {
-		applicationsRepository.findById(id).ifPresent(consumer -> {
-			ledgerTxApproveApplicationServices.approveApplication(TxApproveApplicationMapper.map(consumer));
+		ResponseEntity responseEntity = new ResponseEntity("Application Approved successfully", HttpStatus.OK);
+		applicationsRepository.findById(id).ifPresent(application -> {
+			application.setState("APPROVED");
+			applicationsRepository.save(application);
+			ledgerTxApproveApplicationServices.approveApplication(TxApproveApplicationMapper.map(application));
 			
 		});
 		
@@ -41,6 +46,6 @@ public class TxApproveApplicationController {
 		
 		ledgerTxApproveApplicationServices.approveApplication(TxApproveApplicationMapper.map(c));*/
 		
-		return new ResponseEntity("Application Approved successfully", HttpStatus.OK);
+		return responseEntity;
 	}
 }

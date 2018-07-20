@@ -43,7 +43,7 @@ public class LedgerCustomerServices {
 			restTemplate.setInterceptors(interceptors);
 */
 			//RestTemplate restTemplate = new RestTemplate();
-			responseCustomer  =  restTemplate.postForEntity(LedgerConstant.API_URL + "Customer",customer,Customer.class);
+			responseCustomer  =  restTemplate.postForEntity(LedgerConstant.API_URL + "Customer", customer, Customer.class);
 
 		} catch (Exception e) {
 			e.printStackTrace();

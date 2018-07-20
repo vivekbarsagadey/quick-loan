@@ -15,9 +15,10 @@ import lombok.Data;
 @Entity	
 @Data
 public class LoanDetails extends BaseEntityAudit{
+
 	private int loanAmount;
 	private String loanPurpose;
-	LocalDate deadlineDate;
+	private LocalDate deadlineDate;
     
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)

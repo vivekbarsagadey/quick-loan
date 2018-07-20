@@ -9,9 +9,8 @@ public final class TxRejectApplicationMapper {
 	public final static TxRejectApplication map(Application source ) {
 		TxRejectApplication dest = new TxRejectApplication();
 		dest.set$class(LedgerConstant.TRANSACTION_NS + ".rejectApplication");
-		dest.setApplication(LedgerConstant.ASSET_NS+".Applications#"+source.getId());
-		//dest.setRemarks(source.getRemarks());
-		dest.setRemarks(LedgerConstant.ASSET_NS+".Applications#"+source.getRemarks());
+		dest.setApplication(LedgerConstant.ASSET_NS+".Application#"+source.getId());
+		dest.setRemarks(source.getRemarks());
 		return dest;
 	}
 }

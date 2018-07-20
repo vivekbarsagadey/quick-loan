@@ -10,32 +10,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.whiz.quickloan.application.services.ApplicationsRepository;
-import com.whiz.quickloan.investor.services.InvestorRepository;
-import com.whiz.quickloan.ledger.mapper.TxLoanLentMapper;
-import com.whiz.quickloan.ledger.transactions.services.LedgerTxLoanLentServices;
+import com.whiz.quickloan.ledger.mapper.TxRequestInvestorMapper;
+import com.whiz.quickloan.ledger.transactions.services.LedgerTxRequestInvestorServices;
 
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("api/ledger")
+@RequestMapping("/api/ledger")
 @CrossOrigin
-public class TxLoanLentController {
+public class TxRequestInvestorController {
 
 	@Autowired
-	LedgerTxLoanLentServices ledgerTxLoanLentServices;
+	LedgerTxRequestInvestorServices ledgerTxRequestInvestorServices;
 	
 	@Autowired
 	private ApplicationsRepository applicationsRepository;
 	
-	@ApiOperation(value = "loan lent")
-	@RequestMapping(value = "/application/loanlent/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity approve(@PathVariable Integer id) {
-		applicationsRepository.findById(id).ifPresent(application -> {
-			ledgerTxLoanLentServices.loanLent(TxLoanLentMapper.map(application));
+	@ApiOperation(value = "request Investor")
+	@RequestMapping(value = "/application/request/{id}", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity requestInvestor(@PathVariable Integer id) {
+		applicationsRepository.findById(id).ifPresent(consumer -> {
+			ledgerTxRequestInvestorServices.requestInvestor(consumer);
 			
 		});
 		
-		
-		return new ResponseEntity("Loan Lent successful", HttpStatus.OK);
+		return new ResponseEntity("Investor Requested", HttpStatus.OK);
 	}
 }

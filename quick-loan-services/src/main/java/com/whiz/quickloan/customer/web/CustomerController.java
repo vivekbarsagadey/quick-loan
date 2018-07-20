@@ -19,6 +19,7 @@ import io.swagger.models.Model;
 
 @RestController
 @RequestMapping("/api/customer")
+@CrossOrigin
 public class CustomerController {
 
 	@Autowired
@@ -42,9 +43,11 @@ public class CustomerController {
 	}
 
 	@ApiOperation(value = "Add a Customer")
-	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
 	public ResponseEntity saveCustomer(@RequestBody Customer customer) {
-		customer.setBestTimeToCall(BestTimeToCall.MORNING);
+		
+		
+		customer.getUserDetails().setCustomer(customer);
 		customer.getAddressDetails().setCustomer(customer);
 		customer.getContactDetails().setCustomer(customer);
 		customer.getEmploymentDetails().setCustomer(customer);
@@ -58,6 +61,7 @@ public class CustomerController {
 		
 		return new ResponseEntity(response, HttpStatus.OK);
 	}
+
 
 	@ApiOperation(value = "Update a Customer")
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json")

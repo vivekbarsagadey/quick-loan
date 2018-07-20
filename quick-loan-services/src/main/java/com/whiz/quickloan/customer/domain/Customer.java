@@ -1,11 +1,8 @@
 package com.whiz.quickloan.customer.domain;
 
-import java.time.LocalDate;
-
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
@@ -16,16 +13,12 @@ import lombok.Data;
 @Entity
 @Data
 public class Customer extends BaseEntityAudit{
-	private String firstName;
-	private String lastName;
-	private LocalDate DoB;
-	private Boolean isUsCitizen;
-	private Boolean isMilitaryDependant;
-	private String licenseNumber;
-	private String status;
-
-	@Enumerated(EnumType.STRING)
-	private BestTimeToCall bestTimeToCall;
+	
+	@Column
+	private int score;
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
+	private UserDetails userDetails;
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
 	private AddressDetails addressDetails;

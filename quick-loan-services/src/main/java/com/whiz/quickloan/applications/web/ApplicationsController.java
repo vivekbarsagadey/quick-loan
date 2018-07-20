@@ -25,6 +25,7 @@ import io.swagger.models.Model;
 
 @RestController
 @RequestMapping("/api/applications")
+@CrossOrigin
 public class ApplicationsController {
 
 	@Autowired
@@ -50,18 +51,26 @@ public class ApplicationsController {
 		Iterable<Application> ApplicationsList = applicationsRepository.findAll();
 		return ApplicationsList;
 	}
+	
+	
+	@RequestMapping(value = "/investor/{invertorId}", method = RequestMethod.GET, produces = "application/json")
+	@CrossOrigin
+	public Iterable<Application> listByInverstor(@PathVariable String invertorId, Model model) {
+		Iterable<Application> ApplicationsList = applicationsRepository.findAll();
+		return ApplicationsList;
+	}
 
 	@ApiOperation(value = "Create an Application")
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity saveApplication(@RequestBody Application application) {
 		application.setApplicationDate(LocalDate.now());
-		application.setCustomerId(0);
-		application.setRemarks("");
+		//application.setCustomerId(0);
+		//application.setRemarks("");
 		
-		applicationsRepository.save(application);
+		Application response = applicationsRepository.save(application);
 		
 		// update ledger data
-		String response = ledgerApplicationServices.saveApplication(ApplicationMapper.map(application));
+		//String response = ledgerApplicationServices.saveApplication(ApplicationMapper.map(application));
 				
 		//return new ResponseEntity("Application saved successfully", HttpStatus.OK);
 		return new ResponseEntity(response, HttpStatus.OK);

@@ -8,3 +8,4 @@ quick-loan-services/.settings
 /quick-loan-services/.project
 /quick-loan-services/target
 /quick-loan-services/bin
+*.iml
