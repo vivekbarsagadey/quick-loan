@@ -6,7 +6,7 @@
             <source>User Management</source>
             <target>Bonjour i18n !</target>
             <context-group purpose="location">
-              <context context-type="sourcefile">app/user-management/user-management.component.ts</context>
+              <context context-type="sourcefile">app/user-management/investor-management.component.ts</context>
               <context context-type="linenumber">6</context>
             </context-group>
           </trans-unit>
@@ -14,7 +14,7 @@
             <source>User Management</source>
             <target>Gestion des utilisateurs</target>
             <context-group purpose="location">
-              <context context-type="sourcefile">app/user-management/user-management.component.ts</context>
+              <context context-type="sourcefile">app/user-management/investor-management.component.ts</context>
               <context context-type="linenumber">6</context>
             </context-group>
           </trans-unit>
@@ -62,7 +62,7 @@
                         <source>First Name</source>
                         <target>Prénom</target>
                         <context-group purpose="location">
-                          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+                          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
                           <context context-type="linenumber">11</context>
                         </context-group>
                       </trans-unit>
@@ -70,7 +70,7 @@
                         <source>Last Name</source>
                         <target>Nom de famille</target>
                         <context-group purpose="location">
-                          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+                          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
                           <context context-type="linenumber">18</context>
                         </context-group>
                       </trans-unit>
@@ -78,7 +78,7 @@
                         <source>Age</source>
                         <target>Age</target>
                         <context-group purpose="location">
-                          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+                          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
                           <context context-type="linenumber">25</context>
                         </context-group>
                       </trans-unit>
@@ -86,7 +86,7 @@
                         <source>Email address</source>
                         <target>Adresse e-mail</target>
                         <context-group purpose="location">
-                          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+                          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
                           <context context-type="linenumber">34</context>
                         </context-group>
                       </trans-unit>
@@ -94,7 +94,7 @@
                         <source>Password</source>
                         <target>Mot de passe</target>
                         <context-group purpose="location">
-                          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+                          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
                           <context context-type="linenumber">45</context>
                         </context-group>
                       </trans-unit>
@@ -102,7 +102,7 @@
                         <source>Submit</source>
                         <target>Soumettre</target>
                         <context-group purpose="location">
-                          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+                          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
                           <context context-type="linenumber">53</context>
                         </context-group>
                       </trans-unit>
@@ -110,7 +110,7 @@
                         <source>Clear</source>
                         <target>Clair</target>
                         <context-group purpose="location">
-                          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+                          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
                           <context context-type="linenumber">54</context>
                         </context-group>
                       </trans-unit>

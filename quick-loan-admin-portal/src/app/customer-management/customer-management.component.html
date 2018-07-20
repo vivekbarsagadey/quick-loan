@@ -1,0 +1,105 @@
+<app-sidebar></app-sidebar>
+<div class="main-panel">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+        <div class="row">
+          <div class="col-md-10">
+            <a class="navbar-brand" href="#">Customers</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 text-md-right">
+        <li class="dropdown text-md-right"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+          </ul>
+        </li>
+      </div>
+      <!--<div class="dropdown">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Action
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div>-->
+    </div>
+  </nav>
+
+  <div >
+
+    <!--<div class="selectappStatusdiv">
+    <label class="selectLabelSatus"   for="applicationStatus">Application Status</label>
+    <select name="applicationStatus" class="applicationStatus" id="applicationStatus" (change)="renderApplicationList($event)">
+      <option value="all">All</option>
+      <option value="approved">Approved</option>
+      <option value="pending">Pending</option>
+      <option value="rejected">Rejected</option>
+    </select>
+    </div>
+
+    <div *ngFor="let element of renderedList">
+      <div class="row" id="rowapplicationStatus">
+       <div class="col-lg-4 col-md-5">
+          <h5>{{element.name}}</h5>
+       </div>
+        <div class="col-lg-8 col-md-7">
+          <p>{{element.status}}</p>
+        </div>
+      </div>
+    </div>
+  -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <th>id</th>
+                      <th>Name</th>
+                      <th>Email id</th>
+                      <th>Loan Amount</th>
+                      <th>Deadline Date</th>
+                      <th>Bank Account</th>
+                      <th>Credit Score</th>
+                      <th>Payment Method</th>
+                    </tr>
+                    <tbody>
+                    <tr *ngFor="let customer of customers">
+                      <td>{{customer.id}}</td>
+                      <td>{{customer.userDetails.firstName}} {{customer.userDetails.lastName}}</td>
+                      <td>{{customer.contactDetails.emailId}}</td>
+                      <td>{{customer.loanDetails.loanAmount}}</td>
+                      <td>{{customer.loanDetails.deadlineDate}}</td>
+                      <td>{{customer.paymentDetails.bankAccount}}</td>
+                      <td>{{customer.score}}</td>
+                      <td>{{customer.paymentDetails.paymentMethod}}</td>
+                      <td>
+                        <button class="btn btn-sm btn-warning" (click)="changeStatus(customer)">{{customer.status == 'BLOCKED' ? "UnBlock":"Block"}}</button>
+                        <button class="btn btn-sm btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

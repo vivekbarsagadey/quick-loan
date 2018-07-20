@@ -5,7 +5,7 @@
       <trans-unit id="6ad31729632818476420bb0f698d617436263675" datatype="html">
         <source>User Management</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/user-management.component.ts</context>
+          <context context-type="sourcefile">app/user-management/investor-management.component.ts</context>
           <context context-type="linenumber">6</context>
         </context-group>
         <context-group purpose="location">
@@ -16,14 +16,14 @@
       <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
         <source>Users</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/user-management.component.ts</context>
+          <context context-type="sourcefile">app/user-management/investor-management.component.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8c4cfd77b7b3d7917de13bec98a8a74890f95618" datatype="html">
         <source>New Users</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/user-management.component.ts</context>
+          <context context-type="sourcefile">app/user-management/investor-management.component.ts</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
@@ -73,49 +73,49 @@
       <trans-unit id="c83b838d845690bcb897f775f53b5316535306dc" datatype="html">
         <source>First Name</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="166b2cc65003221ff5f3ec05d5baca41e6821396" datatype="html">
         <source>Last Name</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2e6be334a2152f179a557167f98ce4459ff9a2f9" datatype="html">
         <source>Age</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="69b6ac577a19acc39fc0c22342092f327fff2529" datatype="html">
         <source>Email address</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
         <source>Password</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
           <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
         <source>Submit</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
           <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="99ee4faa69cd2ea8e3678c1f557c0ff1f05aae46" datatype="html">
         <source>Clear</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user-management/new-user/new-user.component.ts</context>
+          <context context-type="sourcefile">app/user-management/new-user/new-investor.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>

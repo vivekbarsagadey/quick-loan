@@ -7,11 +7,12 @@ import {UserService} from './user.service';
 import {UserDetailComponent} from './user-detail/user-detail.component';
 import {NewUserComponent} from './new-user/new-user.component';
 import { UserListComponent } from './user-list/user-list.component';
+import {SidebarComponent} from "../sidebar/sidebar.component";
 
 @NgModule({
   imports:      [ CommonModule, FormsModule , UserManagementRoutingModule, ReactiveFormsModule  ],
-  declarations: [ UserManagementComponent , UserListComponent, UserDetailComponent , NewUserComponent ],
-  exports:      [ UserManagementComponent ],
+  declarations: [ UserManagementComponent , UserListComponent, UserDetailComponent , NewUserComponent, SidebarComponent ],
+  exports:      [ UserManagementComponent, SidebarComponent ],
   providers:    [ UserService , { provide: LOCALE_ID, useValue: 'fr' }]
 })
 export class UserManagementModule { }

@@ -1,17 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div class="col col-md-4">
-      <div class="card card-inverse card-success">
-        <div class="card-header">
-          <h5 class="text-dark" i18n>User Management</h5>
+<app-sidebar></app-sidebar>
+
+<div class="main-panel">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="row">
+          <div class="col-md-10">
+            <a class="navbar-brand" href="/user">Users</a>
+          </div>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item list-group-item-action"><a routerLink="/user" id="userLink" class="text-success  nav-link" routerLinkActive="active">Users</a></li>
-          <li class="list-group-item list-group-item-action"><a routerLink="/newuser" id="newuserLink" class="text-success nav-link" routerLinkActive="active">New Users</a></li>
-        </ul>
+      </div>
+      <div class="col-md-2 text-md-right">
+        <li class="dropdown text-md-right"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+          </ul>
+        </li>
       </div>
     </div>
-    <div class="col-md-8">
+  </nav>
+  <br/>
+
+  <div class="row">
+
+    <div class="col-md-12">
       <router-outlet></router-outlet>
     </div>
   </div>

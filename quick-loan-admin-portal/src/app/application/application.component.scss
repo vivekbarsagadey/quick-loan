@@ -14,10 +14,11 @@
   margin-left: 10%;
 }
 
+.table {
+  text-align: center;
+}
 
-
-
-.table thead tr th {
+.table thead tr th td {
   font-size: 1.063rem;
 }
 .table > thead > tr > th, .table > tbody > tr > th,> {
@@ -46,3 +47,6 @@
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+.td{
+  padding-bottom: 20px;
+}

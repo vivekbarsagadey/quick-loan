@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UrlConstant} from "../util/url-constant";
 
 @Component({
   selector: 'app-application',
@@ -6,33 +7,73 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./application.component.scss']
 })
 export class ApplicationComponent implements OnInit {
+  investorList: any;
   applicationList: any;
-  renderedList: any;
-  constructor() {
-    this.applicationList = [
-      { status : 'approved', name: 'List 1'},
-      { status : 'rejected', name: 'List 2'},
-      { status : 'pending', name: 'List 3'},
-      { status : 'pending', name: 'List 4'},
-      { status : 'approved', name: 'List 5'},
-      { status : 'rejected', name: 'List 6'},
-      { status : 'rejected', name: 'List 7'},
-      { status : 'rejected', name: 'List 8'},
-      { status : 'approved', name: 'List 9'}
-    ];
-  }
+
+  constructor() {  }
 
   ngOnInit() {
-    this.renderedList = this.applicationList;
+    this.getApplications();
+    this.getInvestors();
   }
-  renderApplicationList(event?: any) {
-    if (event.target.value !== 'all') {
-      this.renderedList = this.applicationList.filter(elem => {
-        return elem.status === event.target.value;
-      });
-    } else {
-      this.renderedList = this.applicationList;
-    }
 
+   getApplications(){
+    fetch(UrlConstant.JAVA_API + "applications/", {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(res => {
+        console.log('response from server.........', res);
+
+        this.applicationList = res;
+      });
+  }
+
+  getInvestors(){
+    fetch(UrlConstant.JAVA_API + "investor/", {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(res => {
+        console.log('response from server.........', res);
+
+        this.investorList = res;
+      });
+  }
+
+  requestInvestor(){
+
+  }
+
+  /*changeStatus(application){
+    fetch(UrlConstant.JAVA_API + "ledger/investor/block/" + application.id, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+
+    }).then(res => res.json())
+      .then(res => {
+        console.log('response from server.........', res);
+        this.applicationList = res;
+      });
+  }*/
+
+  deleteApplication(applicationId){
+    fetch(UrlConstant.JAVA_API + "applications/" + applicationId, {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(res => {
+        console.log('response from server.........', res);
+
+        this.applicationList = res;
+      });
   }
 }

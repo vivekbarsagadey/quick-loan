@@ -1,6 +1,7 @@
 <div class="">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active">Users</li>
+  <ol class="breadcrumb NAVBAR-RIGHT">
+    <li class="breadcrumb-item active"></li>
+    <a routerLink="/newuser" id="newuserLink" class="text-success nav-link " routerLinkActive="active">New Users</a>
   </ol>
   <div *ngIf="deletedUser" class="alert alert-info" role="alert">
     <strong>Heads up!</strong> You have successfully deleted <strong> {{getFullName(deletedUser)}}</strong> user.
@@ -13,8 +14,7 @@
         <h5 class="mb-1">{{ getFullName(user) }}</h5>
         <small>{{ user.age }} Years</small>
       </div>
-      <small>User email id is {{user.email}}</small>
-
+      <small>User email id is {{user.email}}</small>14
     </li>
   </ul>
 </div>

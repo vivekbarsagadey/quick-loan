@@ -11,13 +11,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import {UserManagementModule} from './user-management/user-management.module';
 import {ContactModule} from './contact/contact.module';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormComponent } from './form/form.component';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
 import { ProfileComponent } from './profile/profile.component';
+import {UserManagementComponent} from "./user-management/user-management.component";
+import { CustomerManagementComponent } from './customer-management/customer-management.component';
+import { InvestorManagementComponent } from './investor-management/investor-management.component';
+// import { SidebarComponent } from './sidebar/sidebar.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -25,6 +28,9 @@ const appRoutes: Routes = [
   {path: 'applications', component: ApplicationComponent},
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'user-management', component: UserManagementComponent},
+  {path: 'customers', component: CustomerManagementComponent},
+  {path: 'investors', component: InvestorManagementComponent},
   {
     path: '',
     redirectTo: '/login',
@@ -32,7 +38,6 @@ const appRoutes: Routes = [
   },
   {path: '**', component: PageNotFoundComponent}
 ];
-
 
 @NgModule({
   declarations: [
@@ -42,11 +47,13 @@ const appRoutes: Routes = [
     AboutComponent,
     PageNotFoundComponent,
     HomeComponent,
-    SidebarComponent,
+ //   SidebarComponent,
     FormComponent,
     LoginComponent,
     ApplicationComponent,
     ProfileComponent,
+    CustomerManagementComponent,
+    InvestorManagementComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +66,11 @@ const appRoutes: Routes = [
     MatSelectModule,
     BrowserAnimationsModule
   ],
+
+  exports: [
+ //   SidebarComponent
+  ],
+
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]
 })
