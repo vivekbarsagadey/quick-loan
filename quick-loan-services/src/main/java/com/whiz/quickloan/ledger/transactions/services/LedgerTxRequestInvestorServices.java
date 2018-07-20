@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.whiz.quickloan.applications.domain.Application;
 import com.whiz.quickloan.ledger.LedgerConstant;
+import com.whiz.quickloan.ledger.mapper.TxRequestInvestorMapper;
 import com.whiz.quickloan.ledger.transactions.TxRequestInvestor;
 
 @Service
@@ -17,6 +19,12 @@ private static final Logger log = LoggerFactory.getLogger(LedgerTxRequestInvesto
 	
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	
+	public void requestInvestor(Application application) {
+		this.requestInvestor(TxRequestInvestorMapper.map(application));
+		
+	}
 	
 	public String requestInvestor(TxRequestInvestor requestInvestor) {
 		ResponseEntity<TxRequestInvestor> responseApplication  = null;
