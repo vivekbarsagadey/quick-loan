@@ -33,6 +33,8 @@
               "src/lib/ionicons/css/ionicons.min.css",
               "src/lib/owlcarousel/assets/owl.carousel.min.css",
               "src/lib/lightbox/css/lightbox.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.scss"
             ],
             "scripts": [
@@ -48,7 +50,6 @@
               "src/lib/isotope/isotope.pkgd.min.js",
               "src/lib/lightbox/js/lightbox.min.js",
               "src/lib/touchSwipe/jquery.touchSwipe.min.js",
-              "src/contactform/contactform.js",
               "src/js/main.js"
             ]
           },

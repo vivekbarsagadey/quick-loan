@@ -11,7 +11,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-
+import {BsDatepickerModule} from 'ngx-bootstrap';
 
 
 const appRoutes: Routes = [
@@ -45,6 +45,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

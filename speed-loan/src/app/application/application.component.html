@@ -30,13 +30,6 @@
                  class="col-md-7 offset-md-5 text-danger">
               <div [hidden]="!firstName.hasError('pattern')">Only alphabetsallowed</div>
             </div>
-            <!--<div  ng-show="applicationForm.firstname.$dirty" role="alert">-->
-               <!--<span ng-show="applicationForm.firstname.$error.minlength"> Please enter atleast 5 characters-->
-      <!--</span>-->
-            <!--</div>-->
-            <!--<div *ngIf="firstName.errors?.minlength" class="col-md-7 offset-md-5 text-danger">-->
-              <!--Name must be at least 5 characters long.-->
-            <!--</div>-->
             <div *ngIf="firstName.touched"
                  class="col-md-7 offset-md-5 text-danger">
               <div *ngIf = "firstName.errors?.required">
@@ -99,8 +92,11 @@
               <label for="licIssueDate" class="control-label">LICENSE ISSUE DATE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #licIssueDate = "ngModel" id="licIssueDate"   [(ngModel)]="user.licIssueDate" name="licIssueDate" type="date" required>
+              <input class="form-control"  #licIssueDate = "ngModel" id="licIssueDate"  [(ngModel)]="user.licIssueDate" name="licIssueDate" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
             </div>
+            <!--<div *ngIf="licIssueDate.errors?.minDate" class="col-md-7 offset-md-5 text-danger">-->
+              <!--set right date-->
+            <!--</div>-->
             <div *ngIf="licIssueDate.touched"
                  class="col-md-7 offset-md-5 text-danger">
               <div *ngIf = "licIssueDate.errors?.required">
@@ -150,7 +146,7 @@
               <label for="doB" class="control-label">DATE OF BIRTH</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #doB = "ngModel" id="doB"  [(ngModel)]="user.doB" name="doB" type="date" required>
+              <input class="form-control" #doB = "ngModel" id="doB"  [(ngModel)]="user.doB" name="doB" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
             </div>
             <div *ngIf="doB.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -180,7 +176,7 @@
               <label for="licExpirationDate" class="control-label">LICENSE EXPIRATION DATE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #licExpirationDate = "ngModel" id="licExpirationDate"  [(ngModel)]="user.licExpirationDate" name="licExpirationDate" type="date" required>
+              <input class="form-control"  #licExpirationDate = "ngModel" id="licExpirationDate"  [(ngModel)]="user.licExpirationDate" name="licExpirationDate" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
             </div>
             <div *ngIf="licExpirationDate.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -191,7 +187,7 @@
           </div>
         </div>
         <div class="row next-btn-userdetail form-group">
-          <div><button  type="submit" class="btn btn-lg next-btn" id="userdetailbtn" name="next"  (click)="applyForm('userDetails')"> NEXT </button></div>
+          <div><button  type="submit" class="btn btn-lg next-btn" id="userdetailbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('userDetails')"> NEXT </button></div>
         </div>
       </div>
 
@@ -209,9 +205,6 @@
             <div *ngIf="address.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
               Address must be at least 15 characters long.
             </div>
-            <!--<div *ngIf="address.errors?.maxlength" class="col-md-7 offset-md-5 text-danger">-->
-              <!--Name must be at least 50 characters long.-->
-            <!--</div>-->
             <div *ngIf="address.touched"
                  class="col-md-7 offset-md-5 text-danger">
               <div *ngIf = "address.errors?.required">
@@ -332,9 +325,10 @@
         </div>
         <div class="col-12 row next-btn-align">
           <div class="col-6"><button class="btn btn-lg next-btn" id="addressdetailsbtnpre" name="pre" (click)="applyFormPre('addressDetails')">PREVIOUS</button></div>
-          <div class="col-6"><button class="btn btn-lg next-btn" id="addressdetailsbtn" name="next" (click)="applyForm('addressDetails')">NEXT</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="addressdetailsbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('addressDetails')">NEXT</button></div>
         </div>
       </div>
+
 
       <div class="col-md-12 row text-left" id="bankdetails"  *ngIf="bankDetails">
         <div class="col-md-12 text-center heading-title"><h5><strong>BANK DETAILS</strong></h5></div>
@@ -359,8 +353,8 @@
             </div>
             <div class="col-md-7">
               <select class="form-control " #accountType = "ngModel" id="accountType" [(ngModel)]="user.accountType" name="accountType" type="text" required>
-                <option value="1">SAVING</option>
-                <option value="2">CURRENT</option>
+                <option>SAVING</option>
+                <option>CURRENT</option>
               </select>
             </div>
             <div *ngIf="accountType.touched"
@@ -375,18 +369,14 @@
               <label  for="bankPhone" class="control-label">BANK PHONE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #bankPhone = "ngModel" name="bankPhone" id="bankPhone"  minlength="10" maxlength="10" pattern="[0-9]"  [(ngModel)]="user.bankPhone"  type="text" required>
+              <input class="form-control" #bankPhone = "ngModel" name="bankPhone" id="bankPhone" minlength="10" maxlength="10" pattern="\d*"  [(ngModel)]="user.bankPhone"  type="text" required>
             </div>
-            <!--<div [hidden]= "bankPhone.valid || bankPhone.pristine"-->
-                 <!--class="col-md-7 offset-md-5 text-danger">-->
-              <!--<div [hidden]="!bankPhone.hasError('pattern')">Only numbers</div>-->
-            <!--</div>-->
-            <div *ngIf="bankPhone.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <div *ngIf="bankPhone.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
             </div>
-            <!--<div *ngIf="bankPhone.errors?.maxlength" class="col-md-7 offset-md-5 text-danger">-->
-            <!--Name must be at least 11 characters long.-->
-            <!--</div>-->
+            <div *ngIf="(bankPhone.errors?.minlength) && (!bankPhone.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
+            </div>
             <div *ngIf="bankPhone.touched"
                  class="col-md-7 offset-md-5 text-danger">
               <div *ngIf = "bankPhone.errors?.required">
@@ -459,20 +449,22 @@
         </div>
         <div class=" col-12 row next-btn-align">
           <div class="col-6"><button class="btn btn-lg next-btn" id="bankdetailsbtnpre" name="pre" (click)="applyFormPre('bankDetails')">PREVIOUS</button></div>
-          <div class="col-6"><button class="btn btn-lg next-btn" id="bankdetailsbtn" name="next" (click)="applyForm('bankDetails')">NEXT</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="bankdetailsbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('bankDetails')">NEXT</button></div>
         </div>
       </div>
+
 
 
       <div class="col-md-12 row text-left" id="contactdetails" *ngIf="contactDetails">
         <div class="col-md-12 text-center heading-title"><h5><strong>CONTACT DETAILS</strong></h5></div>
         <div class="col-md-6 row">
-          <div class="col-md-12 row form-group">
+          <div class="col-md-12 text-left" ngModelGroup="emailId" #userMail="ngModelGroup">
+          <div class="row form-group">
             <div class="col-md-5">
               <label for="emailId" class=" control-label">EMAIL ID</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  [(ngModel)] = "user.emailId" name="emailId"
+              <input class="form-control field-size"  [(ngModel)] = "user.emailId" name="emailId"
                      #emailId = "ngModel" id="emailId"
                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                      type="text" required>
@@ -487,12 +479,12 @@
               </div>
             </div>
           </div>
-          <div class="col-md-12 row form-group">
+          <div class="row form-group">
             <div class="col-md-5">
               <label for="confirmEmailId" class=" control-label">CONFIRM EMAIL ID</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #confirmEmailId = "ngModel" id="confirmEmailId"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="user.confirmEmailId" name="confirmEmailId" type="email" required>
+              <input class="form-control field-size" #confirmEmailId = "ngModel" id="confirmEmailId"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="user.confirmEmailId" name="confirmEmailId" type="email" required>
             </div>
             <div *ngIf="confirmEmailId.invalid && ( confirmEmailId.touched)"
                  class="col-md-7 offset-md-5  text-danger">
@@ -503,23 +495,26 @@
                 The email id doesn't seem right
               </div>
             </div>
-            <!--<div *ngIf="confirmEmailId.touched"-->
-                 <!--class="col-md-7 offset-md-5 text-danger">-->
-              <!--<div *ngIf = "confirmEmailId.errors?.required">-->
-                <!--Email income is required-->
-              <!--</div>-->
-            <!--</div>-->
+            <div *ngIf="(userMail.invalid|| userMail.value?.emailId != userMail.value?.confirmEmailId) && (userMail.touched)"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "userMail.valid">
+                Mail don't match
+              </div>
+            </div>
           </div>
-
+          </div>
           <div class="col-md-12 row form-group">
             <div class="col-md-5">
               <label for="cellPhone2" class=" control-label">CELL PHONE2</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #cellPhone2 = "ngModel" id="cellPhone2"  minlength="10" maxlength="10"  [(ngModel)]="user.cellPhone2" name="cellPhone2" type="text" required>
+              <input class="form-control" #cellPhone2 = "ngModel" id="cellPhone2"  minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.cellPhone2" name="cellPhone2" type="text" required>
             </div>
-            <div *ngIf="cellPhone2.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <div *ngIf="cellPhone2.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(cellPhone2.errors?.minlength) && (!cellPhone2.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="cellPhone2.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -533,10 +528,13 @@
               <label for="homePhone1"  class=" control-label">HOME PHONE 1</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #homePhone1 = "ngModel" id="homePhone1" minlength="10" maxlength="10" [(ngModel)]="user.homePhone1" name="homePhone1" type="text" required>
+              <input class="form-control" #homePhone1 = "ngModel" id="homePhone1" minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.homePhone1" name="homePhone1" type="text" required>
             </div>
-            <div *ngIf="homePhone1.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <div *ngIf="homePhone1.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(homePhone1.errors?.minlength) && (!homePhone1.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="homePhone1.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -550,10 +548,13 @@
               <label for="homePhone3"  class=" control-label">HOME PHONE 3</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #homePhone3 = "ngModel" id="homePhone3" minlength="10" maxlength="10" [(ngModel)]="user.homePhone3" name="homePhone3" type="text" required>
+              <input class="form-control" #homePhone3 = "ngModel" id="homePhone3" minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.homePhone3" name="homePhone3" type="text" required>
             </div>
-            <div *ngIf="homePhone3.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <div *ngIf="homePhone3.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(homePhone3.errors?.minlength) && (!homePhone3.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="homePhone3.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -580,13 +581,17 @@
           </div>
         </div>
         <div class="col-md-6 row">
-          <div class="col-md-12 row form-group">
+          <div class="col-md-12 text-left" ngModelGroup="password" #userPassword="ngModelGroup">
+           <div class="row form-group">
             <div class="col-md-5">
               <label for="password" class="control-label">PASSWORD</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #password = "ngModel"   id="password" [(ngModel)]="user.password" name="password" type="password" required>
+              <input class="form-control field-size"  #password = "ngModel" minlength ="8"  id="password" [(ngModel)]="user.password" name="password" type="password" required>
             </div>
+             <div *ngIf="password.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
+               Password atleast 8 charecter.
+             </div>
             <div *ngIf="password.touched"
                  class="col-md-7 offset-md-5 text-danger">
               <div *ngIf = "password.errors?.required">
@@ -594,41 +599,43 @@
               </div>
             </div>
           </div>
-          <div class="col-md-12 row form-group">
+          <div class="row form-group">
             <div class="col-md-5">
               <label for="confirmPassword" class="control-label">CONFIRM PASSWORD</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control "  #confirmPassword = "ngModel"   id="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword" type="password" required>
+              <input class="form-control field-size"  #confirmPassword = "ngModel"   id="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword" type="password" required>
             </div>
             <div *ngIf="confirmPassword.touched"
+                       class="col-md-7 offset-md-5 text-danger">
+            <div *ngIf = "confirmPassword.errors?.required">
+              Password is required
+            </div>
+          </div>
+            <div *ngIf="(userPassword.invalid|| userPassword.value?.password != userPassword.value?.confirmPassword) && (userPassword.touched)"
                  class="col-md-7 offset-md-5 text-danger">
-              <div *ngIf = "confirmPassword.errors?.required">
-                Password is required
+              <div *ngIf = "userPassword.valid">
+                Passwords don't match
               </div>
             </div>
           </div>
-            <!--<div *ngIf="(userPassword.invalid|| userPassword.value?.password != userPassword.value?.confirmPassword) && (userPassword.touched)"-->
-                 <!--class="col-md-7 offset-md-5 text-danger">-->
 
-              <!--<div *ngIf = "userPassword.invalid; else nomatch">-->
-                <!--Password needs to be more than 8 characters-->
-              <!--</div>-->
-              <!--<ng-template #nomatch >-->
-                <!--Passwords don't match-->
-              <!--</ng-template>-->
-
-            <!--</div>-->
-          <!--</div>-->
+          </div>
           <div class="col-md-12 row form-group">
             <div class="col-md-5">
               <label for="cellPhone1"  class=" control-label">CELL PHONE 1</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #cellPhone1 = "ngModel" id="cellPhone1" minlength="10" maxlength="10" [(ngModel)]="user.cellPhone1" name="cellPhone1" type="text" required>
+              <input class="form-control" #cellPhone1 = "ngModel" id="cellPhone1" minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.cellPhone1" name="cellPhone1" type="text" required>
             </div>
-            <div *ngIf="cellPhone1.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <!--<div *ngIf="cellPhone1.errors?.minlength" class="col-md-7 offset-md-5 text-danger">-->
+              <!--Only Number allowed and it should be 10 digit.-->
+            <!--</div>-->
+            <div *ngIf="cellPhone1.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(cellPhone1.errors?.minlength) && (!cellPhone1.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="cellPhone1.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -642,10 +649,13 @@
               <label for="cellPhone3"  class=" control-label">CELL PHONE 3</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #cellPhone3 = "ngModel" id="cellPhone3" minlength="10" maxlength="10"  [(ngModel)]="user.cellPhone3" name="cellPhone3" type="text" required>
+              <input class="form-control" #cellPhone3 = "ngModel" id="cellPhone3" minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.cellPhone3" name="cellPhone3" type="text" required>
             </div>
-            <div *ngIf="cellPhone3.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <div *ngIf="cellPhone3.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(cellPhone3.errors?.minlength) && (!cellPhone3.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="cellPhone3.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -659,10 +669,13 @@
               <label for="homePhone2"  class=" control-label">HOME PHONE 2</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #homePhone2 = "ngModel" id="homePhone2" minlength="10" maxlength="10" [(ngModel)]="user.homePhone2" name="homePhone2" type="text" required>
+              <input class="form-control" #homePhone2 = "ngModel" id="homePhone2" minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.homePhone2" name="homePhone2" type="text" required>
             </div>
-            <div *ngIf="homePhone2.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <div *ngIf="homePhone2.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(homePhone2.errors?.minlength) && (!homePhone2.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="homePhone2.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -676,10 +689,13 @@
               <label for="workPhone"  class=" control-label">WORK PHONE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #workPhone = "ngModel" id="workPhone" minlength="10" maxlength="10" [(ngModel)]="user.workPhone" name="workPhone" type="text" required>
+              <input class="form-control" #workPhone = "ngModel" id="workPhone" minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.workPhone" name="workPhone" type="text" required>
             </div>
-            <div *ngIf="workPhone.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <div *ngIf="workPhone.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(workPhone.errors?.minlength) && (!workPhone.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="workPhone.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -693,7 +709,7 @@
               <label for="dateOfMove"  class=" control-label">DATE OF MOVE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #dateOfMove = "ngModel" id="dateOfMove" [(ngModel)]="user.dateOfMove" name="dateOfMove" type="date" required>
+              <input class="form-control"  #dateOfMove = "ngModel" id="dateOfMove" [(ngModel)]="user.dateOfMove" name="dateOfMove" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
             </div>
             <div *ngIf="dateOfMove.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -705,9 +721,10 @@
         </div>
         <div class=" col-12 row next-btn-align">
           <div class="col-6"><button class="btn btn-lg next-btn" id="contactdetailsbtnpre" name="pre" (click)="applyFormPre('contactDetails')">PREVIOUS</button></div>
-          <div class="col-6"><button class="btn btn-lg next-btn" id="contactdetailsbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('contactDetails')" >NEXT</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="contactdetailsbtn" name="next"  [disabled]="!applicationForm.form.valid || userPassword.value?.password != userPassword.value?.confirmPassword || userMail.value?.emailId != userMail.value?.confirmEmailId" (click)="applyForm('contactDetails')" >NEXT</button></div>
         </div>
       </div>
+
 
       <div class="col-md-12 row text-left" id="employmentdetails" *ngIf="employmentDetails">
         <div class="col-md-12 text-center heading-title"><h5><strong>EMPLOYMENT DETAILS</strong></h5></div>
@@ -820,10 +837,16 @@
               <label for="employerPhone"  class=" control-label">EMPLOYER PHONE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #employerPhone = "ngModel" id="employerPhone" minlength="10" maxlength="10" [(ngModel)]="user.employerPhone" name="employerPhone" type="text" required>
+              <input class="form-control" #employerPhone = "ngModel" id="employerPhone" minlength="10" maxlength="10" pattern="\d*" [(ngModel)]="user.employerPhone" name="employerPhone" type="text" required>
             </div>
-            <div *ngIf="employerPhone.errors?.minlength" class="col-md-7 offset-md-5 text-danger">
-              Only Number allowed and it should be 10 digit.
+            <!--<div *ngIf="employerPhone.errors?.minlength" class="col-md-7 offset-md-5 text-danger">-->
+              <!--Only Number allowed and it should be 10 digit.-->
+            <!--</div>-->
+            <div *ngIf="employerPhone.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(employerPhone.errors?.minlength) && (!employerPhone.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number should be 10 digit.
             </div>
             <div *ngIf="employerPhone.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -843,11 +866,9 @@
         </div>
         <div class="col-12 row next-btn-align">
           <div class="col-6"><button class="btn btn-lg next-btn" id="employmentdetailsbtnpre" name="pre" (click)="applyFormPre('employmentDetails')">PREVIOUS</button></div>
-          <div class="col-6"><button class="btn btn-lg next-btn" id="employmentdetailsbtn" name="next" (click)="applyForm('employmentDetails')">NEXT</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="employmentdetailsbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('employmentDetails')">NEXT</button></div>
         </div>
       </div>
-
-
       <div class="col-md-12 row text-left" id="loandetails" *ngIf="loanDetails">
         <div class="col-md-12 text-center heading-title"><h5><strong>LOAN DETAILS</strong></h5></div>
         <div class="col-md-6 row">
@@ -856,7 +877,7 @@
               <label for="loanAmount"  class=" control-label">LOAN AMOUNT</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #loanAmount = "ngModel" id="loanAmount" [(ngModel)]="user.loanAmount" name="loanAmount" type="text" required>
+              <input class="form-control" #loanAmount = "ngModel" id="loanAmount" [(ngModel)]="user.loanAmount" name="loanAmount" type="number" required>
             </div>
             <div *ngIf="loanAmount.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -870,7 +891,7 @@
               <label for="deadlineDate"  class=" control-label">DEADLINE DATE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #deadlineDate = "ngModel" id="deadlineDate" [(ngModel)]="user.deadlineDate" name="deadlineDate" type="date" required>
+              <input class="form-control" #deadlineDate = "ngModel" id="deadlineDate" [(ngModel)]="user.deadlineDate" name="deadlineDate" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
             </div>
             <div *ngIf="deadlineDate.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -902,9 +923,10 @@
         </div>
         <div class="col-12 row next-btn-align">
           <div class="col-6"><button class="btn btn-lg next-btn" id="loandetailsbtnpre" name="pre" (click)="applyFormPre('loanDetails')">PREVIOUS</button></div>
-          <div class="col-6"><button class="btn btn-lg next-btn" id="loandetailsbtn" name="next" (click)="applyForm('loanDetails')">NEXT</button></div>
+          <div class="col-6"><button class="btn btn-lg next-btn" id="loandetailsbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('loanDetails')">NEXT</button></div>
         </div>
       </div>
+
 
 
       <div class="col-md-12 row text-left" id="paymentdetails" *ngIf="paymentDetails">
@@ -916,7 +938,7 @@
               <label for="paymentFrequency"  class=" control-label">PAYMENT FREQUENCY</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #paymentFrequency = "ngModel" id="paymentFrequency"  [(ngModel)]="user.paymentFrequency" name="paymentFrequency" type="text" required>
+              <input class="form-control"  #paymentFrequency = "ngModel" id="paymentFrequency"  [(ngModel)]="user.paymentFrequency" name="paymentFrequency" type="number" required>
             </div>
             <div *ngIf="paymentFrequency.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -976,7 +998,7 @@
               <label for="secondPayDay"  class=" control-label">SECOND PAY DAY</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #secondPayDay = "ngModel" id="secondPayDay" [(ngModel)]="user.secondPayDay" name="secondPayDay" type="date" required>
+              <input class="form-control" #secondPayDay = "ngModel" id="secondPayDay" [(ngModel)]="user.secondPayDay" name="secondPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
             </div>
             <div *ngIf="secondPayDay.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -992,7 +1014,7 @@
               <label for="nexTPayDay"  class=" control-label">NEXT PAY DAY</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #nexTPayDay = "ngModel" id="nexTPayDay" [(ngModel)]="user.nexTPayDay" name="nexTPayDay" type="date" required>
+              <input class="form-control" #nexTPayDay = "ngModel" id="nexTPayDay" [(ngModel)]="user.nexTPayDay" name="nexTPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
             </div>
             <div *ngIf="nexTPayDay.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -1047,18 +1069,10 @@
               </div>
             </div>
           </div>
-          <!--<div class="col-md-12 row form-group">-->
-          <!--<div class="col-md-5">-->
-          <!--<label>ACTIVE STATUS:</label>-->
-          <!--</div>-->
-          <!--<div class="col-md-7">-->
-          <!--<input class="form-control " [(ngModel)]="user.activeStatus" name="activeStatus" type="radio">-->
-          <!--</div>-->
-          <!--</div>-->
         </div>
         <div class=" col-12 row next-btn-align">
           <div class="col-6"><button type="button" class="btn btn-lg next-btn " name="pre" (click)="applyFormPre('paymentDetails')">PREVIOUS</button></div>
-          <div class="col-6"><button type="submit" class="btn btn-lg next-btn " name="submit" (click)="openClickSubmit()">SUBMIT</button></div>
+          <div class="col-6"><button type="submit" class="btn btn-lg next-btn " name="submit" [disabled]="!applicationForm.form.valid"  (click)="openClickSubmit()">SUBMIT</button></div>
         </div>
       </div>
     </form>

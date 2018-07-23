@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as $ from 'jquery';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from './User';
+import {BsDatepickerConfig} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-application',
@@ -10,8 +10,9 @@ import { User } from './User';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent implements OnInit {
-  // private user: User;
+  datePickerConfig: Partial<BsDatepickerConfig>;
   sendToServer: any;
+  loanApplication: any;
   toggle: any;
   userDetails: boolean;
   addressDetails: boolean;
@@ -21,10 +22,13 @@ export class ApplicationComponent implements OnInit {
   loanDetails: boolean;
   paymentDetails: boolean;
   user: any = {};
-  // registerForm: FormGroup;
-  // submitted = false;
 
   constructor(private formBuilder: FormBuilder) {
+    this.datePickerConfig = Object.assign({}, {
+      minDate: new Date(2018, 0, 1),
+      maxDate: new Date(2018, 11, 31),
+      dateInputFormat: 'DD/MM/YYYY'
+    })
     this.userDetails = true;
     this.addressDetails = false;
     this.bankDetails = false;
@@ -35,24 +39,7 @@ export class ApplicationComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.user = new User({email: '', password: { password: '' , confirmPassword: ''}});
-    // this.registerForm = this.formBuilder.group({
-    //   firstName: ['', Validators.required],
-    //   lastName: ['', Validators.required],
-    // });
   }
-  // onFormSubmit({ value, valid}: { value: User, valid: boolean }) {
-  //   this.user = value;
-  //   console.log( this.user);
-  //   console.log('valid: ' + valid);
-  // }
-  // get f() { return this.registerForm.controls; }
-  // onSubmit() {
-  //   this.submitted = true;
-  //   if (this.registerForm.invalid) {
-  //     return;
-  //   }
-  //   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value)); }
   applyForm(formValue) {
     switch (formValue) {
       case 'userDetails':
@@ -123,7 +110,7 @@ export class ApplicationComponent implements OnInit {
       },
       'bankDetails': {
         'abaOrRoutingNumber': this.user.abaOrRoutingNumber,
-        'accountType': Number(this.user.accountType),
+        'accountType': this.user.accountType,
         'accountNumber': this.user.accountNumber,
         'bankPhone': this.user.bankPhone,
         'bankName': this.user.bankName,
@@ -184,7 +171,7 @@ export class ApplicationComponent implements OnInit {
       }
     };
 
-    fetch('http://192.168.100.18:8080/api/customer/',  {
+    fetch('http://192.168.100.12:8080/api/customer/',  {
       method: 'POST', // or 'PUT'
       body: JSON.stringify(this.sendToServer), // data can be `string` or {object}!
       headers: {
@@ -192,9 +179,25 @@ export class ApplicationComponent implements OnInit {
         'Content-Type': 'application/json'
       }
     }).then(res => res.json())
-      .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response));
+      .then(res => this.applyForLoan(res))
+      .catch(error => console.error('Error:', error));
+  }
+  applyForLoan(userData) {
+    console.log('User data-----------:', userData)
+    this.loanApplication = {
+      'customerId': userData.id,
+      'loanAmount': userData.loanDetails.loanAmount
+    };
+     fetch('http://192.168.100.12:8080/api/applications/',  {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify(this.loanApplication), // data can be `string` or {object}!
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(res => console.log('Success-----------:', res))
+      .catch(error => console.error('Error:', error));
   }
 }
-
 

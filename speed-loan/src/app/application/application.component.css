@@ -56,10 +56,7 @@ label{
   margin-left: 46%;
 }
 
-/*input, textarea {*/
-  /*background-color:transparent;*/
-  /*border: 0px solid;*/
-/*}*/
-/*input:focus {*/
-  /*outline:none;*/
-/*}*/
+.field-size{
+  margin-left: -15px;
+  width: 95%;
+}
