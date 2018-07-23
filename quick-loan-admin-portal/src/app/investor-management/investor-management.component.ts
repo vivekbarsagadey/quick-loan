@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UrlConstant } from '../util/url-constant';
 
 @Component({
@@ -8,7 +9,7 @@ import { UrlConstant } from '../util/url-constant';
 })
 export class InvestorManagementComponent implements OnInit {
   investors: any;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.getInvestors();
@@ -39,6 +40,10 @@ export class InvestorManagementComponent implements OnInit {
         console.log('response from server.........', res);
         this.investors = res;
       });
+  }
+
+  createInvestor() {
+    this.router.navigateByUrl('new');
   }
 
   deleteInvestor(investorId){

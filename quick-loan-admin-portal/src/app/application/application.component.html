@@ -105,13 +105,16 @@
                       <td>
                         {{user.loanAmount}}
                       </td>
-                      <td>
+                      <td *ngIf="user.investorId == 0 || user.status == 'REJECTED'" >
                         <form>
-                        <select name="selectInvestor" onchange="requestInvestor()">       //ng-change="requestInvestor()">
+                        <select name="selectInvestor" [(ngModel)]="mySelectedInvestor" (change)="getRequestInvestor(user.id)">
                           <option>{{user.investorId}}</option>
                           <option *ngFor="let investor of investorList" value={{investor.id}}>{{investor.id}}</option>
                         </select>
                         </form>
+                      </td>
+                      <td *ngIf="!(user.investorId == 0 || user.status == 'REJECTED')">
+                        {{user.investorId}}
                       </td>
                       <td>
                         {{user.status}}

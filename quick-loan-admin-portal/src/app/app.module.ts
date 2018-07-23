@@ -20,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {UserManagementComponent} from "./user-management/user-management.component";
 import { CustomerManagementComponent } from './customer-management/customer-management.component';
 import { InvestorManagementComponent } from './investor-management/investor-management.component';
+import { NewInvestorComponent } from './investor-management/new-investor/new-investor.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 
 const appRoutes: Routes = [
@@ -31,6 +32,10 @@ const appRoutes: Routes = [
   {path: 'user-management', component: UserManagementComponent},
   {path: 'customers', component: CustomerManagementComponent},
   {path: 'investors', component: InvestorManagementComponent},
+  {
+    path: 'new',
+    component: NewInvestorComponent
+  },
   {
     path: '',
     redirectTo: '/login',
@@ -54,6 +59,7 @@ const appRoutes: Routes = [
     ProfileComponent,
     CustomerManagementComponent,
     InvestorManagementComponent,
+    NewInvestorComponent,
   ],
   imports: [
     BrowserModule,

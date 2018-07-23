@@ -1,0 +1,202 @@
+<app-sidebar></app-sidebar>
+<!--<ol class="breadcrumb">-->
+<!--<li class="breadcrumb-item active">New User</li>-->
+<!--</ol>-->
+<div class="main-panel">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+
+<div class="row">
+  <div class="col-md-10 mx-auto">
+    <div class="card aligned">
+      <div class="card-block px-2">
+    <div class="header-text text-center">
+      <h3 class="text-primary card-title">Investor Registration</h3>
+    </div>
+    <form #investorForm="ngForm">
+      <div class="form-group row has-danger">
+        <label for="companyName" class="col-4 col-form-label" i18n>Company Name</label>
+        <div class="col-8">
+          <input type="text" class="form-control form-control-danger" id="companyName" placeholder="Enter company Name" required
+                 [(ngModel)]="investor.companyName" name="companyName" #companyName="ngModel">
+        </div>
+      </div>
+      <hr>
+      <h5 class="text-center text-success strong">Contact Details</h5>
+      <div class="form-group row has-danger">
+        <label for="companyEmailId" class="col-4 col-form-label" i18n>Email address</label>
+        <div class="col-8">
+          <input type="email" class="form-control form-control-danger" id="companyEmailId" aria-describedby="emailHelp" placeholder="Enter email" required
+                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="investor.companyEmailId" name="companyEmailId" #companyEmailId="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="cellPhone1" class="col-4 col-form-label" i18n>Cell Phone 1</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="cellPhone1" placeholder="Enter 10 digit Cell Phone 1" required
+                 maxlength="10" minlength="10" [(ngModel)]="investor.cellPhone1" name="cellPhone1" #cellPhone1="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="cellPhone2" class="col-4 col-form-label" i18n>Cell Phone 2</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="cellPhone2" placeholder="Enter 10 digit Cell Phone 2" required
+                 maxlength="10" minlength="10" [(ngModel)]="investor.cellPhone2" name="cellPhone2" #cellPhone2="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="companyWebsite" class="col-4 col-form-label" i18n>Website</label>
+        <div class="col-8">
+          <input type="text" class="form-control form-control-danger" id="companyWebsite" placeholder="Enter Website" required
+                 [(ngModel)]="investor.companyWebsite" name="companyWebsite" #companyWebsite="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="workPhone1" class="col-4 col-form-label" i18n>Work Phone 1</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="workPhone1" placeholder="Enter Work Phone 1" required
+                 maxlength="12" minlength="8" [(ngModel)]="investor.workPhone1" name="workPhone1" #workPhone1="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="workPhone2" class="col-4 col-form-label" i18n>Work Phone 2</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="workPhone2" placeholder="Enter Work Phone 2" required
+                 maxlength="12" minlength="8" [(ngModel)]="investor.workPhone2" name="workPhone2" #workPhone2="ngModel">
+        </div>
+      </div>
+      <hr>
+      <h5 class="text-center text-success strong">Address Details</h5>
+      <div class="form-group row has-danger">
+        <label for="companyAddress" class="col-4 col-form-label" i18n>Company Address</label>
+        <div class="col-8">
+          <textarea class="form-control form-control-danger" id="companyAddress" required rows="4" placeholder="Enter Address"
+                    [(ngModel)]="investor.companyAddress" name="companyAddress" #companyAddress="ngModel"></textarea>
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="companyCity" class="col-4 col-form-label" i18n>Company City</label>
+        <div class="col-8">
+          <input type="text" class="form-control form-control-danger" id="companyCity" placeholder="Enter City" required
+                 [(ngModel)]="investor.companyCity" name="companyCity" #companyCity="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="companyState" class="col-4 col-form-label" i18n>Company State</label>
+        <div class="col-8">
+          <input type="text" class="form-control form-control-danger" id="companyState" placeholder="Enter State" required
+                 [(ngModel)]="investor.companyState" name="companyState" #companyState="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="companyCountry" class="col-4 col-form-label" i18n>Company Country</label>
+        <div class="col-8">
+          <input type="text" class="form-control form-control-danger" id="companyCountry" placeholder="Enter Country" required
+                 [(ngModel)]="investor.companyCountry" name="companyCountry" #companyCountry="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="companyZipCode" class="col-4 col-form-label" i18n>Company Zip Code</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="companyZipCode" placeholder="Enter 6 digit Zip Code" required
+                 maxlength="6" minlength="6" [(ngModel)]="investor.companyZipCode" name="companyZipCode" #companyZipCode="ngModel">
+        </div>
+      </div>
+      <hr>
+      <h5 class="text-center text-success strong">Bank Details</h5>
+      <div class="form-group row has-danger">
+        <label for="abaOrRoutingNumber" class="col-4 col-form-label" i18n>aba or Routing Number</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="abaOrRoutingNumber" placeholder="Enter 1 digit aba or Routing Number" required
+                 [(ngModel)]="investor.abaOrRoutingNumber" name="abaOrRoutingNumber" #abaOrRoutingNumber="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="accountNumber" class="col-4 col-form-label" i18n>Account Number</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="accountNumber" placeholder="Enter Account Number" required
+                 [(ngModel)]="investor.accountNumber" name="accountNumber" #accountNumber="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="accountType" class="col-4 col-form-label" i18n>Account Type</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="accountType" placeholder="Enter 1 digit Account Type" required
+                 maxlength="1" minlength="1" [(ngModel)]="investor.accountType" name="accountType" #accountType="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="bankName" class="col-4 col-form-label" i18n>Bank Name</label>
+        <div class="col-8">
+          <input type="text" class="form-control form-control-danger" id="bankName" placeholder="Enter Bank Name" required
+                 [(ngModel)]="investor.bankName" name="bankName" #bankName="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="bankPhone" class="col-4 col-form-label" i18n>Bank Phone</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="bankPhone" placeholder="Enter Bank Phone" required
+                 maxlength="12" minlength="8" [(ngModel)]="investor.bankPhone" name="bankPhone" #bankPhone="ngModel">
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="durationOfBankAccount" class="col-4 col-form-label" i18n>Duration of Bank Account</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="durationOfBankAccount" placeholder="Enter Duration of Bank Account in Months" required
+                 maxlength="2" minlength="1" [(ngModel)]="investor.durationOfBankAccount" name="durationOfBankAccount" #durationOfBankAccount="ngModel">
+        </div>
+      </div>
+      <hr>
+      <h5 class="text-center text-success strong">Payment Details</h5>
+      <div class="form-group row has-danger">
+        <label for="rateOfInterest" class="col-4 col-form-label" i18n>Rate of Interest</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="rateOfInterest" placeholder="%" required
+                 minlength="1" maxlength="2" [(ngModel)]="investor.rateOfInterest" name="rateOfInterest" #rateOfInterest="ngModel">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group row has-danger">
+        <label for="loanRange" class="col-4 col-form-label" i18n>Loan Range</label>
+        <div class="col-8">
+          <select class="form-control form-control-danger" id="loanRange" required [(ngModel)]="investor.loanRange" name="loanRange" #loanRange="ngModel">
+            <option value="">Up to 1000</option>
+            <option value="UPTO_1000">Up to 2000</option>
+            <option value="UPTO_5000">Up to 5000</option>
+            <option value="UPTO_10000">Up to 10000</option>
+            <option value="UPTO_20000">Up to 20000</option>
+            <option value="UPTO_50000">Up to 50000</option>
+            <option value="UPTO_100000">Up to 100000</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row has-danger">
+        <label for="totalLoanLent" class="col-4 col-form-label" i18n>Total Loan Lent</label>
+        <div class="col-8">
+          <input type="number" class="form-control form-control-danger" id="totalLoanLent" placeholder="Total Loan Amount Lent" required
+                 [(ngModel)]="investor.totalLoanLent" name="totalLoanLent" #totalLoanLent="ngModel">
+        </div>
+      </div>
+
+      <div class="col-md-12 row">
+        <div class="col-md-4"> </div>
+        <div class="btn-toolbar space-between col-md-8">
+          <div class="col-md-6">
+            <button type="submit"  id="submitButton" class="btn btn-success width-large" [disabled]="!investorForm.form.valid" (click)="onSubmit()" i18n>Submit</button>
+          </div>
+          <div class="col-md-6">
+            <button type="reset" class="btn btn-success width-large" i18n>Clear</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+</div>
+</div>

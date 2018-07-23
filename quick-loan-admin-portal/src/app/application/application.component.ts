@@ -8,6 +8,7 @@ import {UrlConstant} from "../util/url-constant";
 })
 export class ApplicationComponent implements OnInit {
   investorList: any;
+  mySelectedInvestor: any
   applicationList: any;
 
   constructor() {  }
@@ -45,9 +46,22 @@ export class ApplicationComponent implements OnInit {
       });
   }
 
-  requestInvestor(){
+  getRequestInvestor(applicationId){
+    console.log('Investor selected for mySelect------->>>>',this.mySelectedInvestor);
+    const investorId = this.mySelectedInvestor;
+    fetch(UrlConstant.JAVA_API + "ledger/application/request/"+applicationId+"?investorId="+investorId, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
 
+    }).then(res => res.json())
+      .then(res => {
+        console.log('response from server.........', res);
+        this.applicationList = res;
+      });
   }
+
 
   /*changeStatus(application){
     fetch(UrlConstant.JAVA_API + "ledger/investor/block/" + application.id, {
