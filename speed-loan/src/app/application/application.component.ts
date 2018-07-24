@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import * as $ from 'jquery';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
 
 @Component({
@@ -28,7 +26,7 @@ export class ApplicationComponent implements OnInit {
       minDate: new Date(2018, 0, 1),
       maxDate: new Date(2018, 11, 31),
       dateInputFormat: 'DD/MM/YYYY'
-    })
+    });
     this.userDetails = true;
     this.addressDetails = false;
     this.bankDetails = false;
@@ -183,7 +181,7 @@ export class ApplicationComponent implements OnInit {
       .catch(error => console.error('Error:', error));
   }
   applyForLoan(userData) {
-    console.log('User data-----------:', userData)
+    console.log('User data-----------:', userData);
     this.loanApplication = {
       'customerId': userData.id,
       'loanAmount': userData.loanDetails.loanAmount

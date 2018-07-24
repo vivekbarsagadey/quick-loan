@@ -19,6 +19,7 @@ transition: all 0.5s;
 
 #header #logo {
 float: left;
+
 }
 
 @media (min-width: 1024px) {

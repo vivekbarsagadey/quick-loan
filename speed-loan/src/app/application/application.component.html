@@ -24,7 +24,7 @@
               <label for="firstName" class="control-label">FIRST NAME</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"   #firstName = "ngModel" id="firstName"  pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.firstName" name="firstName" type="text" required>
+              <input class="form-control"   #firstName = "ngModel" id="firstName"  pattern="[a-zA-Z ]*"  [(ngModel)]="user.firstName" name="firstName" type="text" required>
             </div>
             <div [hidden]="firstName.valid || firstName.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -42,7 +42,7 @@
               <label for="lastName" class="control-label">LAST NAME</label>
             </div>
             <div class="col-md-7">
-              <input  class="form-control" #lastName = "ngModel" id="lastName" pattern="[a-zA-Z][a-zA-Z ]+"  [(ngModel)]="user.lastName" name="lastName" type="text" required>
+              <input  class="form-control" #lastName = "ngModel" id="lastName" pattern="[a-zA-Z ]*"   [(ngModel)]="user.lastName" name="lastName" type="text" required>
             </div>
             <div [hidden]="lastName.valid || lastName.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -92,7 +92,7 @@
               <label for="licIssueDate" class="control-label">LICENSE ISSUE DATE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #licIssueDate = "ngModel" id="licIssueDate"  [(ngModel)]="user.licIssueDate" name="licIssueDate" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
+              <input class="form-control readonly"  #licIssueDate = "ngModel" id="licIssueDate"  [(ngModel)]="user.licIssueDate" name="licIssueDate" type="text" bsDatepicker [bsConfig]="datePickerConfig" readonly="readonly" required>
             </div>
             <!--<div *ngIf="licIssueDate.errors?.minDate" class="col-md-7 offset-md-5 text-danger">-->
               <!--set right date-->
@@ -111,7 +111,7 @@
               <label for="middleName" class="control-label">MIDDLE NAME</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #middleName = "ngModel" id="middleName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.middleName" name="middleName" type="text" required>
+              <input class="form-control" #middleName = "ngModel" id="middleName" pattern="[a-zA-Z ]*"[(ngModel)]="user.middleName" name="middleName" type="text" required>
             </div>
             <div [hidden]="middleName.valid || middleName.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -146,7 +146,7 @@
               <label for="doB" class="control-label">DATE OF BIRTH</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #doB = "ngModel" id="doB"  [(ngModel)]="user.doB" name="doB" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
+              <input class="form-control readonly" #doB = "ngModel" id="doB"  [(ngModel)]="user.doB" name="doB" type="text" bsDatepicker [bsConfig]="datePickerConfig" readonly="readonly" required>
             </div>
             <div *ngIf="doB.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -161,7 +161,7 @@
             </div>
             <div class="col-md-7">
               <select class="form-control"  #licState = "ngModel" id="licState"   [(ngModel)]="user.licState" name="licState" type="text" required>
-                <option>MAHARASHTRA</option>
+                <option>MAHARASHTRA </option>
               </select>
             </div>
             <div *ngIf="licState.touched"
@@ -176,7 +176,7 @@
               <label for="licExpirationDate" class="control-label">LICENSE EXPIRATION DATE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #licExpirationDate = "ngModel" id="licExpirationDate"  [(ngModel)]="user.licExpirationDate" name="licExpirationDate" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
+              <input class="form-control"  #licExpirationDate = "ngModel" id="licExpirationDate"  [(ngModel)]="user.licExpirationDate" name="licExpirationDate" type="text" bsDatepicker [bsConfig]="datePickerConfig" required>
             </div>
             <div *ngIf="licExpirationDate.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -267,7 +267,7 @@
               <label for="city" class="control-label">CITY</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control " #city = "ngModel" id="city" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.city" name="city" type="text" required>
+              <input class="form-control " #city = "ngModel" id="city" pattern="[a-zA-Z ]*"[(ngModel)]="user.city" name="city" type="text" required>
             </div>
             <div [hidden]="city.valid || city.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -314,13 +314,11 @@
             </div>
             <div class="col-md-7">
               <input class="form-control " #yrsInCurrentaddress = "ngModel" id="yrsInCurrentaddress" [(ngModel)]="user.yrsInCurrentaddress" name="yrsInCurrentaddress" type="number" required>
+              <div *ngIf="yrsInCurrentaddress.touched && yrsInCurrentaddress.errors?.required"
+                   class=" text-danger">
+                Years in current address is required
+              </div>
             </div>
-            <div *ngIf="yrsInCurrentaddress.touched"
-                       class="col-md-7 offset-md-5 text-danger">
-            <div *ngIf = "yrsInCurrentaddress.errors?.required">
-              Years in current address is required
-            </div>
-          </div>
           </div>
         </div>
         <div class="col-12 row next-btn-align">
@@ -405,7 +403,7 @@
               <label for="bankName" class="control-label">BANK NAME</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #bankName ="ngModel" id="bankName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.bankName" name="bankName" type="text" required>
+              <input class="form-control"  #bankName ="ngModel" id="bankName" pattern="[a-zA-Z ]*"[(ngModel)]="user.bankName" name="bankName" type="text" required>
             </div>
             <div [hidden]= "bankName.valid || bankName.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -709,7 +707,7 @@
               <label for="dateOfMove"  class=" control-label">DATE OF MOVE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #dateOfMove = "ngModel" id="dateOfMove" [(ngModel)]="user.dateOfMove" name="dateOfMove" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
+              <input class="form-control readonly" readonly="readonly"  #dateOfMove = "ngModel" id="dateOfMove" [(ngModel)]="user.dateOfMove" name="dateOfMove" type="text" bsDatepicker [bsConfig]="datePickerConfig" required>
             </div>
             <div *ngIf="dateOfMove.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -734,7 +732,7 @@
               <label for="companyName"  class=" control-label">COMPANY NAME</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #companyName = "ngModel" id="companyName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.companyName" name="companyName" type="text" required>
+              <input class="form-control" #companyName = "ngModel" id="companyName" pattern="[a-zA-Z ]*"[(ngModel)]="user.companyName" name="companyName" type="text" required>
             </div>
             <div [hidden]="companyName.valid || companyName.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -768,7 +766,7 @@
               <label for="employerName"  class=" control-label">EMPLOYER NAME</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #employerName = "ngModel" id="employerName" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.employerName" name="employerName" type="text" required>
+              <input class="form-control" #employerName = "ngModel" id="employerName" pattern="[a-zA-Z ]*"[(ngModel)]="user.employerName" name="employerName" type="text" required>
             </div>
             <div [hidden]="employerName.valid || employerName.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -819,7 +817,7 @@
               <label for="jobTitle"  class=" control-label">JOB TITLE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #jobTitle = "ngModel" id="jobTitle" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.jobTitle" name="jobTitle" type="text" required>
+              <input class="form-control" #jobTitle = "ngModel" id="jobTitle" pattern="[a-zA-Z ]*"[(ngModel)]="user.jobTitle" name="jobTitle" type="text" required>
             </div>
             <div [hidden]="jobTitle.valid || jobTitle.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -869,6 +867,8 @@
           <div class="col-6"><button class="btn btn-lg next-btn" id="employmentdetailsbtn" name="next" [disabled]="!applicationForm.form.valid"  (click)="applyForm('employmentDetails')">NEXT</button></div>
         </div>
       </div>
+
+
       <div class="col-md-12 row text-left" id="loandetails" *ngIf="loanDetails">
         <div class="col-md-12 text-center heading-title"><h5><strong>LOAN DETAILS</strong></h5></div>
         <div class="col-md-6 row">
@@ -891,7 +891,7 @@
               <label for="deadlineDate"  class=" control-label">DEADLINE DATE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #deadlineDate = "ngModel" id="deadlineDate" [(ngModel)]="user.deadlineDate" name="deadlineDate" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
+              <input class="form-control readonly" readonly="readonly" #deadlineDate = "ngModel" id="deadlineDate" [(ngModel)]="user.deadlineDate" name="deadlineDate" type="text" bsDatepicker [bsConfig]="datePickerConfig" required>
             </div>
             <div *ngIf="deadlineDate.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -907,7 +907,7 @@
               <label for="loanPurpose"  class=" control-label">LOAN PURPOSE</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control"  #loanPurpose = "ngModel" id="loanPurpose" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.loanPurpose" name="loanPurpose" type="text" required>
+              <input class="form-control"  #loanPurpose = "ngModel" id="loanPurpose" pattern="[a-zA-Z ]*"[(ngModel)]="user.loanPurpose" name="loanPurpose" type="text" required>
             </div>
             <div [hidden]="loanPurpose.valid || loanPurpose.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -966,7 +966,7 @@
               <label for="bankAccount"  class=" control-label">BANK ACCOUNT</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #bankAccount = "ngModel" id="bankAccount" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="user.bankAccount" name="bankAccount" type="text" required>
+              <input class="form-control" #bankAccount = "ngModel" id="bankAccount" pattern="[a-zA-Z ]*"[(ngModel)]="user.bankAccount" name="bankAccount" type="text" required>
             </div>
             <div [hidden]="bankAccount.valid || bankAccount.pristine"
                  class="col-md-7 offset-md-5 text-danger">
@@ -998,7 +998,7 @@
               <label for="secondPayDay"  class=" control-label">SECOND PAY DAY</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #secondPayDay = "ngModel" id="secondPayDay" [(ngModel)]="user.secondPayDay" name="secondPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
+              <input class="form-control readonly" readonly="readonly" #secondPayDay = "ngModel" id="secondPayDay" [(ngModel)]="user.secondPayDay" name="secondPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig" required>
             </div>
             <div *ngIf="secondPayDay.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -1014,7 +1014,7 @@
               <label for="nexTPayDay"  class=" control-label">NEXT PAY DAY</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #nexTPayDay = "ngModel" id="nexTPayDay" [(ngModel)]="user.nexTPayDay" name="nexTPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig"  placeholder="DD/MM/YYYY" required>
+              <input class="form-control readonly" readonly="readonly"  #nexTPayDay = "ngModel" id="nexTPayDay" [(ngModel)]="user.nexTPayDay" name="nexTPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig" required>
             </div>
             <div *ngIf="nexTPayDay.touched"
                  class="col-md-7 offset-md-5 text-danger">

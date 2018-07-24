@@ -60,3 +60,9 @@ label{
   margin-left: -15px;
   width: 95%;
 }
+.readonly{
+  background-color:white !important;
+}
+button:disabled {
+  background-color:#717782;
+}
