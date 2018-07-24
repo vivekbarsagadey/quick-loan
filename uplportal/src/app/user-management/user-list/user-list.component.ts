@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {UserService} from '../user.service';
 import {User} from '../user';
 import {ActivatedRoute, Router, Params} from '@angular/router';
+import { domainMembersDelete } from '../../api/update-service';
 
 
 @Component({
@@ -40,10 +41,11 @@ export class UserListComponent implements OnInit {
   //   return data;
   // }
   onSelect(user: User) {
-    this.router.navigate(['route/user', user.id]);
+    this.router.navigate(['uplportal/user', user.id]);
   }
 
-  onDeleteUser(user: User) {
+  onDeleteUsers(user: User) {
+    domainMembersDelete({User: user});
     this.deletedUser =  this.userService.deleteUser(user.id);
     this.loadUser();
 
@@ -53,7 +55,7 @@ export class UserListComponent implements OnInit {
 
   }
   newUserComponent() {
-    this.router.navigate(['route/newuser']);
+    this.router.navigate(['uplportal/newuser']);
   }
   getFullName(user: User) {
     return [user.lastName , user.firstName ].join(',');

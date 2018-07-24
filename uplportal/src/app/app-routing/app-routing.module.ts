@@ -16,7 +16,7 @@ import { AppRouteComponent } from '../app-route/app-route.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'route', component: AppRouteComponent,
+  {path: 'uplportal', component: AppRouteComponent,
     children: [
       {path: 'home', component: HomeComponent},
       {path: 'contact' , component: ContactComponent},

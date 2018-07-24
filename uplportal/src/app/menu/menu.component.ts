@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
   userName: string;
   userId: number;
+  userRole: string;
   constructor(private router: Router) {
    const userData = JSON.parse(localStorage.getItem('userData'));
    this.userName = userData.user.userName;
    this.userId = userData.user.id;
+   this.userRole = userData.user.role;
   }
 
   ngOnInit() {

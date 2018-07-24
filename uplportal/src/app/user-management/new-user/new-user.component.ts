@@ -5,6 +5,7 @@ import {UserService} from '../user.service';
 import {User} from '../user';
 import {ActivatedRoute, Router, Params} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import { domainMembersAdd } from '../../api/update-service';
 
 @Component({
   selector: 'app-new-user',
@@ -21,9 +22,10 @@ export class NewUserComponent implements OnInit {
   ngOnInit() {
     this.user = new User(-1, null, null, null, null, null);
   }
-  onSubmit() {
+  onSubmitUser() {
+    domainMembersAdd({User: this.user});
     this.userService.addUser(this.user).then(() => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['/uplportal/user']);
     });
 
   }

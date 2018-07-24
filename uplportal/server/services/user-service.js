@@ -34,7 +34,6 @@ class UserService {
   }
 
   authenticate({username, password}) {
-
     return User.findOne({where: {userName: username, password: password}}).then((data) => {
       console.log("dataVal.get() ", data);
       return data.get();
@@ -49,6 +48,38 @@ class UserService {
     });
   };
 
+  updateUserData({userData},callback){
+    console.log("updateUserDataCreated>....------->>>>>>",userData);
+    userData.forEach((user) => {
+      db.sequelize.sync().then(function () {
+        return User.create(user);
+      }).then(function (res) {
+        console.log("User is added ..",res);
+        callback(res)
+      }).catch(function (err) {
+        console.log("error measssage.....", err);
+       callback(err)
+      });
+    });
+  }
+
+  deleteUserData({userData},callback){
+    console.log("UserDataaaaaaadeleting>....------>>>>>>>>>>>->>>>>>",userData);
+    userData.forEach((user) => {
+       db.sequelize.sync().then(function () {
+        return User.destroy({
+          where: { firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password}
+        });
+      }).then(function (res) {
+        console.log("User is deleted ------------- .....>>>>>>>..",res);
+         callback(res)
+      }).catch(function (err) {
+        console.log("error measssage..>>>>>>>>>>>>>>>>>>>>>>...", err);
+        callback(err)
+      });
+    });
+  }
+
   createDummyUserData(callback) {
     userData.forEach((user) => {
       db.sequelize.sync().then(function () {
@@ -60,7 +91,6 @@ class UserService {
         callback("Error during user creation")
       });
     });
-
     callback("User is created ")
   }
 

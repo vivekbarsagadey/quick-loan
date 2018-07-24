@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         if (res['auth']) {
           localStorage.setItem( 'userData', JSON.stringify(res));
-          this.router.navigateByUrl('/route');
+          this.router.navigateByUrl('/uplportal');
         } else {
           this.errorFieldValue = 'block';
         }

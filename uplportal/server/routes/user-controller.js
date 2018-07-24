@@ -15,6 +15,31 @@ router.post('/authenticate', (req, res) => {
   });
 });
 
+router.post('/updateUserData', (req, res) => {
+  let userData = req.body.userData;
+  console.log("userDataToUpdate----------------------------->>>>>",userData);
+  userService.updateUserData({userData: userData},(user) => {
+    if (user) {
+      res.send({newUserData: user});
+    }
+    else {
+      res.send({newUserData: null});
+    }
+  });
+});
+
+router.post('/deleteUserData', (req, res) => {
+  let userData = req.body.userData;
+  console.log("User Data to Delete----------------------------->>>>>",userData);
+  userService.deleteUserData({userData: userData},(user) => {
+    if (user) {
+      res.send({newUserData: user});
+    }
+    else {
+      res.send({newUserData: null});
+    }
+  });
+});
 
 router.get('/', (req, res) => {
   userService.findAll().then((users) => {

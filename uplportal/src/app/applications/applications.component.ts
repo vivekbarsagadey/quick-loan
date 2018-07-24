@@ -9,18 +9,23 @@ import { UrlConstants } from '../common/url-constants';
   templateUrl: './applications.component.html',
   styleUrls: ['./applications.component.scss']
 })
+
+
 export class ApplicationsComponent implements OnInit {
   users: Observable<any[]>;
+  dispalyMessage: String;
+  userId: string;
   display: any;
   currentUser: any;
   userInfo: any;
   constructor(private userService: UserService, private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router) {    const userData = JSON.parse(localStorage.getItem('userData'));
+    this.userId = userData.user.id;
   }
 
   ngOnInit() {
     this.display = 'none';
-    fetch( UrlConstants.APPLICATION_URL , {
+    fetch( UrlConstants.APPLICATION_BY_INVESTORID_URL, {
       method: 'get',
       mode: 'cors'
     }).then(response => {
@@ -29,13 +34,21 @@ export class ApplicationsComponent implements OnInit {
     }).then(res => {
       console.log(res);
       this.users = res;
+      this.displayScreenMessage();
+     // this.users = res.filter((user) => user['investorId'] === this.userId );
     }).catch(err => {}
     );
   }
 
+  displayScreenMessage() {
+    this.dispalyMessage = '';
+    if (!this.users.length) {
+      this.dispalyMessage = 'No Pending Application Requests';
+    }
+  }
   openModal(id) {
     this.display = 'block';
-    fetch(UrlConstants.CUSTOMER_URL + 8, {
+    fetch(UrlConstants.CUSTOMER_URL + id, {
       method: 'get',
       mode: 'cors'
     }).then(response => {
@@ -45,28 +58,30 @@ export class ApplicationsComponent implements OnInit {
       console.log('res>>>>>>>>>>>>>>', res);
       this.userInfo = res;
     }).catch(err => {
+      console.log('err>>>>>>>>>>>>>>', err);
       }
     );
   }
-  onClickAcceptBtn() {
-    fetch(UrlConstants.APPLICATION_URL,  {
-      method: 'POST',
-      mode: 'cors',
-      redirect: 'follow',
+  onClickAcceptBtn(userId) {
+    fetch(UrlConstants.APPLICATION_LEDGER_URL + 'updateStatus/' + userId + '/APPROVED',  {
+      method: 'GET',
       headers: new Headers({
         'Content-Type': 'text/plain'
       })
-    }).then(function() { this.display = 'none'; });
+    }).then((res) => console.log(res)
+    );
+
+    // then(function() { this.display = 'none'; });
   }
-  onClickRejectBtn() {
-    fetch(UrlConstants.APPLICATION_URL, {
-      method: 'POST',
-      mode: 'cors',
-      redirect: 'follow',
+  onClickRejectBtn(userId) {
+    fetch(UrlConstants.APPLICATION_LEDGER_URL + 'updateStatus/' + userId + '/REJECTED', {
+      method: 'GET',
       headers: new Headers({
         'Content-Type': 'text/plain'
       })
-    }).then(function() { this.display = 'none'; });
+    }).then((res) => console.log(res));
+
+    // then(function() { this.display = 'none'; });
   }
   onCloseHandled() {
     this.display = 'none';
