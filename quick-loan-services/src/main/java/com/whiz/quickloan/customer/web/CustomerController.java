@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.whiz.quickloan.QuickloanApplication;
 import com.whiz.quickloan.applications.domain.Application;
 import com.whiz.quickloan.customer.domain.Customer;
+import com.whiz.quickloan.customer.domain.CustomerStatus;
 import com.whiz.quickloan.customer.services.CustomerRepository;
 import com.whiz.quickloan.ledger.mapper.CustomerMapper;
 import com.whiz.quickloan.ledger.services.LedgerCustomerServices;
@@ -72,8 +73,10 @@ public class CustomerController {
 		if(null != userRepository.findByEmailId(emailId)) 
 			return new ResponseEntity("This email id is already registered...please use another email id..!!!", HttpStatus.BAD_REQUEST);
 		
+		customer.setScore(5);
+		customer.setStatus(CustomerStatus.ACTIVE);
+		
 		// save customer in DB
-	
 		customer.getUserDetails().setCustomer(customer);
 		customer.getAddressDetails().setCustomer(customer);
 		customer.getContactDetails().setCustomer(customer);
@@ -84,10 +87,9 @@ public class CustomerController {
 		
 		customer = customerRepository.save(customer);
 
-		// save customer in Block chain
-		String response;
+		// save customer in ledger
 		if(QuickloanApplication.blockChainENabled)
-			response = ledgerCustomerServices.saveCustomer(CustomerMapper.map(customer));
+			ledgerCustomerServices.saveCustomer(CustomerMapper.map(customer));
 
 		// save user in DB
 		User user = new User();
@@ -121,11 +123,12 @@ public class CustomerController {
 			}
 			
 			// Update customer
-			
-			customer.setId(id);
-			storedCustomer.setCustomer(customer);
-			
+			storedCustomer.updateCustomer(customer);
 			customerRepository.save(storedCustomer);
+
+			// update ledger
+			//ledgerCustomerServices.updateCustomer(CustomerMapper.map(storedCustomer));
+			
 			return new ResponseEntity("Customer updated successfully", HttpStatus.OK);
 		} else {
 			return new ResponseEntity("Customer update fail", HttpStatus.OK);
@@ -141,11 +144,18 @@ public class CustomerController {
 		Customer storedCustomer = customerRepository.findById(id).orElse(null);
 		if (storedCustomer != null) {
 			User user = userRepository.findByEmailId(storedCustomer.getContactDetails().getEmailId());
-			userService.deleteUserById(user.getId());
+			if(null != user)
+				userService.deleteUserById(user.getId());
 		}
 
 		// delete customer
 		customerRepository.deleteById(id);
+		
+		
+		// delete customer from ledger
+		if(QuickloanApplication.blockChainENabled)
+			ledgerCustomerServices.deleteCustomer(id);
+		
 		return new ResponseEntity("Customer deleted successfully", HttpStatus.OK);
 	}
 

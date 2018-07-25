@@ -54,7 +54,7 @@ CREATE TABLE `bank_details` (
   `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FKlxahb6q7hvt3ymfvjpvdnlq02` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE `contact_details` (
@@ -89,6 +89,7 @@ CREATE TABLE `customer` (
   `updated_by` varchar(20) DEFAULT NULL,
   `updated_date` datetime DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 

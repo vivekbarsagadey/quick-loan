@@ -8,9 +8,9 @@ public final class ApplicationMapper {
 	public final static com.whiz.quickloan.ledger.domain.Application map(Application source) {
 		com.whiz.quickloan.ledger.domain.Application dest = new com.whiz.quickloan.ledger.domain.Application();
 		dest.set$class(LedgerConstant.ASSET_NS + ".Applications");
-		dest.setId(source.getId().toString());
-		dest.setCustomer("resource:org.whizit.pronto.participants.Customer#1");
-		dest.setInvestor("resource:org.whizit.pronto.participants.Investor#0");
+		dest.setId(Integer.toString(source.getId()));
+		dest.setCustomer("resource:org.whizit.pronto.participants.Customer#"+ source.getCustomerId());
+		dest.setInvestor("resource:org.whizit.pronto.participants.Investor#"+ source.getInvestorId());
 		dest.setApplicationDate("2018-07-04T10:06:34.591Z");
 		dest.setLoanAmount(150);
 		dest.setStatus("RECEIVED");

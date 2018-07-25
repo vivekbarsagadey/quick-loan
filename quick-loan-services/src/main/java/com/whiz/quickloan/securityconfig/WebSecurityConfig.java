@@ -8,7 +8,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.approval.TokenStoreUserApprovalHandler;
 import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
@@ -36,7 +38,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	/*@Bean
 	public PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();
-	}	*/
+	}*/	
+	
 	
 	@Autowired
 	public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
@@ -50,11 +53,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 
-	@Override
+	/*@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		//http.authorizeRequests().antMatchers("/**").permitAll();
-		http.csrf().disable().anonymous().disable().authorizeRequests().antMatchers("/oauth/token").permitAll();
-	}
+		http.authorizeRequests().antMatchers("/oauth/token").permitAll();
+		//http.csrf().disable().anonymous().disable().authorizeRequests().antMatchers("/oauth/token", "/").permitAll();
+	}*/
 
 	@Override
 	@Bean

@@ -1,26 +1,23 @@
 package com.whiz.quickloan.ledger.transactions;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Data
-public class TxBlockCustomer extends BaseDomain{
-	
+public class TxUpdateCustomerStatus extends BaseDomain {
+
 	private String customer;
-	public TxBlockCustomer() {
+	private String status;
+
+	public TxUpdateCustomerStatus() {
 		super();
 	}
 
 	/**
 	 * @param customer
 	 */
-	public TxBlockCustomer(String $class) {
+	public TxUpdateCustomerStatus(String $class) {
 		super();
 		this.$class = $class;
 	}
 
-	
 }

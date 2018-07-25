@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.whiz.quickloan.QuickloanApplication;
 import com.whiz.quickloan.investor.domain.Investor;
+import com.whiz.quickloan.investor.domain.InvestorStatus;
 import com.whiz.quickloan.investor.domain.LoanRange;
 import com.whiz.quickloan.investor.services.InvestorRepository;
 import com.whiz.quickloan.ledger.mapper.InvestorMapper;
@@ -47,6 +49,7 @@ public class InvestorController {
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity save(@RequestBody Investor investor) {
 		investor.setLoanRange(LoanRange.UPTO_1000);
+		investor.setStatus(InvestorStatus.ACTIVE);
 		investor.getAddressDetails().setInvestor(investor);
 		investor.getContactDetails().setInvestor(investor);
 		investor.getPaymentDetails().setInvestor(investor);
@@ -66,7 +69,9 @@ public class InvestorController {
 
 		Investor storedInvestor = investorRepository.findById(investorId).orElse(null);
 		if (storedInvestor != null) {
-			investorRepository.save(storedInvestor);
+			storedInvestor.updateInvestor(investor); 
+			investorRepository.save(storedInvestor); // update database
+			//ledgerInvestorServices.updateInvestor(InvestorMapper.map(investor));
 			return new ResponseEntity("Investor updated successfully!", HttpStatus.OK);
 		} else {
 			return new ResponseEntity("Investor update failed!", HttpStatus.OK);
@@ -77,6 +82,9 @@ public class InvestorController {
 	@RequestMapping(value = "/{investorId}", method = RequestMethod.DELETE, produces = "application/json")
 	public ResponseEntity delete(@PathVariable Integer investorId) {
 		investorRepository.deleteById(investorId);
+		
+		if(QuickloanApplication.blockChainENabled)
+			ledgerInvestorServices.deleteInvestor(investorId);
 		return new ResponseEntity("Investor deleted successfully", HttpStatus.OK);
 	}
 

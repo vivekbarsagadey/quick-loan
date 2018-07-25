@@ -23,7 +23,7 @@ public class User extends BaseEntityAudit{
 	private String emailId;
 	private String password;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<UserRole> roles;
 
 }

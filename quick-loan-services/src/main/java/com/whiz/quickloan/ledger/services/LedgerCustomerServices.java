@@ -51,6 +51,30 @@ public class LedgerCustomerServices {
 		return responseCustomer.getBody().toString();
 	}
 
+	public void deleteCustomer(Integer id) {
+
+		String url = LedgerConstant.API_URL + "customer/" + id;
+		try {
+			//RestTemplate restTemplate = new RestTemplate();
+			restTemplate.delete(url);
+			log.info("Customer deleted from ledger!!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+
+	public void updateCustomer(Customer customer) {
+
+		String url = LedgerConstant.API_URL + "customer/" + customer.getId();
+		try {
+			//RestTemplate restTemplate = new RestTemplate();
+			restTemplate.put(url, customer);
+			log.info("Ledger customer update called!!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+
 
 /*	public String saveCustomerOld(Customer customer) {
 		ResponseEntity<String> response  = null;

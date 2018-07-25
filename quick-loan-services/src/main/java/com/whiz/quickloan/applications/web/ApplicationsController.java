@@ -1,6 +1,7 @@
 package com.whiz.quickloan.applications.web;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.whiz.quickloan.QuickloanApplication;
 import com.whiz.quickloan.application.services.ApplicationsRepository;
 import com.whiz.quickloan.applications.domain.Application;
 import com.whiz.quickloan.applications.domain.ApplicationState;
@@ -57,8 +59,8 @@ public class ApplicationsController {
 	
 	@RequestMapping(value = "/investor/{invertorId}", method = RequestMethod.GET, produces = "application/json")
 	@CrossOrigin
-	public Iterable<Application> listByInverstor(@PathVariable String invertorId, Model model) {
-		Iterable<Application> ApplicationsList = applicationsRepository.findAll();
+	public Iterable<Application> listByInverstor(@PathVariable Integer invertorId, Model model) {
+		List<Application> ApplicationsList = applicationsRepository.findByInvestorId(invertorId);
 		return ApplicationsList;
 	}
 
@@ -73,13 +75,15 @@ public class ApplicationsController {
 		application.setStatus(ApplicationStatus.RECEIVED);
 		application.setRemarks("NO_REMARKS");
 		
-		Application response = applicationsRepository.save(application);
+		// save in DB
+		application = applicationsRepository.save(application);
 		
 		// update ledger data
-		//String response = ledgerApplicationServices.saveApplication(ApplicationMapper.map(application));
+		if(QuickloanApplication.blockChainENabled)
+			ledgerApplicationServices.saveApplication(ApplicationMapper.map(application));
 				
 		//return new ResponseEntity("Application saved successfully", HttpStatus.OK);
-		return new ResponseEntity(response, HttpStatus.OK);
+		return new ResponseEntity("Application received", HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Update an Application")
@@ -90,6 +94,7 @@ public class ApplicationsController {
 		if(storedApplications !=null) {
 			storedApplications.updateApplication(application);
 			applicationsRepository.save(storedApplications);
+			//ledgerApplicationServices.updateApplication(ApplicationMapper.map(storedApplications));
 			return new ResponseEntity("Application updated successfully!", HttpStatus.OK);
 		}else {
 			return new ResponseEntity("Application update failed!", HttpStatus.OK);
@@ -99,7 +104,8 @@ public class ApplicationsController {
 	@ApiOperation(value = "Delete an Application")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json")
 	public ResponseEntity delete(@PathVariable Integer id) {
-		applicationsRepository.deleteById(id);
+		applicationsRepository.deleteById(id); 					// delete from DB
+		ledgerApplicationServices.deleteApplication(id); 		//delete from ledger
 		return new ResponseEntity("Application deleted successfully!", HttpStatus.OK);
 	}
 	
@@ -110,9 +116,9 @@ public class ApplicationsController {
 	}
 	
 	//Add application to ledger
-	@ApiOperation(value = "LedgerTxApplicationServices test", response = Application.class)
+	/*@ApiOperation(value = "LedgerTxApplicationServices test", response = Application.class)
 	@RequestMapping(value = "/LedgerTxApplicationServices/{id}", method = RequestMethod.GET, produces = "application/json")
 	public String testLedgerTxApplicationServices(@PathVariable Integer id) {
 		return ledgerTxApplicationServices.createApplication(ApplicationMapper.map(new Application(id)));
-	}
+	}*/
 }

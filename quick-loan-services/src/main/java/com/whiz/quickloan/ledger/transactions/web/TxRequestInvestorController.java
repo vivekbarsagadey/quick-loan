@@ -33,14 +33,18 @@ public class TxRequestInvestorController {
 	@RequestMapping(value = "/application/request/{id}", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity requestInvestor(@PathVariable Integer id, @RequestParam Integer investorId) {
 		applicationsRepository.findById(id).ifPresent(application -> {
+			
+			// update in DB
 			application.setInvestorId(investorId);
 			application.setStatus(ApplicationStatus.REQUESTED);
 			application.setState(ApplicationState.WAITING_FOR_APPROVAL);
 			applicationsRepository.save(application);
+			
+			// upodate in ledger
 			ledgerTxRequestInvestorServices.requestInvestor(application);
 			
 		});
 		
-		return new ResponseEntity("Investor Requested", HttpStatus.OK);
+		return new ResponseEntity("Request sent to investor", HttpStatus.OK);
 	}
 }

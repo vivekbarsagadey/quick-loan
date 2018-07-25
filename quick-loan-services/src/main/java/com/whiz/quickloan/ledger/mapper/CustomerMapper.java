@@ -13,8 +13,4 @@ public final class CustomerMapper {
 		return dest;
 	}
 	
-	public final static Customer map(com.whiz.quickloan.ledger.domain.Customer source ) {
-		Customer dest = new Customer();
-		return dest;
-	}
 }

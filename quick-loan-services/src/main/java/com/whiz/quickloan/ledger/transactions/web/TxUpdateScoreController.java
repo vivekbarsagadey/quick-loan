@@ -29,9 +29,10 @@ public class TxUpdateScoreController {
 	@ApiOperation(value = "update Score")
 	@RequestMapping(value = "/customer/updateScore/{id}", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity updateScore(@PathVariable Integer id) {
-		customerRepository.findById(id).ifPresent(consumer -> {
-			ledgerTxUpdateScoreServices.updateScore(TxUpdateScoreMapper.map(consumer));
-			
+		customerRepository.findById(id).ifPresent(customer -> {
+			ledgerTxUpdateScoreServices.updateScore(TxUpdateScoreMapper.map(customer));
+			customer.setScore(2 * customer.getScore());
+			customerRepository.save(customer);
 		});
 		
 		

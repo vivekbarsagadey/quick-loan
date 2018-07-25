@@ -3,6 +3,8 @@ package com.whiz.quickloan.customer.domain;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
@@ -17,10 +19,9 @@ public class Customer extends BaseEntityAudit{
 	
 	@Column
 	private int score;
-	
-	/*@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private User user;*/
-	
+	@Enumerated(EnumType.STRING)
+	private CustomerStatus status;
+
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
 	private UserDetails userDetails;
 
@@ -43,8 +44,10 @@ public class Customer extends BaseEntityAudit{
 	private BankDetails bankDetails;
 	
 	
-	public void setCustomer(Customer customer) {
+	public void updateCustomer(Customer customer) {
 		
+		this.score = customer.score;
+		this.status = customer.status;
 		this.addressDetails.updateAddressDetails(customer.addressDetails);
 		this.contactDetails.updateContactDetails(customer.contactDetails);
 		this.bankDetails.updateBankDetails(customer.bankDetails);

@@ -49,6 +49,18 @@ public class LedgerApplicationServices {
 		return responseApplication.getBody().toString();
 	}
 
+	public void deleteApplication(Integer id) {
+
+		String url = LedgerConstant.API_URL + "Applications/" + id;
+		try {
+			//RestTemplate restTemplate = new RestTemplate();
+			restTemplate.delete(url);
+			log.info("Application deleted from ledger!!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+
 /*	public String saveCustomerOld(Customer customer) {
 		ResponseEntity<String> response  = null;
 		try {

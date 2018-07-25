@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.whiz.quickloan.ledger.LedgerConstant;
+import com.whiz.quickloan.ledger.domain.Customer;
 import com.whiz.quickloan.ledger.domain.Investor;
 
 @Service
@@ -40,5 +41,29 @@ public class LedgerInvestorServices {
 		}
 		
 		return responseInvestor.getBody().toString();
+	}
+
+	public void deleteInvestor(Integer investorId) {
+		
+		String url = LedgerConstant.API_URL + "investor/" + investorId;
+		try {
+			//RestTemplate restTemplate = new RestTemplate();
+			restTemplate.delete(url);
+			log.info("Ledger delete called!!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	public void updateInvestor(Investor investor) {
+
+		String url = LedgerConstant.API_URL + "investor/" + investor.getId();
+		try {
+			//RestTemplate restTemplate = new RestTemplate();
+			restTemplate.put(url, investor);
+			log.info("Ledger investor update called!!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
 	}
 }

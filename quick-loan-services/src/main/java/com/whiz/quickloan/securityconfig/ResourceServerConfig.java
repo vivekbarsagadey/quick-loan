@@ -21,11 +21,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests().antMatchers("/**").permitAll();
-        /*.authorizeRequests()
+/*
+        .authorizeRequests()
+        .antMatchers("/", "/oauth/token").permitAll()
         .antMatchers("/api/customer/**").access("hasRole('CUSTOMER')")
-        .antMatchers("/api/investor/**").access("hasRole('INVESTOR')")
         .antMatchers("/**").access("hasRole('USER')")
-        .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());*/
-    }
+        .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
+        
+*/    }
 
 }

@@ -17,7 +17,8 @@ import lombok.Data;
 public class Investor extends BaseEntityAudit{
 	
 	private String companyName;
-	private String status;
+	@Enumerated(EnumType.STRING)
+	private InvestorStatus status;
 	private Double totalLoanLent = 0.0;
 	//private String licenseNumber;
 

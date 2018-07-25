@@ -6,6 +6,9 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.whiz.quickloan.user.domain.QuickLoanUserDetails;
@@ -19,13 +22,16 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	
+	/*@Bean
+	public PasswordEncoder passwordEncoder() {
+	    return new BCryptPasswordEncoder();
+	}	*/
 	/* Test users */
-/*	@PostConstruct
+	/*@PostConstruct
 	public void createNewUsers() {
 		User user1 = new User();
-		user1.setEmailId("whizit");
-		user1.setPassword("whizit");
+		user1.setEmailId("whiz");
+		user1.setPassword("whiz");
 		
 		user1.setRoles(Arrays.asList(new UserRole("CUSTOMER")));
 		
@@ -35,16 +41,16 @@ public class UserService {
 		
 		
 		User user2 = new User();
-		user2.setEmailId("gsit");
-		user2.setPassword("gsit");
+		user2.setEmailId("gs");
+		user2.setPassword("gs");
 		
 		user2.setRoles(Arrays.asList(new UserRole("USER")));
 		
 		
 		QuickLoanUserDetails quickLoanUserDetails2 = new QuickLoanUserDetails(user2);
 		userRepository.save(user2);
-	}
-*/
+	}*/
+
 	
 	public List<User> findAllUsers() {
 		
