@@ -6,29 +6,29 @@
         <div class="col-md-8">
           <div class="row">
             <div class="col-sm-3">
-              <h5 class="mb-1">{{ user.remarks }}</h5>
+              <h5>{{ user.applicationDate }} </h5>
             </div>
-            <div class="col-sm-3">
-              <small>Loan Amount:- {{user.loanAmount}}</small>
+            <div class="col-sm-5">
+              <h5>Loan Status:- {{user.status}}</h5>
             </div>
-            <div class="col-sm-3">
-              <small>Loan State:- {{user.status}}</small>
-            </div>
-            <div class="col-sm-3">
-              <small>{{ user.applicationDate }} </small>
+            <div class="col-sm-4">
+              <h5>Loan Amount:- {{user.loanAmount}}</h5>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="row">
+            <div class="col-md-6" *ngIf="!(user.status != 'REJECTED' && user.status != 'APPROVED')"></div>
+            <div class="col-md-6" *ngIf="user.status != 'REJECTED' && user.status != 'APPROVED'">
+              <div class="col-sm-6 mr-2">
+                <button type="button" class="btn btn-lg btn-info accept-btn" (click)="onClickAcceptBtn(user.id)">Accept</button>
+              </div>
+              <div class="col-sm-6">
+                <button type="button" class="btn btn-lg btn-danger reject-btn" (click)="onClickRejectBtn(user.id)">Reject</button>
+              </div>
+            </div>
             <div class="col-sm-4 mr-2">
               <button class="btn btn-lg btn-info cust-details-btn" type="button" (click)="openModal(user.customerId)">Customer Details</button>
-            </div>
-            <div class="col-sm-3 mr-2">
-              <button type="button" class="btn btn-lg btn-info accept-btn" (click)="onClickAcceptBtn(user.id)">Accept</button>
-            </div>
-            <div class="col-sm-4">
-              <button type="button" class="btn btn-lg btn-danger reject-btn" (click)="onClickRejectBtn(user.id)">Reject</button>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
                           <p i18n>First Name :</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.firstName}}</p>
+                          <p>{{userInfo.userDetails.firstName}}</p>
                         </div>
                       </div>
                     </div>
@@ -69,7 +69,7 @@
                           <p i18n>Last Name :</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.lastName}}</p>
+                          <p>{{userInfo.userDetails.lastName}}</p>
                         </div>
                       </div>
                     </div>
@@ -84,7 +84,7 @@
                           <p>Military Dependant:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.isMilitaryDependant}}</p>
+                          <p>{{userInfo.userDetails.isMilitaryDependant}}</p>
                         </div>
                       </div>
                     </div>
@@ -94,7 +94,7 @@
                           <p i18n>Us Citizen:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.isUsCitizen}}</p>
+                          <p>{{userInfo.userDetails.isUsCitizen}}</p>
                         </div>
                       </div>
                     </div>
@@ -109,7 +109,7 @@
                           <p>Updated By:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.updatedBy}}</p>
+                          <p>{{userInfo.userDetails.updatedBy}}</p>
                         </div>
                       </div>
                     </div>
@@ -119,7 +119,7 @@
                           <p i18n>Updated Date:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.updatedDate}}</p>
+                          <p>{{userInfo.userDetails.updatedDate}}</p>
                         </div>
                       </div>
                     </div>
@@ -134,7 +134,7 @@
                           <p>Best Time to Call:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.bestTimeToCall}}</p>
+                          <p>{{userInfo.userDetails.bestTimeToCall}}</p>
                         </div>
                       </div>
                     </div>
@@ -144,7 +144,7 @@
                           <p i18n>Date of Birth:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.dob}}</p>
+                          <p>{{userInfo.userDetails.doB}}</p>
                         </div>
                       </div>
                     </div>
@@ -159,7 +159,7 @@
                           <p>Created By:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.createdBy}}</p>
+                          <p>{{userInfo.userDetails.createdBy}}</p>
                         </div>
                       </div>
                     </div>
@@ -169,7 +169,7 @@
                           <p i18n>Created Date:</p>
                         </div>
                         <div class="col-md-6">
-                          <p>{{userInfo.createdDate}}</p>
+                          <p>{{userInfo.userDetails.createdDate}}</p>
                         </div>
                       </div>
                     </div>
