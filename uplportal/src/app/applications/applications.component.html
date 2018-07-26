@@ -18,12 +18,27 @@
         </div>
         <div class="col-md-4">
           <div class="row">
-            <div class="col-md-6" *ngIf="!(user.status != 'REJECTED' && user.status != 'APPROVED')"></div>
-            <div class="col-md-6" *ngIf="user.status != 'REJECTED' && user.status != 'APPROVED'">
+            <ng-template #other_states>
+            <div class="col-md-6 text-center">
+              <div class="col-sm-6" *ngIf="user.status == 'APPROVED'">
+                <button type="button" class="btn btn-lg btn-success" (click)="onClickLoanLent(user.id)">Loan Lent</button>
+              </div>
+              <div class="col-sm-6" *ngIf="user.status == 'REJECTED'">
+                <h3 class="text-danger">✗</h3>
+              </div>
+              <div class="col-sm-6 row" *ngIf="user.status == 'LOAN_LENT'">
+                <button type="button" class="btn btn-lg btn-warning" (click)="onClickClearedBtn(user.id)">Loan Cleared</button>
+              </div>
+              <div class="col-md-6 row" *ngIf="user.status == 'LOAN_CLEARED'">
+                <h3 class="text-success">✔</h3>
+              </div>
+            </div>
+            </ng-template>
+            <div class="col-md-7 row" *ngIf="user.status == 'REQUESTED';else other_states">
               <div class="col-sm-6 mr-2">
                 <button type="button" class="btn btn-lg btn-info accept-btn" (click)="onClickAcceptBtn(user.id)">Accept</button>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-5">
                 <button type="button" class="btn btn-lg btn-danger reject-btn" (click)="onClickRejectBtn(user.id)">Reject</button>
               </div>
             </div>

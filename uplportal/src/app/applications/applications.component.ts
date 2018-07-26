@@ -70,7 +70,6 @@ export class ApplicationsComponent implements OnInit {
       })
     }).then((res) => console.log(res)
     );
-
     // then(function() { this.display = 'none'; });
   }
   onClickRejectBtn(userId) {
@@ -86,8 +85,25 @@ export class ApplicationsComponent implements OnInit {
   onCloseHandled() {
     this.display = 'none';
   }
-
-  /* getFullName(user: User) {
+  onClickLoanLent(applicationId) {
+    fetch(UrlConstants.APPLICATION_LEDGER_URL + 'updateStatus/' + applicationId + '/LOAN_LENT',  {
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'text/plain'
+      })
+    }).then((res) => console.log(res)
+    );
+  }
+  onClickClearedBtn(applicationId) {
+    fetch(UrlConstants.APPLICATION_LEDGER_URL + 'updateStatus/' + applicationId + '/LOAN_CLEARED',  {
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'text/plain'
+      })
+    }).then((res) => console.log(res)
+    );
+  }
+/* getFullName(user: User) {
      return [user.lastName, user.firstName].join(',');
    }*/
 
