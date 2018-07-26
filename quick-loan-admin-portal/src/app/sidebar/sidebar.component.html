@@ -1,10 +1,5 @@
 <div class="sidebar" data-background-color="white" data-active-color="danger">
 
-  <!--
-      Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
-      Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-  -->
-
   <div class="sidebar-wrapper">
     <div class="logo">
       <a href="#" class="simple-text">
@@ -12,33 +7,33 @@
       </a>
     </div>
 
-    <ul class="nav">
-      <li class="active">
-        <a routerLink="/home" routerLinkActive="active">
+    <ul class="nav navbar">
+      <li>
+        <a routerLink="home" class="app-menu__item" routerLinkActive="active" #dashboard="routerLinkActive">
           <i class="ti-panel"></i>
           <p>Dashboard</p>
         </a>
       </li>
       <li>
-        <a routerLink="/applications" routerLinkActive="active">
+        <a routerLink="applications" class="app-menu__item" routerLinkActive="active" #applicaton="routerLinkActive">
           <i class="ti-notepad"></i>
           <p>Application</p>
         </a>
       </li>
       <li>
-        <a routerLink="/user" routerLinkActive="active">
+        <a routerLink="user" routerLinkActive="active">
           <i class="ti-user"></i>
           <p>User Management</p>
         </a>
       </li>
       <li>
-        <a routerLink="/customers" routerLinkActive="active">
+        <a routerLink="customers" routerLinkActive="active">
           <i class="ti-map"></i>
           <p>Customer Management</p>
         </a>
       </li>
       <li>
-        <a routerLink="/investors" routerLinkActive="active">
+        <a routerLink="investors" routerLinkActive="active">
           <i class="ti-stats-up"></i>
           <p>Investor Management</p>
         </a>

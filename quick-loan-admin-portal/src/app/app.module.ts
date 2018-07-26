@@ -13,36 +13,15 @@ import {UserManagementModule} from './user-management/user-management.module';
 import {ContactModule} from './contact/contact.module';
 import { FormComponent } from './form/form.component';
 import {MatSelectModule} from '@angular/material/select';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
 import { ProfileComponent } from './profile/profile.component';
-import {UserManagementComponent} from "./user-management/user-management.component";
 import { CustomerManagementComponent } from './customer-management/customer-management.component';
 import { InvestorManagementComponent } from './investor-management/investor-management.component';
 import { NewInvestorComponent } from './investor-management/new-investor/new-investor.component';
-// import { SidebarComponent } from './sidebar/sidebar.component';
-
-const appRoutes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'home', component: FormComponent},
-  {path: 'applications', component: ApplicationComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'user-management', component: UserManagementComponent},
-  {path: 'customers', component: CustomerManagementComponent},
-  {path: 'investors', component: InvestorManagementComponent},
-  {
-    path: 'new',
-    component: NewInvestorComponent
-  },
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
-  {path: '**', component: PageNotFoundComponent}
-];
+import { AppRouteComponent } from './app-route/app-route.component';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -60,6 +39,7 @@ const appRoutes: Routes = [
     CustomerManagementComponent,
     InvestorManagementComponent,
     NewInvestorComponent,
+    AppRouteComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,14 +47,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     ContactModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(appRoutes),
     UserManagementModule,
     MatSelectModule,
-    BrowserAnimationsModule
-  ],
-
-  exports: [
- //   SidebarComponent
+    AppRoutingModule,
   ],
 
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],

@@ -12,7 +12,7 @@ import { UrlConstants } from '../common/url-constants';
 
 
 export class ApplicationsComponent implements OnInit {
-  users: Observable<any[]>;
+  users: any;
   dispalyMessage: String;
   userId: string;
   display: any;
@@ -42,7 +42,7 @@ export class ApplicationsComponent implements OnInit {
 
   displayScreenMessage() {
     this.dispalyMessage = '';
-    if (!this.users.length) {
+    if (!(this.users.length)) {
       this.dispalyMessage = 'No Pending Application Requests';
     }
   }

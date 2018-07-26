@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         if (res.auth) {
           console.log(res);
           localStorage.setItem( 'admin', JSON.stringify(res));
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/qlap');
         } else {
           this.errorFieldValue = 'block';
         }
