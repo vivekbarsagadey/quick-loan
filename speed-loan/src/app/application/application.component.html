@@ -421,7 +421,13 @@
               <label for="durationOfBankAccount" class="control-label">DURATION OF BANK ACCOUNT</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #durationOfBankAccount = "ngModel" id="durationOfBankAccount" [(ngModel)]="user.durationOfBankAccount" name="durationOfBankAccount" type="number" required>
+              <input class="form-control" #durationOfBankAccount = "ngModel" id="durationOfBankAccount" minlength="1" maxlength="4" pattern="\d*" [(ngModel)]="user.durationOfBankAccount" name="durationOfBankAccount" type="text" required>
+            </div>
+            <div *ngIf="durationOfBankAccount.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(durationOfBankAccount.errors?.minlength) && (!durationOfBankAccount.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              Number atmost 4 digit.
             </div>
             <div *ngIf="durationOfBankAccount.touched"
                  class="col-md-7 offset-md-5 text-danger">
