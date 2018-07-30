@@ -1,0 +1,75 @@
+<div>
+  <div id="applicationForm" class=" apply-status cmsmasters_row">
+    <div class="cmsmasters_row_outer_parent">
+      <div class=" text-white text-center apply-status-heading">
+        <div>
+          <h1 >Apply Status</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>{{dispalyMessage}}</h3>
+  <ul class="list-group users">
+    <li class="list-group-item list-group-item-action justify-content-between">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-sm-3">
+              <h5>{{ user.applicationDate }} </h5>
+            </div>
+            <div class="col-sm-5">
+              <h5>Loan Status:- {{user.status}}</h5>
+            </div>
+            <div class="col-sm-4">
+              <h5>Loan Amount:- {{user.loanAmount}}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-sm-6" *ngIf="user.status == 'LOAN_REPAID'">
+                <h3 class="text-warning">Unvarified</h3>
+              </div>
+              <div class="row" *ngIf="user.status == 'LOAN_LENT'">
+                <div class="col-sm-6 mr-2">
+                  <button type="button" id="loanReceived_{{user.id}}" class="btn btn-lg btn-info accept-btn" (click)="onClickReceivedBtn(user.id)">Loan Received</button>
+                </div>
+              </div>
+              <div class="" *ngIf="user.status == 'LOAN_RECEIVED'">
+                <button type="button" id="loanRepaid_{{user.id}}" class="btn btn-lg btn-success" (click)="onClickLoanRepaid(user.id)">Loan Repaid</button>
+              </div>
+              <div class="" *ngIf="user.status == 'LOAN_CLEARED'">
+                <h3 class="text-success">✔</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-sm-6" *ngIf="user.status == 'APPROVED'">
+                <h3 class="text-success">Loan Approved</h3>
+              </div>
+              <div class="col-sm-6" *ngIf="user.status == 'LOAN_REPAID'">
+                <h3 class="text-success">Loan Paid</h3>
+              </div>
+              <div class="col-sm-6" *ngIf="user.status == 'REJECTED'">
+                <h3 class="text-danger">Loan Rejected</h3>
+              </div>
+              <div class="col-sm-6" *ngIf="user.status == 'REQUESTED'">
+                <h3 class="text-success">Investor Requested</h3>
+              </div>
+              <div class="col-sm-6" *ngIf="user.status == 'RECEIVED'">
+                <h3 class="text-info">Applied Succesfully</h3>
+              </div>
+              <div class="col-sm-6" *ngIf="user.status == 'LOAN_CLEARED'">
+                <h3 class="text-danger">Loan CLEARED</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<!--<app-application-details *ngIf="currentUser" [userInfo]="currentUser" [display]="display"></app-application-details>-->
+

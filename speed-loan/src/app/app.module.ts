@@ -12,6 +12,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import {BsDatepickerModule} from 'ngx-bootstrap';
+import { LoanApplicationComponent } from './loan-application/loan-application.component';
 
 
 const appRoutes: Routes = [
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   {path: 'how-it-works', component: HowItWorksComponent},
   {path: 'faq', component: FaqComponent},
   {path: 'contact-us', component: ContactUsComponent},
+  {path: 'loan-status', component: LoanApplicationComponent},
   {
     path: '',
     redirectTo: '/home',
@@ -40,6 +42,7 @@ const appRoutes: Routes = [
     HowItWorksComponent,
     FaqComponent,
     ContactUsComponent,
+    LoanApplicationComponent,
   ],
   imports: [
     BrowserModule,
