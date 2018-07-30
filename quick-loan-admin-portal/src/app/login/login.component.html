@@ -13,7 +13,7 @@
       <div class="form-group">
         <label class="control-label">Enter User Name</label>
 
-        <input type="text" formControlName="username" class="form-control border-input" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <input type="text" autofocus formControlName="username" class="form-control border-input" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
           <div *ngIf="f.username.errors.required">User Name is required</div>
           <div *ngIf="f.username.errors.minlength">User Name must be at least 5 characters</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {NgModule} from "@angular/compiler/src/core";
+import {NgModule} from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-sidebar',

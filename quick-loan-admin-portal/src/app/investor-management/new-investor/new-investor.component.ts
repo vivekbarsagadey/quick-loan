@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-investor',
@@ -10,7 +11,7 @@ export class NewInvestorComponent implements OnInit {
   investor: any = {};
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -59,6 +60,6 @@ export class NewInvestorComponent implements OnInit {
       }
     }).then(res => res.json())
       .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response));
+      .then(response => this.router.navigateByUrl('qlap/investors'));
   }
 }

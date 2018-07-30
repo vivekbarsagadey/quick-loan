@@ -1,3 +1,29 @@
+@import "../../assets/paper/variables";
+@import "../../assets/paper/mixins";
+
+@import "../../assets/paper/typography";
+
+// Core CSS
+@import "../../assets/paper/misc";
+@import "../../assets/paper/sidebar-and-main-panel";
+@import "../../assets/paper/buttons";
+@import "../../assets/paper/inputs";
+
+@import "../../assets/paper/alerts";
+@import "../../assets/paper/tables";
+
+@import "../../assets/paper/checkbox-radio";
+@import "../../assets/paper/navbars";
+@import "../../assets/paper/footers";
+
+// Fancy Stuff
+
+@import "../../assets/paper/dropdown";
+@import "../../assets/paper/cards";
+@import "../../assets/paper/chartist";
+@import "../../assets/paper/responsive";
+
+
 li{
   width: 100%;
   height: 60px;
@@ -9,4 +35,3 @@ ul{
 i{
   margin-top: 10%;
 }
-

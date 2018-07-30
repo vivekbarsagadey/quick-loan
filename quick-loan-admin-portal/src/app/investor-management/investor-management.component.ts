@@ -43,11 +43,11 @@ export class InvestorManagementComponent implements OnInit {
   }
 
   createInvestor() {
-    this.router.navigateByUrl('new');
+    this.router.navigateByUrl('qlap/new');
   }
 
-  deleteInvestor(investorId){
-    fetch(UrlConstant.JAVA_API + "investor/" + investorId, {
+  deleteInvestor(investorId) {
+    fetch(UrlConstant.JAVA_API + 'investor/' + investorId, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'

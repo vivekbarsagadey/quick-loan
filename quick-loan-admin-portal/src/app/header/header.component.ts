@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+
 import {FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Location } from '@angular/common';
 
+
 @Component({
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   Form: FormGroup;
   userData: String;
+
+  @Input()  pageName: String;
   // searchData: any;
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.Form = formBuilder.group({

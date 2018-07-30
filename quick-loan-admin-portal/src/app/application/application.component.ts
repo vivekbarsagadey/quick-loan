@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UrlConstant} from "../util/url-constant";
+import {UrlConstant} from '../util/url-constant';
 
 @Component({
   selector: 'app-application',
@@ -18,8 +18,8 @@ export class ApplicationComponent implements OnInit {
     this.getInvestors();
   }
 
-   getApplications(){
-    fetch(UrlConstant.JAVA_API + "applications/", {
+  getApplications() {
+    fetch(UrlConstant.JAVA_API + 'applications/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -32,8 +32,8 @@ export class ApplicationComponent implements OnInit {
       });
   }
 
-  getInvestors(){
-    fetch(UrlConstant.JAVA_API + "investor/", {
+  getInvestors() {
+    fetch(UrlConstant.JAVA_API + 'investor/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -46,10 +46,10 @@ export class ApplicationComponent implements OnInit {
       });
   }
 
-  getRequestInvestor(applicationId){
-    console.log('Investor selected for mySelect------->>>>',this.mySelectedInvestor);
+  getRequestInvestor(applicationId) {
+    console.log('Investor selected for mySelect------->>>>', this.mySelectedInvestor);
     const investorId = this.mySelectedInvestor;
-    fetch(UrlConstant.JAVA_API + "ledger/application/request/"+applicationId+"?investorId="+investorId, {
+    fetch(UrlConstant.JAVA_API + 'ledger/application/request/' + applicationId + '?investorId=' + investorId, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -77,8 +77,8 @@ export class ApplicationComponent implements OnInit {
       });
   }*/
 
-  deleteApplication(applicationId){
-    fetch(UrlConstant.JAVA_API + "applications/" + applicationId, {
+  deleteApplication(applicationId) {
+    fetch(UrlConstant.JAVA_API + 'applications/' + applicationId, {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'

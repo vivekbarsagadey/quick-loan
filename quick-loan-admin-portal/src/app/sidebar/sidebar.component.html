@@ -1,49 +1,46 @@
-<div class="sidebar" data-background-color="white" data-active-color="danger">
-
-  <div class="sidebar-wrapper">
-    <div class="logo">
-      <a href="#" class="simple-text">
-        QLAP
-      </a>
-    </div>
-
-    <ul class="nav navbar">
-      <li>
-        <a routerLink="home" class="app-menu__item" routerLinkActive="active" #dashboard="routerLinkActive">
-          <i class="ti-panel"></i>
-          <p>Dashboard</p>
-        </a>
-      </li>
-      <li>
-        <a routerLink="applications" class="app-menu__item" routerLinkActive="active" #applicaton="routerLinkActive">
-          <i class="ti-notepad"></i>
-          <p>Application</p>
-        </a>
-      </li>
-      <li>
-        <a routerLink="user" routerLinkActive="active">
-          <i class="ti-user"></i>
-          <p>User Management</p>
-        </a>
-      </li>
-      <li>
-        <a routerLink="customers" routerLinkActive="active">
-          <i class="ti-map"></i>
-          <p>Customer Management</p>
-        </a>
-      </li>
-      <li>
-        <a routerLink="investors" routerLinkActive="active">
-          <i class="ti-stats-up"></i>
-          <p>Investor Management</p>
-        </a>
-      </li>
-      <li>
-        <a routerLink="notifications.html" routerLinkActive="active">
-          <i class="ti-bell"></i>
-          <p>Notifications</p>
-        </a>
-      </li>
-    </ul>
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="#" class="simple-text">
+      QLAP
+    </a>
   </div>
+
+  <ul class="nav">
+    <li routerLinkActive="active" #dashboard="routerLinkActive">
+      <a routerLink="home" class=""  >
+        <i class="ti-panel"></i>
+        <p>Dashboard</p>
+      </a>
+    </li>
+    <li routerLinkActive="active" #applicaton="routerLinkActive">
+      <a routerLink="applications" class=""  >
+        <i class="ti-notepad"></i>
+        <p>Application</p>
+      </a>
+    </li>
+    <li routerLinkActive="active" #user="routerLinkActive">
+      <a routerLink="user" >
+        <i class="ti-user"></i>
+        <p>User Management</p>
+      </a>
+    </li>
+    <li routerLinkActive="active" #customers="routerLinkActive">
+      <a routerLink="customers" >
+        <i class="ti-map"></i>
+        <p>Customer Management</p>
+      </a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="investors">
+        <i class="ti-stats-up"></i>
+        <p>Investor Management</p>
+      </a>
+    </li>
+    <!--<li routerLinkActive="active">-->
+      <!--<a routerLink="notifications">-->
+        <!--<i class="ti-stats-up"></i>-->
+        <!--<p>Notifications</p>-->
+      <!--</a>-->
+    <!--</li>-->
+  </ul>
 </div>

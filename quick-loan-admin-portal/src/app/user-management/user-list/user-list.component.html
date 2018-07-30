@@ -1,7 +1,7 @@
 <div class="">
   <ol class="breadcrumb NAVBAR-RIGHT">
     <li class="breadcrumb-item active"></li>
-    <a routerLink="/newuser" id="newuserLink" class="text-success nav-link " routerLinkActive="active">New Users</a>
+    <a id="newuserLink" class="text-success nav-link " routerLinkActive="active">New Users</a>
   </ol>
   <div *ngIf="deletedUser" class="alert alert-info" role="alert">
     <strong>Heads up!</strong> You have successfully deleted <strong> {{getFullName(deletedUser)}}</strong> user.

@@ -1,42 +1,7 @@
-<app-sidebar></app-sidebar>
 <div class="main-panel">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-
-        <div class="row">
-          <div class="col-md-10">
-            <a class="navbar-brand" href="#">Investors</a>
-          </div>
-        </div>
-      </div>
-      <button class="btn-simple" (click)="createInvestor()">New Investor</button>
-      <div class="col-md-2 text-md-right">
-        <li class="dropdown text-md-right"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-          <ul class="dropdown-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-            <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-          </ul>
-        </li>
-      </div>
-      <!--<div class="dropdown">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Action
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </div>-->
-    </div>
-  </nav>
-
-  <div >
-
+  <app-header [pageName]="'Investors'"></app-header>
+  <div class="text-center">
+    <button class="btn-simple my-2" (click)="createInvestor()">New Investor</button>
     <!--<div class="selectappStatusdiv">
     <label class="selectLabelSatus"   for="applicationStatus">Application Status</label>
     <select name="applicationStatus" class="applicationStatus" id="applicationStatus" (change)="renderApplicationList($event)">
@@ -102,5 +67,5 @@
     </div>
 
   </div>
-
+  <app-footer></app-footer>
 </div>
