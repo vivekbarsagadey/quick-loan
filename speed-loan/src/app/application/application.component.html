@@ -251,6 +251,7 @@
             <div class="col-md-7">
               <select class="form-control" #stayType = "ngModel" id="stayType" [(ngModel)]="user.stayType" name="stayType" type="text" required>
                 <option>RENT</option>
+                <option>OWN</option>
               </select>
             </div>
             <div *ngIf="stayType.touched"
@@ -336,7 +337,13 @@
               <label for="abaOrRoutingNumber" class="control-label">ROUTING NUMBER</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #abaOrRoutingNumber = "ngModel" id="abaOrRoutingNumber" [(ngModel)]="user.abaOrRoutingNumber" name="abaOrRoutingNumber" type="number" required>
+              <input class="form-control" #abaOrRoutingNumber = "ngModel" id="abaOrRoutingNumber" minlength="9" maxlength="9" pattern="\d*" [(ngModel)]="user.abaOrRoutingNumber" name="abaOrRoutingNumber" type="text" required>
+            </div>
+            <div *ngIf="abaOrRoutingNumber.errors?.pattern" class="col-md-7 offset-md-5 text-danger">
+              Only numbers allowed.
+            </div>
+            <div *ngIf="(abaOrRoutingNumber.errors?.minlength) && (!abaOrRoutingNumber.errors?.pattern)" class="col-md-7 offset-md-5 text-danger">
+              it should be nine digit.
             </div>
             <div *ngIf="abaOrRoutingNumber.touched"
                  class="col-md-7 offset-md-5 text-danger">
@@ -574,6 +581,7 @@
             <div class="col-md-7">
               <select class="form-control" #residentialStatus = "ngModel" id="residentialStatus"  [(ngModel)]="user.residentialStatus" name="residentialStatus" type="text" required>
                 <option>OWN</option>
+                <option>RENT</option>
               </select>
             </div>
             <div *ngIf="residentialStatus.touched"
@@ -972,12 +980,12 @@
               <label for="bankAccount"  class=" control-label">BANK ACCOUNT</label>
             </div>
             <div class="col-md-7">
-              <input class="form-control" #bankAccount = "ngModel" id="bankAccount" pattern="[a-zA-Z ]*"[(ngModel)]="user.bankAccount" name="bankAccount" type="text" required>
+              <input class="form-control" #bankAccount = "ngModel" id="bankAccount" [(ngModel)]="user.bankAccount" name="bankAccount" type="text" required>
             </div>
-            <div [hidden]="bankAccount.valid || bankAccount.pristine"
-                 class="col-md-7 offset-md-5 text-danger">
-              <div [hidden]="!bankAccount.hasError('pattern')">Only alphabetsallowed</div>
-            </div>
+            <!--<div [hidden]="bankAccount.valid || bankAccount.pristine"-->
+                 <!--class="col-md-7 offset-md-5 text-danger">-->
+              <!--<div [hidden]="!bankAccount.hasError('pattern')">Only alphabetsallowed</div>-->
+            <!--</div>-->
             <div *ngIf="bankAccount.touched"
                  class="col-md-7 offset-md-5 text-danger">
               <div *ngIf = "bankAccount.errors?.required">
@@ -1001,22 +1009,6 @@
           </div>
           <div class="col-md-12 row form-group">
             <div class="col-md-5">
-              <label for="secondPayDay"  class=" control-label">SECOND PAY DAY</label>
-            </div>
-            <div class="col-md-7">
-              <input class="form-control readonly" readonly="readonly" #secondPayDay = "ngModel" id="secondPayDay" [(ngModel)]="user.secondPayDay" name="secondPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig" required>
-            </div>
-            <div *ngIf="secondPayDay.touched"
-                 class="col-md-7 offset-md-5 text-danger">
-              <div *ngIf = "secondPayDay.errors?.required">
-                Second pay day is required
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 row">
-          <div class="col-md-12 row form-group">
-            <div class="col-md-5">
               <label for="nexTPayDay"  class=" control-label">NEXT PAY DAY</label>
             </div>
             <div class="col-md-7">
@@ -1026,6 +1018,22 @@
                  class="col-md-7 offset-md-5 text-danger">
               <div *ngIf = "nexTPayDay.errors?.required">
                 Next pay day is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 row">
+          <div class="col-md-12 row form-group">
+            <div class="col-md-5">
+              <label for="secondPayDay"  class=" control-label">SECOND PAY DAY</label>
+            </div>
+            <div class="col-md-7">
+              <input class="form-control readonly" readonly="readonly" #secondPayDay = "ngModel" id="secondPayDay" [(ngModel)]="user.secondPayDay" name="secondPayDay" type="text" bsDatepicker [bsConfig]="datePickerConfig" required>
+            </div>
+            <div *ngIf="secondPayDay.touched"
+                 class="col-md-7 offset-md-5 text-danger">
+              <div *ngIf = "secondPayDay.errors?.required">
+                Second pay day is required
               </div>
             </div>
           </div>

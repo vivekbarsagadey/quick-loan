@@ -3,13 +3,14 @@
     "composer": "^0.19.5"
   },
   "name": "pronto",
-  "version": "0.0.6",
+  "version": "0.0.10",
   "description": "Blockchain based quick payday loan web application",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/pronto.bna",
     "pretest": "npm run lint",
     "lint": "eslint .",
-    "test": "nyc mocha -t 0 test/*.js && cucumber-js"
+    "test": "nyc mocha -t 0 test/*.js && cucumber-js",
+    "start": "start-network"
   },
   "keywords": [
     "composer",
@@ -32,5 +33,9 @@
     "nyc": "latest",
     "mkdirp": "latest",
     "mocha": "latest"
+  },
+  "dependencies": {
+    "composer-common": "0.19.5",
+    "composer-runtime-hlfv1": "0.19.5"
   }
 }

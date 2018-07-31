@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder} from '@angular/forms';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-application',
@@ -21,7 +23,7 @@ export class ApplicationComponent implements OnInit {
   paymentDetails: boolean;
   user: any = {};
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.datePickerConfig = Object.assign({}, {
       minDate: new Date(2018, 0, 1),
       maxDate: new Date(2018, 11, 31),
@@ -194,7 +196,7 @@ export class ApplicationComponent implements OnInit {
         'Content-Type': 'application/json'
       }
     }).then(res => res.json())
-      .then(res => console.log('Success-----------:', res))
+      .then(res =>         this.router.navigate(['loan-status', {applicationId: res}]))
       .catch(error => console.error('Error:', error));
   }
 }

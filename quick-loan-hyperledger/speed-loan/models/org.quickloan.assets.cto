@@ -1,13 +1,26 @@
-namespace org.quickloan.assets
+namespace org.whizit.pronto.assets
 
-import org.quickloan.participants.Customer
-import org.quickloan.participants.Investor
+import org.whizit.pronto.participants.Customer
+import org.whizit.pronto.participants.Investor
 
-asset Applications identified by applicationId {
-	o String applicationId
+enum Status {
+	o RECEIVED
+    o INVESTOR_REQUESTED
+    o APPROVED
+    o REJECTED
+    o LOAN_LENT
+    o LOAN_REPAID
+    o LOAN_RECEIVED
+    o LOAN_CLEARED
+}
+
+asset Applications identified by id {
+	o String id
     --> Customer customer
+    --> Investor investor
     o DateTime applicationDate
-    o Integer loanAmount
-    o String applicationStatus default = "In Process"
-    o String remarks default = "No remarks"
+    o Double loanAmount default = 0.0
+    o Status status
+    o String state default = "RECEIVED_QLAP"
+	o String remarks optional
 }
