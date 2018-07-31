@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {UrlConstant} from '../../util/url-constant';
 
 @Component({
   selector: 'app-new-investor',
@@ -51,7 +52,7 @@ export class NewInvestorComponent implements OnInit {
       'totalLoanLent': this.investor.totalLoanLent
     };
 
-    fetch('http://192.168.100.12:8080/api/investor/',  {
+    fetch(UrlConstant.JAVA_API +  'investor/',  {
       method: 'POST', // or 'PUT'
       body: JSON.stringify(this.sendToServer), // data can be `string` or {object}!
       headers: {
