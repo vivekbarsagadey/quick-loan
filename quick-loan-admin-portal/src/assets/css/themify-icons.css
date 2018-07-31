@@ -418,6 +418,7 @@
 }
 .ti-plug:before {
 	content: "\e683";
+
 }
 .ti-pie-chart:before {
 	content: "\e684";
