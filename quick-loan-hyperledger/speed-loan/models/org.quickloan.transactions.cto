@@ -1,34 +1,31 @@
-namespace org.quickloan.transactions
+namespace org.whizit.pronto.transactions
 
-import org.quickloan.participants.Customer
-import org.quickloan.participants.Investor
-import org.quickloan.assets.Applications
-
-transaction createApplication {
-    o Applications application
-}
+import org.whizit.pronto.participants.Customer
+import org.whizit.pronto.participants.Investor
+import org.whizit.pronto.assets.Applications
 
 transaction requestInvestor {
-	--> Investor investor
-    --> Applications application
-}
-
-transaction approveLoan {
-	--> Investor investor
-    --> Applications application
-    //--> Customer customer
-}
-
-transaction rejectLoan {
-    --> Applications application
-	o String remarks
-}
-
-transaction loanLent {
 	--> Applications application
+    --> Investor investor
 }
 
-transaction loanRepaid {
+transaction updateScore {
+	--> Customer customer
+    o Integer score
+}
+
+transaction updateCustomerStatus {
+	--> Customer customer
+    o String status
+}
+
+transaction updateInvestorStatus {
+	--> Investor investor
+    o String status
+}
+
+transaction updateApplicationStatus {
 	--> Applications application
-	--> Investor investor optional
+    o String status
+    o String remarks optional
 }

@@ -1,16 +1,19 @@
-namespace org.quickloan.participants
+namespace org.whizit.pronto.participants
 
-import org.quickloan.assets.Applications
-
-participant Customer identified by customerId {
-	o String customerId
-    o Applications[] allApplications
-    --> Investor lender
+enum Status {
+	o ACTIVE
+    o BLOCKED
+    o UNBLOCKED
 }
 
-participant Investor identified by investorId {
-	o String investorId                
-    --> Applications applicationRequests
-    --> Applications applicationAssigned
-    o Integer totalLoanLent
+participant Customer identified by id {
+	o String id
+    o Status status
+  	o Integer score default= 5
+}
+  
+participant Investor identified by id {
+	o String id
+    o Status status
+    o Double totalLoanLent default= 0.0
 }
