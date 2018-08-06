@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: quick-loan-suggestion
+Version: 0.0.1
+Summary: quick-loan-suggestion application based on machine learning
+Home-page: https://github.com/
+Author: Vivek Barsagadey
+Author-email: vivek.bnb@gmail.com
+License: UNKNOWN
+Description: 
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
